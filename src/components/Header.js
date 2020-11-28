@@ -1,12 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button, Collapse, Modal } from "react-bootstrap";
+
 import Categorias from "../categorias";
-import { Button, Collapse } from "react-bootstrap";
+
+import LoginModal from "./LoginModal";
 
 class Header extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.state = { searchOpen: false, navOpen: false, activeKey: "" };
+    this.state = {
+      searchOpen: false,
+      navOpen: false,
+      activeKey: "",
+      showLogin: false,
+    };
   }
 
   handleClick(categoria) {
@@ -20,6 +28,18 @@ class Header extends React.Component {
       activeKey: categoria,
     });
   }
+
+  handleLoginShow = () => {
+    this.setState({
+      showLogin: true,
+    });
+  };
+
+  handleLoginClose = () => {
+    this.setState({
+      showLogin: false,
+    });
+  };
 
   renderNavList() {
     const { activeKey } = this.state;
@@ -75,7 +95,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { navOpen, searchOpen } = this.state;
+    const { navOpen, searchOpen, showLogin } = this.state;
     return (
       <header className="header mb-5">
         {/* Top bar */}
@@ -93,9 +113,9 @@ class Header extends React.Component {
               <div className="col-lg-6 text-center text-lg-right">
                 <ul className="menu list-inline mb-0">
                   <li className="list-inline-item">
-                    <Link to="/login" className="link">
+                    <button onClick={this.handleLoginShow} className="link">
                       Login
-                    </Link>
+                    </button>
                   </li>
                   <li className="list-inline-item">
                     <a href="register.html">Registar</a>
@@ -107,6 +127,9 @@ class Header extends React.Component {
               </div>
             </div>
           </div>
+          <Modal show={showLogin} onHide={this.handleLoginClose}>
+            <LoginModal hideFunction={this.handleLoginClose} />
+          </Modal>
         </div>
         {/* Nav bar */}
         <nav className="navbar navbar-expand-lg">

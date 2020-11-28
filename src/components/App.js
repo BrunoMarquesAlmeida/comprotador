@@ -1,8 +1,8 @@
 import { HashRouter, Route } from "react-router-dom";
 
 import Header from "./Header";
-import LoginModal from "./LoginModal";
 import Footer from "./Footer";
+import Home from "./Home";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <HashRouter>
         <div>
           <Header />
-          <Route path="/login" component={LoginModal} />
+          <Route path="/" component={Home} />
           <Footer />
         </div>
       </HashRouter>
