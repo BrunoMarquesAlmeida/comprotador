@@ -2,6 +2,7 @@ import { HashRouter, Route } from "react-router-dom";
 
 import Header from "./Header";
 import LoginModal from "./LoginModal";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -10,9 +11,9 @@ function App() {
         <div>
           <Header />
           <Route path="/login" component={LoginModal} />
+          <Footer />
         </div>
       </HashRouter>
-      Content
     </div>
   );
 }

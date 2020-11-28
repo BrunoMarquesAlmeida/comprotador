@@ -26,16 +26,16 @@ class Header extends React.Component {
     return Object.keys(Categorias).map((categoria) => {
       return (
         <li className="nav-item dropdown menu-large" key={categoria}>
-          <a
+          <Link
+            to="/"
             className="dropdown-toggle nav-link"
             style={{ cursor: "pointer" }}
             onClick={() => this.handleClick(categoria)}
           >
             {categoria}
             <b className="caret"></b>
-          </a>
+          </Link>
           <ul
-            // className={`dropdown-menu megamenu`}
             className={
               activeKey === categoria
                 ? "dropdown-menu megamenu show"
@@ -47,7 +47,7 @@ class Header extends React.Component {
                 {Object.keys(Categorias[categoria]).map((subCategoria) => {
                   return (
                     <div className="col-md-6 col-lg-3" key={subCategoria}>
-                      <Link style={{ color: "#212529" }}>
+                      <Link to="/" style={{ color: "#212529" }}>
                         <h5>{subCategoria}</h5>
                       </Link>
                       <ul className="list-unstyled mb-3">
@@ -75,7 +75,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { navOpen, searchOpen, show } = this.state;
+    const { navOpen, searchOpen } = this.state;
     return (
       <header className="header mb-5">
         {/* Top bar */}
