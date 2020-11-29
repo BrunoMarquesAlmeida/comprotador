@@ -6,7 +6,7 @@ const Advantages = () => {
           <div className="col-md-4">
             <div className="box clickable d-flex flex-column justify-content-center mb-0 h-100">
               <div className="icon">
-                <i class="fa fa-truck fa-flip-horizontal"></i>
+                <i className="fa fa-truck fa-flip-horizontal"></i>
               </div>
               <h3 className="advantagesA">entregas em 24h</h3>
               <p className="mb-0">

@@ -5,10 +5,7 @@ const ImgSlider = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <div
-            id="main-slider"
-            //  style={{display: "inline-block"}}
-          >
+          <div id="main-slider">
             <Carousel>
               <Carousel.Item>
                 <img
