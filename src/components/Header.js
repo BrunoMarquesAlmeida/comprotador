@@ -75,9 +75,13 @@ class Header extends React.Component {
                           (subCategoria2) => {
                             return (
                               <li className="nav-item" key={subCategoria2}>
-                                <a href="category.html" className="nav-link">
+                                <Link
+                                  to="/"
+                                  href="category.html"
+                                  className="nav-link"
+                                >
                                   {subCategoria2}
-                                </a>
+                                </Link>
                               </li>
                             );
                           }
@@ -118,10 +122,14 @@ class Header extends React.Component {
                     </button>
                   </li>
                   <li className="list-inline-item">
-                    <a href="register.html">Registar</a>
+                    <Link to="/" href="register.html">
+                      Registar
+                    </Link>
                   </li>
                   <li className="list-inline-item">
-                    <a href="contact.html">Contactos</a>
+                    <Link to="/" href="contact.html">
+                      Contactos
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -137,12 +145,12 @@ class Header extends React.Component {
             {/* Logotipos */}
             <Link to={"/"} className="navbar-brand home">
               <img
-                src="assets/img/logo.png"
+                src="comprotador/assets/img/logo.png"
                 alt="ComproTador logo"
                 className="d-none d-md-inline-block"
               />
               <img
-                src="assets/img/logo-small.png"
+                src="comprotador/assets/img/logo-small.png"
                 alt="ComproTador logo"
                 className="d-inline-block d-md-none"
               />

@@ -112,21 +112,16 @@ const product = (imgURL, detail, price, delPrice, newRibbon, saleRibbon) => {
         margin: "0 25px",
       }}
     >
-      <a
-        href="detail.html"
-        // style={{
-        //   width: "222px",
-        // }}
-      >
+      <Link to="/">
         <img
-          src={`assets/img/produtos/${imgURL}`}
+          src={`comprotador/assets/img/produtos/${imgURL}`}
           alt=""
           className="img-fluid"
         />
-      </a>
+      </Link>
       <div className="text">
         <h3>
-          <a href="detail.html">{detail}</a>
+          <Link to="/">{detail}</Link>
         </h3>
         <p className="price">
           <del>{delPrice}</del>
