@@ -12,28 +12,28 @@ const ImgSlider = () => {
             <Carousel>
               <Carousel.Item>
                 <img
-                  src="assets/img/main-slider1.jpg"
+                  src="assets/img/main-slider/artiom-vallat-H-qqp_Eqaww-unsplash.jpg"
                   alt=""
                   className="img-fluid"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  src="assets/img/main-slider2.jpg"
+                  src="assets/img/main-slider/christian-wiediger-WkfDrhxDMC8-unsplash.jpg"
                   alt=""
                   className="img-fluid"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  src="assets/img/main-slider3.jpg"
+                  src="assets/img/main-slider/fredrick-tendong-HVYepJYeHdQ-unsplash.jpg"
                   alt=""
                   className="img-fluid"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  src="assets/img/main-slider4.jpg"
+                  src="assets/img/main-slider/jakob-owens-Eznp0kLNkkI-unsplash.jpg"
                   alt=""
                   className="img-fluid"
                 />
