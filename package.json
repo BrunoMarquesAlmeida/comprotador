@@ -1,6 +1,6 @@
 {
-  "homepageX": "https://brunomarquesalmeida.github.io/comprotador",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://brunomarquesalmeida.github.io/comprotador",
+  "homepageX": "http://localhost:3000",
   "name": "comprotador",
   "version": "0.1.0",
   "private": true,
