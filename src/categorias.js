@@ -1,10 +1,10 @@
 const Categorias = {
-  computadores: {
-    Desktops: ["Gaming", "Workstation", "All-in-One"],
+  Computadores: {
+    Desktops: ["Gaming", "Workstations", "All-in-One"],
     Notebooks: [],
     Servidores: [],
   },
-  componentes: {
+  Componentes: {
     Processadores: ["Intel", "AMD"],
     "Placas gráficas": ["NVIDIA", "AMD"],
     "Fontes de Alimentação": ["Modulares", "Semi-Modulares", "Não Modulares"],
@@ -15,7 +15,7 @@ const Categorias = {
     RAM: ["DDR4", "DDR3"],
     "Compostos térmicos": [],
   },
-  periféricos: {
+  Periféricos: {
     Audio: ["Headsets", "Headphones", "Earbuds", "Microfones", "Colunas"],
     "Ratos/Teclados": ["Ratos", "Teclados", "Conjuntos", "Tapetes"],
     Monitores: ["1080p", "1440p", "4K"],

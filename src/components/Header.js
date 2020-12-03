@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Button, Collapse, Modal } from "react-bootstrap";
 
 import Categorias from "../categorias";
@@ -17,7 +17,7 @@ class Header extends React.Component {
     };
   }
 
-  handleClick(categoria) {
+  handleCatClick(categoria) {
     const { activeKey } = this.state;
     if (activeKey === categoria) {
       return this.setState({
@@ -46,15 +46,16 @@ class Header extends React.Component {
     return Object.keys(Categorias).map((categoria) => {
       return (
         <li className="nav-item dropdown menu-large" key={categoria}>
-          <Link
-            to="/"
+          <NavLink
+            to={`/categoria/${categoria}`}
             className="dropdown-toggle nav-link"
             style={{ cursor: "pointer" }}
-            onClick={() => this.handleClick(categoria)}
+            onClick={() => this.handleCatClick(categoria)}
+            activeClassName="active"
           >
             {categoria}
             <b className="caret"></b>
-          </Link>
+          </NavLink>
           <ul
             className={
               activeKey === categoria
@@ -67,7 +68,10 @@ class Header extends React.Component {
                 {Object.keys(Categorias[categoria]).map((subCategoria) => {
                   return (
                     <div className="col-md-6 col-lg-3" key={subCategoria}>
-                      <Link to="/" style={{ color: "#212529" }}>
+                      <Link
+                        to={`/categoria/${categoria}/${subCategoria}`}
+                        style={{ color: "#212529" }}
+                      >
                         <h5>{subCategoria}</h5>
                       </Link>
                       <ul className="list-unstyled mb-3">
@@ -76,7 +80,7 @@ class Header extends React.Component {
                             return (
                               <li className="nav-item" key={subCategoria2}>
                                 <Link
-                                  to="/"
+                                  to={`/categoria/${categoria}/${subCategoria}/${subCategoria2}`}
                                   href="category.html"
                                   className="nav-link"
                                 >
@@ -145,12 +149,12 @@ class Header extends React.Component {
             {/* Logotipos */}
             <Link to={"/"} className="navbar-brand home">
               <img
-                src="comprotador/assets/img/logo.png"
+                src="assets/img/logo.png"
                 alt="ComproTador logo"
                 className="d-none d-md-inline-block"
               />
               <img
-                src="comprotador/assets/img/logo-small.png"
+                src="assets/img/logo-small.png"
                 alt="ComproTador logo"
                 className="d-inline-block d-md-none"
               />
@@ -193,9 +197,14 @@ class Header extends React.Component {
                 {/* NavList */}
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
-                    <Link to="/" className="nav-link active">
+                    <NavLink
+                      exact
+                      to="/"
+                      className="nav-link"
+                      activeClassName="active"
+                    >
                       Home
-                    </Link>
+                    </NavLink>
                   </li>
                   {this.renderNavList()}
                 </ul>

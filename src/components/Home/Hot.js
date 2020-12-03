@@ -10,7 +10,7 @@ const Hot = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="mb-0">Novidades</h2>
+              <h2 className="mb-0">Destaques</h2>
             </div>
           </div>
         </div>
@@ -112,16 +112,16 @@ const product = (imgURL, detail, price, delPrice, newRibbon, saleRibbon) => {
         margin: "0 25px",
       }}
     >
-      <Link to="/">
+      <Link to="/category">
         <img
-          src={`comprotador/assets/img/produtos/${imgURL}`}
+          src={`assets/img/produtos/${imgURL}`}
           alt=""
           className="img-fluid"
         />
       </Link>
       <div className="text">
         <h3>
-          <Link to="/">{detail}</Link>
+          <Link to="/category">{detail}</Link>
         </h3>
         <p className="price">
           <del>{delPrice}</del>

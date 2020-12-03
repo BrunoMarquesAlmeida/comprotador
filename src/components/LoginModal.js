@@ -38,9 +38,9 @@ const LoginModal = (props) => {
         </form>
         <p className="text-center text-muted">Não está registado?</p>
         <p className="text-center text-muted">
-          <a href="register.html">
+          <Link to="/">
             <strong>Registe-se agora</strong>
-          </a>
+          </Link>
           ! Demora apenas um minuto e dá-lhe acesso a descontos especiais e
           muito mais!
         </p>
