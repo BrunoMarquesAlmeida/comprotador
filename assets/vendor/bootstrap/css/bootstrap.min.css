@@ -550,7 +550,7 @@ pre code {
   .container-md,
   .container-sm,
   .container-xl {
-    max-width: 1140px;
+    max-width: 1440px;
   }
 }
 .row {
@@ -5667,7 +5667,7 @@ a.close.disabled {
 }
 @media (min-width: 1200px) {
   .modal-xl {
-    max-width: 1140px;
+    max-width: 1440px;
   }
 }
 .tooltip {

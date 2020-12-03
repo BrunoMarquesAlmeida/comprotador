@@ -14,3 +14,11 @@ button.link:hover {
   color: #4fbfa8;
   text-decoration: none;
 }
+
+.carousel-item {
+  max-height: 500px;
+}
+
+.pointer {
+  cursor: pointer;
+}
