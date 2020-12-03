@@ -110,12 +110,20 @@ class Header extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-6 offer mb-3 mb-lg-0">
-                <button className="btn btn-success btn-sm">
+                {/* <button className="btn btn-success btn-sm">
                   Oferta do dia
                 </button>
                 <span className="ml-1">
                   35% desconto em compras acima de 50€!
-                </span>
+                </span> */}
+                <Link to="/categoria/Computadores/Desktops/Workstation">
+                  <button className="btn btn-success btn-sm">
+                    Adicionado o menu de filtros
+                  </button>
+                  <span className="ml-1">
+                    Clique aqui para conhecer o último update ao site
+                  </span>
+                </Link>
               </div>
               <div className="col-lg-6 text-center text-lg-right">
                 <ul className="menu list-inline mb-0">
