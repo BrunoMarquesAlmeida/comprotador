@@ -1,6 +1,6 @@
 const Categorias = {
   Computadores: {
-    Desktops: ["Gaming", "Workstations", "All-in-One"],
+    Desktops: ["Gaming", "Workstation", "All-in-One"],
     Notebooks: [],
     Servidores: [],
   },

@@ -5,8 +5,14 @@ const ImgSlider = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <div id="main-slider">
-            <Carousel>
+          <div
+            id="main-slider"
+            style={{
+              maxWidth: "1140px",
+              margin: "auto auto 30px auto",
+            }}
+          >
+            <Carousel height="200px">
               <Carousel.Item>
                 <img
                   src="assets/img/main-slider/artiom-vallat-H-qqp_Eqaww-unsplash.jpg"

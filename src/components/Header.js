@@ -1,10 +1,9 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Button, Collapse, Modal } from "react-bootstrap";
+import LoginModal from "./LoginModal";
 
 import Categorias from "../categorias";
-
-import LoginModal from "./LoginModal";
 
 class Header extends React.Component {
   constructor(props, context) {
