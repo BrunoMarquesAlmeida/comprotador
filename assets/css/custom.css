@@ -7,6 +7,15 @@
   border: none;
 }
 
+.footer-link {
+  color: #999;
+  text-decoration: none;
+  background-color: transparent;
+  background: none !important;
+  padding: 0 !important;
+  border: none;
+}
+
 button.link:hover {
   text-decoration: underline !important;
 }
@@ -25,4 +34,18 @@ button.link:hover {
 
 .container {
   max-width: 1400px;
+}
+
+.ribbon {
+  letter-spacing: 0.1em;
+  font-size: 9pt;
+}
+
+.titleBox {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.titleBox h1 {
+  margin-bottom: 0;
 }
