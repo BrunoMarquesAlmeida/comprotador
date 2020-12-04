@@ -112,7 +112,7 @@ const product = (imgURL, detail, price, delPrice, newRibbon, saleRibbon) => {
         margin: "0 25px",
       }}
     >
-      <Link to="/category">
+      <Link to="/detalhes/xxxyyyzzz">
         <img
           src={`assets/img/produtos/${imgURL}`}
           alt=""
@@ -121,7 +121,7 @@ const product = (imgURL, detail, price, delPrice, newRibbon, saleRibbon) => {
       </Link>
       <div className="text">
         <h3>
-          <Link to="/category">{detail}</Link>
+          <Link to="/detalhes/xxxyyyzzz">{detail}</Link>
         </h3>
         <p className="price">
           <del>{delPrice}</del>
@@ -135,7 +135,7 @@ const product = (imgURL, detail, price, delPrice, newRibbon, saleRibbon) => {
           className="theribbon"
           style={saleRibbon === true ? {} : { display: "none" }}
         >
-          SALE
+          SALDOS
         </div>
         <div className="ribbon-background"></div>
       </div>
@@ -144,7 +144,7 @@ const product = (imgURL, detail, price, delPrice, newRibbon, saleRibbon) => {
           className="theribbon"
           style={newRibbon === true ? {} : { display: "none" }}
         >
-          NEW
+          NOVO
         </div>
         <div className="ribbon-background"></div>
       </div>

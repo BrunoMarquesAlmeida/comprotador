@@ -110,15 +110,9 @@ class Header extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-6 offer mb-3 mb-lg-0">
-                {/* <button className="btn btn-success btn-sm">
-                  Oferta do dia
-                </button>
-                <span className="ml-1">
-                  35% desconto em compras acima de 50€!
-                </span> */}
                 <Link to="/categoria/Computadores/Desktops/Workstation">
                   <button className="btn btn-success btn-sm">
-                    Adicionado o menu de filtros
+                    Página de categorias completa!
                   </button>
                   <span className="ml-1">
                     Clique aqui para conhecer o último update ao site

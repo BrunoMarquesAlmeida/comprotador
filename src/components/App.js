@@ -5,6 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
 import Category from "./Category";
+import Detail from "./Detail";
 
 class App extends React.Component {
   render() {
@@ -25,6 +26,7 @@ class App extends React.Component {
               component={Category}
             />
             <Route exact path="/categoria/:categoria/" component={Category} />
+            <Route exact path="/detalhes/:id" component={Detail} />
             <Footer />
           </div>
         </HashRouter>

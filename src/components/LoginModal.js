@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const LoginModal = (props) => {
-  console.log(props);
   return (
     <>
       <div className="modal-header" style={{ background: "#4fbfa8" }}>

@@ -39,7 +39,7 @@ const MenuFilters = () => {
                       <div className="form-group">
                         {Object.values(specs[spec]).map((check) => {
                           return (
-                            <div className="checkbox">
+                            <div className="checkbox" key={check}>
                               <label>
                                 <input type="checkbox" /> {check}
                               </label>
@@ -69,7 +69,10 @@ function ContextAwareToggle({ eventKey }) {
 
   return (
     <i
-      className={isCurrentEventKey ? "fa fa-caret-up" : "fa fa-caret-down"}
+      className={
+        isCurrentEventKey ? "fa fa-caret-up" : "fa fa-caret-down fa-xs"
+      }
+      style={{ fontSize: "14px" }}
     ></i>
   );
 }

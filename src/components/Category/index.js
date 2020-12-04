@@ -1,5 +1,6 @@
 import BreadCrumb from "./BreadCrumb";
 import MenuFilters from "./MenuFilters";
+import ProductList from "./ProductList";
 
 const Category = (props) => {
   return (
@@ -8,6 +9,7 @@ const Category = (props) => {
         <div className="row">
           <BreadCrumb categorias={props.match.params} />
           <MenuFilters />
+          <ProductList categorias={props.match.params} />
         </div>
       </div>
     </div>
