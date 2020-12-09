@@ -1,5 +1,5 @@
 {
-  "homepagex": "https://brunomarquesalmeida.github.io/comprotador",
+  "homepageX": "https://brunomarquesalmeida.github.io/comprotador",
   "homepage": "http://localhost:3000",
   "name": "comprotador",
   "version": "0.1.0",
@@ -9,9 +9,11 @@
     "@testing-library/react": "^11.2.1",
     "@testing-library/user-event": "^12.2.2",
     "bootstrap": "^4.5.3",
+    "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
+    "react-image-gallery": "^1.0.8",
     "react-multi-carousel": "^2.5.5",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"

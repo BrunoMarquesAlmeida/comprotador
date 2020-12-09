@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { NewRibbon } from "../Common/Ribbon";
+import { AddCartIcon } from "../Common/AddCartIcon";
 
 const ProductList = (props) => {
   return (
@@ -81,9 +82,7 @@ const renderProductList = () => {
             >
               Ver detalhes
             </Link>
-            <span href="basket.html" className="btn btn-primary">
-              <i className="fa fa-shopping-cart"></i>Adicionar
-            </span>
+            <AddCartIcon />
           </p>
         </div>
         <NewRibbon tipo="novo" />

@@ -1,4 +1,6 @@
 import BreadCrumb from "./BreadCrumb";
+import ProductDetail from "./ProductDetail";
+import NavMenu from "./NavMenu";
 
 const Detail = () => {
   return (
@@ -6,6 +8,9 @@ const Detail = () => {
       <div className="container">
         <div className="row">
           <BreadCrumb />
+          <NavMenu />
+
+          <ProductDetail />
         </div>
       </div>
     </div>

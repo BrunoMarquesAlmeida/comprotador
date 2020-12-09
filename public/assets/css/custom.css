@@ -1,12 +1,3 @@
-.link {
-  color: #eee;
-  text-decoration: none;
-  background-color: transparent;
-  background: none !important;
-  padding: 0 !important;
-  border: none;
-}
-
 .footer-link {
   color: #999;
   text-decoration: none;
@@ -48,4 +39,8 @@ button.link:hover {
 
 .titleBox h1 {
   margin-bottom: 0;
+}
+
+.fa-icon {
+  margin: 0 5px;
 }
