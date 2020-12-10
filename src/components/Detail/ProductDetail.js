@@ -3,7 +3,6 @@ import ReactImageGallery from "react-image-gallery";
 
 import { NewRibbon } from "../Common/Ribbon";
 import { AddCartIcon } from "../Common/AddCartIcon";
-import { product } from "../Common/Hot";
 
 const ProductDetail = () => {
   return (
@@ -109,41 +108,12 @@ const ProductDetail = () => {
         </div>
       </div>
       <div className="row same-height-row">
-        <div className="col-md-3 col-sm-6">
+        <div className="col-md-3 col-sm-6" style={{ display: "grid" }}>
           <div className="box same-height">
             <h3>Produtos recomendados</h3>
           </div>
         </div>
-        {/* <div className="col-md-3 col-sm-6">
-          {product(
-            "MSI156.jpg",
-            `Portátil MSI 15.6" GF63 Thin`,
-            "949,90€",
-            "1199,90€",
-            true,
-            true
-          )}
-        </div>
-        <div className="col-md-3 col-sm-6">
-          {product(
-            "MSI156.jpg",
-            `Portátil MSI 15.6" GF63 Thin`,
-            "949,90€",
-            "1199,90€",
-            true,
-            true
-          )}
-        </div>
-        <div className="col-md-3 col-sm-6">
-          {product(
-            "MSI156.jpg",
-            `Portátil MSI 15.6" GF63 Thin`,
-            "949,90€",
-            "1199,90€",
-            true,
-            true
-          )}
-        </div> */}
+
         <div className="col-md-3 col-sm-6">
           <div className="product same-height">
             <a href="detail.html">
