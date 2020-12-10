@@ -84,10 +84,17 @@ const responsive = {
   },
 };
 
-const product = (imgURL, detail, price, delPrice, newRibbon, saleRibbon) => {
+export const product = (
+  imgURL,
+  detail,
+  price,
+  delPrice,
+  newRibbon,
+  saleRibbon
+) => {
   return (
     <div
-      className="product"
+      className="product same-height"
       style={{
         margin: "0 25px",
       }}

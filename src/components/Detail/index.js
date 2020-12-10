@@ -12,6 +12,7 @@ const Detail = () => {
 
           <ProductDetail />
         </div>
+        <div style={{ marginBottom: "30px" }} />
       </div>
     </div>
   );
