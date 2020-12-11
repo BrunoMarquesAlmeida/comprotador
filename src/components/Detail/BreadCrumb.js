@@ -17,9 +17,7 @@ const BreadCrumb = () => {
           <li className="breadcrumb-item">
             <Link to="/categoria/Computadores/Desktops/Gaming">Gaming</Link>
           </li>
-          <li aria-current="page" className="breadcrumb-item active">
-            Mini PC GMK NucBox
-          </li>
+          <li className="breadcrumb-item active">Mini PC GMK NucBox</li>
         </ol>
       </nav>
     </div>
