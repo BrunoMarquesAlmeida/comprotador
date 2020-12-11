@@ -1,6 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 
 const BreadCrumb = (props) => {
+  console.log(props);
   const { categoria, subCategoria, subCategoria2 } = props.categorias;
   return (
     <div className="col-lg-12">

@@ -1,11 +1,10 @@
 import { HashRouter, Route } from "react-router-dom";
 import React from "react";
+import routes from "../routes";
 
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
-import Category from "./Category";
-import Detail from "./Detail";
 
 class App extends React.Component {
   render() {
@@ -15,18 +14,10 @@ class App extends React.Component {
           <div>
             <Header />
             <Route path="/" exact component={Home} />
-            <Route
-              exact
-              path="/categoria/:categoria/:subCategoria/:subCategoria2"
-              component={Category}
-            />
-            <Route
-              exact
-              path="/categoria/:categoria/:subCategoria"
-              component={Category}
-            />
-            <Route exact path="/categoria/:categoria/" component={Category} />
-            <Route exact path="/detalhes/:id" component={Detail} />
+
+            {routes.map(({ path, Component }, key) => (
+              <Route exact path={path} key={key} component={Component} />
+            ))}
             <Footer />
           </div>
         </HashRouter>

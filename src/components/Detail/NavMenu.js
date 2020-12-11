@@ -21,7 +21,7 @@ const NavMenu = () => {
 const renderNavList = () => {
   return Object.keys(Categorias).map((categoria) => {
     return (
-      <li>
+      <li key={categoria}>
         <NavLink
           to={`/categoria/${categoria}`}
           className="nav-link"
@@ -33,7 +33,7 @@ const renderNavList = () => {
         <ul className="list-unstyled">
           {Object.keys(Categorias[categoria]).map((subCategoria) => {
             return (
-              <li>
+              <li key={subCategoria}>
                 <Link to={`/categoria/${categoria}/${subCategoria}`}>
                   {subCategoria}
                 </Link>

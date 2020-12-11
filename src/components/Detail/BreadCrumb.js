@@ -9,7 +9,7 @@ const BreadCrumb = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="breadcrumb-item">
-            <Link to="">Computadores</Link>
+            <Link to="/categoria/Computadores">Computadores</Link>
           </li>
           <li className="breadcrumb-item">
             <Link to="/categoria/Computadores/Desktops">Desktops</Link>

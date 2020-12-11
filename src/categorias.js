@@ -17,7 +17,7 @@ const Categorias = {
   },
   Periféricos: {
     Audio: ["Headsets", "Headphones", "Earbuds", "Microfones", "Colunas"],
-    "Ratos/Teclados": ["Ratos", "Teclados", "Conjuntos", "Tapetes"],
+    "Ratos e Teclados": ["Ratos", "Teclados", "Conjuntos", "Tapetes"],
     Monitores: ["1080p", "1440p", "4K"],
     Controladores: ["Gamepads", "Joysticks"],
   },
