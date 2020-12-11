@@ -44,6 +44,57 @@ const ProductList = (props) => {
         {renderProductList()}
         {renderProductList()}
       </div>
+      <div className="pages">
+        <p className="loadMore">
+          <a href="#" className="btn btn-primary btn-lg">
+            <i className="fa fa-chevron-down"></i> Load more
+          </a>
+        </p>
+        <nav
+          aria-label="Page navigation example"
+          className="d-flex justify-content-center"
+        >
+          <ul className="pagination">
+            <li className="page-item">
+              <a href="#" aria-label="Previous" className="page-link">
+                <span aria-hidden="true">«</span>
+                <span className="sr-only">Previous</span>
+              </a>
+            </li>
+            <li className="page-item active">
+              <a href="#" className="page-link">
+                1
+              </a>
+            </li>
+            <li className="page-item">
+              <a href="#" className="page-link">
+                2
+              </a>
+            </li>
+            <li className="page-item">
+              <a href="#" className="page-link">
+                3
+              </a>
+            </li>
+            <li className="page-item">
+              <a href="#" className="page-link">
+                4
+              </a>
+            </li>
+            <li className="page-item">
+              <a href="#" className="page-link">
+                5
+              </a>
+            </li>
+            <li className="page-item">
+              <a href="#" aria-label="Next" className="page-link">
+                <span aria-hidden="true">»</span>
+                <span className="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 };

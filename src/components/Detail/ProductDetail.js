@@ -109,13 +109,13 @@ const ProductDetail = () => {
       </div>
       <div className="row same-height-row">
         <div className="col-md-3 col-sm-6" style={{ display: "grid" }}>
-          <div className="box same-height">
+          <div className="box">
             <h3>Produtos recomendados</h3>
           </div>
         </div>
 
         <div className="col-md-3 col-sm-6">
-          <div className="product same-height">
+          <div className="product">
             <a href="detail.html">
               <img
                 src="assets/img/produtos/1085_1.jpg"
@@ -131,7 +131,7 @@ const ProductDetail = () => {
           </div>
         </div>
         <div className="col-md-3 col-sm-6">
-          <div className="product same-height">
+          <div className="product">
             <a href="detail.html">
               <img
                 src="assets/img/produtos/1_p030470_2.jpg"
@@ -147,7 +147,7 @@ const ProductDetail = () => {
           </div>
         </div>
         <div className="col-md-3 col-sm-6">
-          <div className="product same-height">
+          <div className="product">
             <a href="detail.html">
               <img
                 src="assets/img/produtos/1_335_2.jpg"
