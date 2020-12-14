@@ -14,7 +14,6 @@ class App extends React.Component {
           <div>
             <Header />
             <Route path="/" exact component={Home} />
-
             {routes.map(({ path, Component }, key) => (
               <Route exact path={path} key={key} component={Component} />
             ))}

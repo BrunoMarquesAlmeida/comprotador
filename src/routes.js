@@ -33,4 +33,9 @@ export default [
     name: "Encomendas",
     Component: MyAccount,
   },
+  {
+    path: "/conta/wishlist",
+    name: "Wishlist",
+    Component: MyAccount,
+  },
 ];
