@@ -5,6 +5,7 @@ import NavMenu from "./NavMenu";
 import Wishlist from "./Wishlist";
 import Detail from "./Detail";
 import Encomendas from "./Encomendas";
+import EncomendaDetalhes from "./EncomendaDetalhes";
 
 const MyAccount = (props) => {
   return (
@@ -13,11 +14,10 @@ const MyAccount = (props) => {
         <div className="row">
           <Breadcrumb props={props} />
           <NavMenu />
-          <div className="col-lg-9">
-            <Route path="/conta/wishlist" component={Wishlist} />
-            <Route exact path="/conta" component={Detail} />
-            <Route path="/conta/encomendas" component={Encomendas} />
-          </div>
+          <Route path="/conta/wishlist" component={Wishlist} />
+          <Route exact path="/conta" component={Detail} />
+          <Route exact path="/conta/encomendas" component={Encomendas} />
+          <Route path="/conta/encomendas/:id" component={EncomendaDetalhes} />
         </div>
       </div>
     </div>

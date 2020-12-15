@@ -5,7 +5,7 @@ import { NewRibbon } from "../Common/Ribbon";
 
 const Wishlist = () => {
   return (
-    <>
+    <div className="col-lg-9">
       <div className="box">
         <h1>Wishlist</h1>
         <p className="lead">
@@ -20,11 +20,11 @@ const Wishlist = () => {
         {renderWishlistItem()}
         {renderWishlistItem()}
       </div>
-    </>
+    </div>
   );
 };
 
-const renderWishlistItem = () => {
+function renderWishlistItem() {
   return (
     <div className="col-lg-3 col-md-4">
       <div className="product">
@@ -57,6 +57,6 @@ const renderWishlistItem = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Wishlist;

@@ -110,12 +110,12 @@ class Header extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-6 offer mb-3 mb-lg-0">
-                <Link to="/detalhes/idproduto">
+                <Link to="/conta">
                   <span
                     to="/detalhes/idproduto"
                     className="btn btn-success btn-sm"
                   >
-                    Adicionado detalhes do produto!
+                    Construção interface: Conta
                   </span>
                   <span className="ml-1">
                     Clique aqui para conhecer o último update ao site
