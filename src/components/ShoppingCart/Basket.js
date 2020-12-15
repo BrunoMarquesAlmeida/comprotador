@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Recomendados from "../Common/Recomendados";
 
 const Basket = () => {
   return (
@@ -98,6 +99,7 @@ const Basket = () => {
           </div>
         </form>
       </div>
+      {Recomendados}
     </div>
   );
 };
