@@ -46,9 +46,9 @@ const ProductList = (props) => {
       </div>
       <div className="pages">
         <p className="loadMore">
-          <a href="#" className="btn btn-primary btn-lg">
+          <span className="btn btn-primary btn-lg">
             <i className="fa fa-chevron-down"></i> Load more
-          </a>
+          </span>
         </p>
         <nav
           aria-label="Page navigation example"

@@ -1,6 +1,7 @@
 import Category from "./components/Category";
 import Detail from "./components/Detail";
 import MyAccount from "./components/MyAccount";
+import ShoppingCart from "./components/ShoppingCart";
 
 export default [
   {
@@ -42,5 +43,10 @@ export default [
     path: "/conta/encomendas/:id",
     name: "Detalhes da encomenda",
     Component: MyAccount,
+  },
+  {
+    path: "/carrinho",
+    name: "Carrinho de compras",
+    Component: ShoppingCart,
   },
 ];
