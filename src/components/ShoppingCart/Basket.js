@@ -6,7 +6,7 @@ const Basket = () => {
     <div id="basket" className="col-lg-9">
       <div className="box">
         <form method="post" action="checkout1.html">
-          <h1>Shopping cart</h1>
+          <h1>Carrinho de compras</h1>
           <p className="text-muted">De momento tem 3 itens no seu carrinho.</p>
           <div className="table-responsive">
             <table className="table">
@@ -83,18 +83,18 @@ const Basket = () => {
           </div>
           <div className="box-footer d-flex justify-content-between flex-column flex-lg-row">
             <div className="left">
-              <a href="category.html" className="btn btn-outline-secondary">
+              <span className="btn btn-outline-secondary">
                 <i className="fa fa-chevron-left"></i> Continuar a comprar
-              </a>
+              </span>
             </div>
             <div className="right">
-              <button className="btn btn-outline-secondary">
+              <span className="btn btn-outline-secondary">
                 <i className="fa fa-refresh"></i> Atualizar carrinho
-              </button>
-              <button type="submit" className="btn btn-primary">
+              </span>
+              <span type="submit" className="btn btn-primary">
                 Confirmar compra
-                <i className="fa fa-chevron-right"></i>
-              </button>
+                <i className="fa fa-chevron-right fa-icon"></i>
+              </span>
             </div>
           </div>
         </form>

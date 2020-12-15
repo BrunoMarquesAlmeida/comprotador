@@ -72,7 +72,7 @@ const EncomendaDetalhes = () => {
                 <th colspan="5" className="text-right">
                   Subtotal
                 </th>
-                <th>1005,70€</th>
+                <th>1 005,70€</th>
               </tr>
               <tr>
                 <th colspan="5" className="text-right">
@@ -85,7 +85,7 @@ const EncomendaDetalhes = () => {
                 <th colspan="5" className="text-right">
                   Total
                 </th>
-                <th>1015,70€</th>
+                <th>1 015,70€</th>
               </tr>
             </tfoot>
           </table>

@@ -11,8 +11,10 @@ const ShoppingCart = (props) => {
         <div className="row">
           <Breadcrumb props={props} />
           <Basket />
-          <OrderSummary />
-          <CouponCodes />
+          <div className="col-lg-3">
+            <OrderSummary />
+            <CouponCodes />
+          </div>
         </div>
       </div>
     </div>
