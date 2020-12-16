@@ -59,7 +59,7 @@ class Footer extends React.Component {
                 <ul className="list-unstyled">
                   <li>
                     <button
-                      className="footer-link link"
+                      className="footer-link"
                       onClick={this.handleLoginShow}
                     >
                       Login
