@@ -41,11 +41,7 @@ class Footer extends React.Component {
                       Sobre
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/terms" href="text.html">
-                      Termos e condições
-                    </Link>
-                  </li>
+
                   <li>
                     <Link to="/FAQ">FAQ</Link>
                   </li>
