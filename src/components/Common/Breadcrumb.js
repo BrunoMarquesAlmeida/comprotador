@@ -15,8 +15,6 @@ const Breadcrumb = (props) => {
       ...rest,
     }));
 
-  console.log(`Generated crumbs for ${props.props.match.path}`);
-  crumbs.map(({ name, path }) => console.log({ name, path }));
   return (
     <div className="col-lg-12">
       <nav aria-label="breadcrumb">
@@ -32,13 +30,13 @@ const Breadcrumb = (props) => {
 };
 
 const renderBreadcrumbs = (crumbs) => {
-  console.log(crumbs);
-
   return crumbs.map(({ name, path }, key) =>
     key + 1 === crumbs.length ? (
-      <li className="breadcrumb-item active">{name}</li>
+      <li className="breadcrumb-item active" key={key}>
+        {name}
+      </li>
     ) : (
-      <li className="breadcrumb-item">
+      <li className="breadcrumb-item" key={key}>
         <Link key={key} to={path}>
           {name}
         </Link>
