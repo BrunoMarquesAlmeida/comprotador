@@ -81,7 +81,7 @@ export default [
     Component: Info,
   },
   {
-    path: "/info/contactos",
+    path: "/info/contctos",
     name: "Informações - Contactos",
     Component: Info,
   },
