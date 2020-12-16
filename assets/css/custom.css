@@ -19,6 +19,10 @@
 button.link:hover {
   text-decoration: underline !important;
 }
+
+button.footer-link:hover {
+  text-decoration: underline !important;
+}
 .advantagesA {
   color: #4fbfa8;
   text-decoration: none;
