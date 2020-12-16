@@ -9,7 +9,7 @@ const OrderSummary = () => {
           <tbody>
             <tr>
               <td>Subtotal</td>
-              <th>1005,70€</th>
+              <th>1 005,70€</th>
             </tr>
             <tr>
               <td>Custos de envio</td>

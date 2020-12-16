@@ -49,4 +49,24 @@ export default [
     name: "Carrinho de compras",
     Component: ShoppingCart,
   },
+  {
+    path: "/carrinho/checkout1",
+    name: "Checkout - Endereço",
+    Component: ShoppingCart,
+  },
+  {
+    path: "/carrinho/checkout2",
+    name: "Checkout - Método de envio",
+    Component: ShoppingCart,
+  },
+  {
+    path: "/carrinho/checkout3",
+    name: "Checkout - Método de pagamento",
+    Component: ShoppingCart,
+  },
+  {
+    path: "/carrinho/checkout4",
+    name: "Checkout - Revisão e confirmação",
+    Component: ShoppingCart,
+  },
 ];
