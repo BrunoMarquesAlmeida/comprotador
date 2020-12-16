@@ -2,6 +2,7 @@ import Category from "./components/Category";
 import Detail from "./components/Detail";
 import MyAccount from "./components/MyAccount";
 import ShoppingCart from "./components/ShoppingCart";
+import Info from "./components/Info";
 
 export default [
   {
@@ -68,5 +69,20 @@ export default [
     path: "/carrinho/checkout4",
     name: "Checkout - Revisão e confirmação",
     Component: ShoppingCart,
+  },
+  {
+    path: "/info/sobre",
+    name: "Informações - Sobre",
+    Component: Info,
+  },
+  {
+    path: "/info/FAQ",
+    name: "Informações - FAQ",
+    Component: Info,
+  },
+  {
+    path: "/info/contactos",
+    name: "Informações - Contactos",
+    Component: Info,
   },
 ];
