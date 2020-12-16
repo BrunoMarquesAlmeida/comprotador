@@ -76,25 +76,25 @@ const Basket = () => {
               <tfoot>
                 <tr>
                   <th colspan="5">Total</th>
-                  <th colspan="2">1005,70€</th>
+                  <th colspan="2">1 005,70€</th>
                 </tr>
               </tfoot>
             </table>
           </div>
           <div className="box-footer d-flex justify-content-between flex-column flex-lg-row">
             <div className="left">
-              <span className="btn btn-outline-secondary">
+              <Link to="/" className="btn btn-outline-secondary">
                 <i className="fa fa-chevron-left"></i> Continuar a comprar
-              </span>
+              </Link>
             </div>
             <div className="right">
               <span className="btn btn-outline-secondary">
                 <i className="fa fa-refresh"></i> Atualizar carrinho
               </span>
-              <span type="submit" className="btn btn-primary">
+              <Link to="/carrinho/checkout1" className="btn btn-primary">
                 Confirmar compra
                 <i className="fa fa-chevron-right fa-icon"></i>
-              </span>
+              </Link>
             </div>
           </div>
         </form>

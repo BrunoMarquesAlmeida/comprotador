@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Checkout1 = () => {
   return (
     <div id="checkout" className="col-lg-9">
@@ -75,14 +77,14 @@ const Checkout1 = () => {
             </div>
           </div>
           <div className="box-footer d-flex justify-content-between">
-            <span className="btn btn-outline-secondary">
+            <Link to="/carrinho" className="btn btn-outline-secondary">
               <i className="fa fa-chevron-left fa-icon"></i>Voltar para o
               carrinho
-            </span>
-            <span type="submit" className="btn btn-primary">
-              Avançar para o método de envio
+            </Link>
+            <Link to="/carrinho/checkout2" className="btn btn-primary">
+              Avançar para Método de envio
               <i className="fa fa-chevron-right fa-icon"></i>
-            </span>
+            </Link>
           </div>
         </form>
       </div>
