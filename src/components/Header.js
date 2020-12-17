@@ -132,7 +132,7 @@ class Header extends React.Component {
                     </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link to="/" href="contact.html">
+                    <Link to="/info/contctos" href="contact.html">
                       Contactos
                     </Link>
                   </li>
