@@ -30,13 +30,13 @@ const subRoutes = [
     icon: null,
   },
   {
-    path: "/info/FAQ",
-    name: "FAQ",
+    path: "/info/contctos",
+    name: "Contactos",
     icon: null,
   },
   {
-    path: "/info/contctos",
-    name: "Contactos",
+    path: "/info/FAQ",
+    name: "FAQ",
     icon: null,
   },
 ];

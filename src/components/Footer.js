@@ -37,16 +37,15 @@ class Footer extends React.Component {
                 <h4 className="mb-3">Páginas</h4>
                 <ul className="list-unstyled">
                   <li>
-                    <Link to="/about" href="text.html">
+                    <Link to="/info/sobre" href="text.html">
                       Sobre
                     </Link>
                   </li>
-
                   <li>
-                    <Link to="/FAQ">FAQ</Link>
+                    <Link to="/info/contctos">Contactos</Link>
                   </li>
                   <li>
-                    <Link to="/contact">Contactos</Link>
+                    <Link to="/info/FAQ">FAQ</Link>
                   </li>
                 </ul>
               </div>
@@ -62,7 +61,7 @@ class Footer extends React.Component {
                     </button>
                   </li>
                   <li>
-                    <Link to="/register">Registar</Link>
+                    <Link to="/">Registar</Link>
                   </li>
                 </ul>
               </div>
