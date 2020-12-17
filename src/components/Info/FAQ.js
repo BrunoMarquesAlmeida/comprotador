@@ -73,7 +73,7 @@ const FAQ = () => {
               className="btn btn-primary d-block text-left rounded-0 border-0"
               style={{ backgroundColor: "#3eaa94" }}
             >
-              3. Envia para o estrangeiro?
+              3. Enviam para o estrangeiro?
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
