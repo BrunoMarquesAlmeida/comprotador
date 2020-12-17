@@ -4,7 +4,7 @@ const NavMenu = (props) => {
   const { subRoutes, title } = props;
   return (
     <div className="col-lg-3">
-      <div className="card sidebar-menu">
+      <div className="card sidebar-menu mb-4">
         <div className="card-header">
           <h3 className="h4 card-title">{title}</h3>
         </div>
