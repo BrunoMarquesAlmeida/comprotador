@@ -14,7 +14,7 @@ const FAQ = () => {
               className="btn btn-primary d-block text-left rounded-0 border-0"
               style={{ backgroundColor: "#3eaa94" }}
             >
-              1. O que é que eu faço se a minha encomenda não chegar?
+              1. O que fazer se a minha encomenda não chegar?
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
