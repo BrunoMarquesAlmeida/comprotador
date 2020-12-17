@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import GoogleAuth from "./Common/GoogleAuth";
 
 const LoginModal = (props) => {
   return (
@@ -35,6 +36,7 @@ const LoginModal = (props) => {
             </button>
           </p>
         </form>
+        <GoogleAuth />
         <p className="text-center text-muted">Não está registado?</p>
         <p className="text-center text-muted">
           <Link to="/">
