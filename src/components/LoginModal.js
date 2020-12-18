@@ -13,6 +13,8 @@ const LoginModal = (props) => {
         </button>
       </div>
       <div className="modal-body">
+        <GoogleAuth />
+        <hr />
         <form action="customer-orders.html" method="post">
           <div className="form-group">
             <input
@@ -36,7 +38,7 @@ const LoginModal = (props) => {
             </button>
           </p>
         </form>
-        <GoogleAuth />
+
         <p className="text-center text-muted">Não está registado?</p>
         <p className="text-center text-muted">
           <Link to="/">

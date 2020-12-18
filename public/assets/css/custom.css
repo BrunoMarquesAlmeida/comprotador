@@ -7,6 +7,23 @@
   border: none;
 }
 
+.btn-google {
+  background-color: #dd4b39;
+}
+
+.btn-social {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.btn-google:hover {
+  color: #fff;
+  background-color: #c23321;
+}
+.btn-google:active {
+  background-color: #a32b1c;
+}
+
 .link {
   color: #eee;
   text-decoration: none;
