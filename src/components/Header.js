@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Button, Collapse, Modal } from "react-bootstrap";
+import { connect } from "react-redux";
+
 import LoginModal from "./LoginModal";
 
 import Categorias from "../categorias";
@@ -101,7 +103,25 @@ class Header extends React.Component {
     });
   }
 
+  renderLoginBtn(isSignedIn) {
+    console.log(isSignedIn);
+    if (isSignedIn) {
+      return (
+        <Link to="/conta" href="register.html">
+          Conta
+        </Link>
+      );
+    } else {
+      return (
+        <button onClick={this.handleLoginShow} className="link">
+          Login
+        </button>
+      );
+    }
+  }
+
   render() {
+    const { isSignedIn } = this.props;
     const { navOpen, searchOpen, showLogin } = this.state;
     return (
       <header className="header mb-5">
@@ -122,9 +142,10 @@ class Header extends React.Component {
               <div className="col-lg-6 text-center text-lg-right">
                 <ul className="menu list-inline mb-0">
                   <li className="list-inline-item">
-                    <button onClick={this.handleLoginShow} className="link">
+                    {/* <button onClick={this.handleLoginShow} className="link">
                       Login
-                    </button>
+                    </button> */}
+                    {this.renderLoginBtn(isSignedIn)}
                   </li>
                   <li className="list-inline-item">
                     <Link to="/" href="register.html">
@@ -270,4 +291,8 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  return { isSignedIn: state.auth.isSignedIn };
+};
+
+export default connect(mapStateToProps, null)(Header);
