@@ -26,6 +26,7 @@ const renderNavLinks = function ({ subRoutes }) {
         to={path}
         activeClassName="active"
         className="nav-link"
+        key={name}
       >
         {icon ? <i className={`fa ${icon}`}></i> : ""} {name}
       </NavLink>
