@@ -38,40 +38,21 @@ class GoogleAuth extends React.Component {
     this.auth.signOut();
   };
 
-  renderAuthButton() {
-    if (this.props.isSignedIn === null) {
-      return null;
-    } else if (this.props.isSignedIn) {
-      return (
-        <button
-          type="button"
-          onClick={this.onSignOut}
-          className="btn btn-block btn-social btn-google"
-        >
-          <span className="fa fa-google fa-icon" />
-          Sair
-        </button>
-      );
-    } else {
-      return (
-        <button
-          type="button"
-          onClick={this.onSignIn}
-          className="btn btn-block btn-social btn-google"
-        >
-          <span className="fa fa-google fa-icon" />
-          Entrar com Google
-        </button>
-      );
-    }
-  }
-
   render() {
-    return <div>{this.renderAuthButton()}</div>;
+    return (
+      <button
+        type="button"
+        onClick={this.onSignIn}
+        className="btn btn-block btn-social btn-google "
+      >
+        <span className="fa fa-google fa-icon" />
+        Entrar com Google
+      </button>
+    );
   }
 }
 
-export const loadGAPI = (signIn, signOut) => {
+export const loadGAPI = (signIn, signOut, handleLoginClose) => {
   window.gapi.load("client:auth2", () => {
     window.gapi.client
       .init({
@@ -88,6 +69,9 @@ export const loadGAPI = (signIn, signOut) => {
   const onAuthChange = (isSignedIn, userID) => {
     if (isSignedIn) {
       signIn(userID);
+      if (handleLoginClose) {
+        handleLoginClose();
+      }
     } else {
       signOut();
     }

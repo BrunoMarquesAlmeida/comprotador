@@ -14,7 +14,7 @@ const LoginModal = (props) => {
       </div>
       <div className="modal-body">
         <GoogleAuth />
-        <hr />
+        {/* <hr />
         <form action="customer-orders.html" method="post">
           <div className="form-group">
             <input
@@ -46,7 +46,7 @@ const LoginModal = (props) => {
           </Link>
           ! Demora apenas um minuto e dá-lhe acesso a descontos especiais e
           muito mais!
-        </p>
+        </p> */}
       </div>
     </>
   );

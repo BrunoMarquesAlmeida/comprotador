@@ -1,4 +1,6 @@
 import { Route } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Breadcrumb from "../Common/Breadcrumb";
 import NavMenu from "../Common/NavMenu";
@@ -8,6 +10,10 @@ import Encomendas from "./Encomendas";
 import EncomendaDetalhes from "./EncomendaDetalhes";
 
 const MyAccount = (props) => {
+  console.log(props.isSignedIn);
+  if (props.isSignedIn === false) {
+    return <Redirect to="/" />;
+  }
   return (
     <div id="content">
       <div className="container">
@@ -50,4 +56,9 @@ const subRoutes = [
     exact: true,
   },
 ];
-export default MyAccount;
+
+const mapStateToProps = (state) => {
+  return { isSignedIn: state.auth.isSignedIn };
+};
+
+export default connect(mapStateToProps, {})(MyAccount);

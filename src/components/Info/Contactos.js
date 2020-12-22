@@ -54,11 +54,11 @@ const Contactos = () => {
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDdWvu5ZnxK1duCfKn-_C_b05oabhQ7eC0&q=Viana+Castelo"
           width="100%"
           height="450"
-          frameborder="0"
+          frameBorder="0"
           style={{ border: "0" }}
-          allowfullscreen=""
+          allowFullScreen=""
           aria-hidden="false"
-          tabindex="0"
+          tabIndex="0"
         ></iframe>
       </div>
     </div>

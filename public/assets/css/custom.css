@@ -1,3 +1,16 @@
+.navMenuBtn {
+  color: #4fbfa8;
+  cursor: pointer;
+}
+
+.navMenuBtn:hover {
+  color: #348e7b;
+}
+
+.navMenuBtn i.fa {
+  margin: 0 5px;
+}
+
 .footer-link {
   color: #999;
   text-decoration: none;

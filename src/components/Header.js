@@ -18,7 +18,7 @@ class Header extends React.Component {
       activeKey: "",
       showLogin: false,
     };
-    loadGAPI(this.props.signIn, this.props.signOut);
+    loadGAPI(this.props.signIn, this.props.signOut, this.handleLoginClose);
   }
 
   handleCatClick(categoria) {
@@ -107,7 +107,6 @@ class Header extends React.Component {
   }
 
   renderLoginBtn(isSignedIn) {
-    console.log(isSignedIn);
     if (isSignedIn) {
       return (
         <Link to="/conta" href="register.html">
@@ -133,32 +132,21 @@ class Header extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-6 offer mb-3 mb-lg-0">
-                <Link to="/info/Sobre">
-                  <span className="btn btn-success btn-sm">
-                    Construção interface: Informações
-                  </span>
+                <Link to="/">
+                  <span className="btn btn-success btn-sm">Autenticação</span>
                   <span className="ml-1">
-                    Clique aqui para conhecer o último update ao site
+                    Agora é possível fazer login com o Google!
                   </span>
                 </Link>
               </div>
               <div className="col-lg-6 text-center text-lg-right">
                 <ul className="menu list-inline mb-0">
                   <li className="list-inline-item">
-                    {/* <button onClick={this.handleLoginShow} className="link">
-                      Login
-                    </button> */}
                     {this.renderLoginBtn(isSignedIn)}
                   </li>
+
                   <li className="list-inline-item">
-                    <Link to="/" href="register.html">
-                      Registar
-                    </Link>
-                  </li>
-                  <li className="list-inline-item">
-                    <Link to="/info/contctos" href="contact.html">
-                      Contactos
-                    </Link>
+                    <Link to="/info/contctos">Contactos</Link>
                   </li>
                 </ul>
               </div>
