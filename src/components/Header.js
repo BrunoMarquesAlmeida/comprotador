@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 import LoginModal from "./LoginModal";
 
 import Categorias from "../categorias";
+import { signIn, signOut } from "../actions";
+import { loadGAPI } from "./Common/GoogleAuth";
 
 class Header extends React.Component {
   constructor(props, context) {
@@ -16,6 +18,7 @@ class Header extends React.Component {
       activeKey: "",
       showLogin: false,
     };
+    loadGAPI(this.props.signIn, this.props.signOut);
   }
 
   handleCatClick(categoria) {
@@ -295,4 +298,4 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps, null)(Header);
+export default connect(mapStateToProps, { signIn, signOut })(Header);

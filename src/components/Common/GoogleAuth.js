@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import { signIn, signOut } from "../../actions";
 
 class GoogleAuth extends React.Component {
@@ -17,6 +18,8 @@ class GoogleAuth extends React.Component {
           this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
+
+    // loadGAPI(this.props.signIn, this.props.signOut);
   }
 
   onAuthChange = (isSignedIn) => {
@@ -67,6 +70,29 @@ class GoogleAuth extends React.Component {
     return <div>{this.renderAuthButton()}</div>;
   }
 }
+
+export const loadGAPI = (signIn, signOut) => {
+  window.gapi.load("client:auth2", () => {
+    window.gapi.client
+      .init({
+        clientId:
+          "722304695356-cqcjp0t0vgsblhnbvelcfbf36v6tuvl1.apps.googleusercontent.com",
+        scope: "email",
+      })
+      .then(() => {
+        const auth = window.gapi.auth2.getAuthInstance();
+        onAuthChange(auth.isSignedIn.get(), auth.currentUser.get().getId());
+        auth.isSignedIn.listen(onAuthChange);
+      });
+  });
+  const onAuthChange = (isSignedIn, userID) => {
+    if (isSignedIn) {
+      signIn(userID);
+    } else {
+      signOut();
+    }
+  };
+};
 
 const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
