@@ -8,13 +8,13 @@ const Detail = () => {
           <div className="row">
             <div className="col-md-6">
               <div className="form-group">
-                <label for="firstname">Primeiro nome</label>
+                <label htmlFor="firstname">Primeiro nome</label>
                 <input id="firstname" type="text" className="form-control" />
               </div>
             </div>
             <div className="col-md-6">
               <div className="form-group">
-                <label for="lastname">Último nome</label>
+                <label htmlFor="lastname">Último nome</label>
                 <input id="lastname" type="text" className="form-control" />
               </div>
             </div>
@@ -23,19 +23,19 @@ const Detail = () => {
           <div className="row">
             <div className="col-md-6">
               <div className="form-group">
-                <label for="company">Morada</label>
+                <label htmlFor="company">Morada</label>
                 <input id="company" type="text" className="form-control" />
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="form-group">
-                <label for="zip">Código postal</label>
+                <label htmlFor="zip">Código postal</label>
                 <input id="zip" type="text" className="form-control" />
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="form-group">
-                <label for="state">Cidade</label>
+                <label htmlFor="state">Cidade</label>
                 <input id="state" className="form-control" />
               </div>
             </div>
@@ -44,19 +44,19 @@ const Detail = () => {
           <div className="row">
             <div className="col-md-6">
               <div className="form-group">
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input id="email" type="text" className="form-control" />
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="form-group">
-                <label for="phone">Contacto telefónico</label>
+                <label htmlFor="phone">Contacto telefónico</label>
                 <input id="phone" type="text" className="form-control" />
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="form-group">
-                <label for="state">Número de contribuinte (NIF)</label>
+                <label htmlFor="state">Número de contribuinte (NIF)</label>
                 <input id="state" className="form-control" />
               </div>
             </div>
