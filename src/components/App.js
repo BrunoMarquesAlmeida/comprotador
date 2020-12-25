@@ -47,9 +47,13 @@ class App extends React.Component {
                 exact
                 path={path}
                 key={key}
-                component={Component}
-                handleLoginShow={this.handleLoginShow}
-                handleLoginClose={this.handleLoginClose}
+                render={(props) => (
+                  <Component
+                    {...props}
+                    handleLoginShow={this.handleLoginShow}
+                    handleLoginClose={this.handleLoginClose}
+                  />
+                )}
               />
             ))}
             <Route component={NotFound} />

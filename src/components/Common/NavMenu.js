@@ -1,11 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import { loadGAPI } from "./GoogleAuth";
 import { signIn, signOut } from "../../actions";
 
 class NavMenu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      logoutClick: false,
+    };
+  }
   componentDidMount() {
     if (this.props.loginType === "Google") {
       loadGAPI(this.props.signIn, this.props.signOut);
@@ -48,24 +54,31 @@ class NavMenu extends React.Component {
         }
       });
     }
+    this.setState({
+      logoutClick: true,
+    });
   };
 
   render() {
     const { subRoutes, title } = this.props;
-    return (
-      <div className="col-lg-3">
-        <div className="card sidebar-menu mb-4">
-          <div className="card-header">
-            <h3 className="h4 card-title">{title}</h3>
-          </div>
-          <div className="card-body">
-            <ul className="nav nav-pills flex-column">
-              {this.renderNavLinks({ subRoutes })}
-            </ul>
+    if (this.state.logoutClick === false) {
+      return (
+        <div className="col-lg-3">
+          <div className="card sidebar-menu mb-4">
+            <div className="card-header">
+              <h3 className="h4 card-title">{title}</h3>
+            </div>
+            <div className="card-body">
+              <ul className="nav nav-pills flex-column">
+                {this.renderNavLinks({ subRoutes })}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return <Redirect to="/" />;
+    }
   }
 }
 

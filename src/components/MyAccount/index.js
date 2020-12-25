@@ -11,7 +11,7 @@ import EncomendaDetalhes from "./EncomendaDetalhes";
 
 const MyAccount = (props) => {
   if (props.isSignedIn === false) {
-    return <Redirect to="/" />;
+    return <Redirect to="/">{props.handleLoginShow()}</Redirect>;
   }
   return (
     <div id="content">
