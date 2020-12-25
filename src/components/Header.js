@@ -1,9 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Button, Collapse, Modal } from "react-bootstrap";
+import { Button, Collapse } from "react-bootstrap";
 import { connect } from "react-redux";
-
-import LoginModal from "./LoginModal";
 
 import Categorias from "../categorias";
 import { signIn, signOut } from "../actions";
@@ -16,9 +14,12 @@ class Header extends React.Component {
       searchOpen: false,
       navOpen: false,
       activeKey: "",
-      showLogin: false,
     };
-    loadGAPI(this.props.signIn, this.props.signOut, this.handleLoginClose);
+    loadGAPI(
+      this.props.signIn,
+      this.props.signOut,
+      this.props.handleLoginClose
+    );
   }
 
   handleCatClick(categoria) {
@@ -32,18 +33,6 @@ class Header extends React.Component {
       activeKey: categoria,
     });
   }
-
-  handleLoginShow = () => {
-    this.setState({
-      showLogin: true,
-    });
-  };
-
-  handleLoginClose = () => {
-    this.setState({
-      showLogin: false,
-    });
-  };
 
   renderNavList() {
     const { activeKey } = this.state;
@@ -115,7 +104,7 @@ class Header extends React.Component {
       );
     } else {
       return (
-        <button onClick={this.handleLoginShow} className="link">
+        <button onClick={this.props.handleLoginShow} className="link">
           Login
         </button>
       );
@@ -152,9 +141,6 @@ class Header extends React.Component {
               </div>
             </div>
           </div>
-          <Modal show={showLogin} onHide={this.handleLoginClose}>
-            <LoginModal hideFunction={this.handleLoginClose} />
-          </Modal>
         </div>
         {/* Nav bar */}
         <nav className="navbar navbar-expand-lg">

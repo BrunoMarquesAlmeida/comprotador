@@ -10,25 +10,11 @@ import { signIn, signOut } from "../actions";
 class Footer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showLogin: false,
-    };
+
     if (this.props.loginType === "Google") {
       loadGAPI(this.props.signIn, this.props.signOut, this.handleLoginClose);
     }
   }
-
-  handleLoginShow = () => {
-    this.setState({
-      showLogin: true,
-    });
-  };
-
-  handleLoginClose = () => {
-    this.setState({
-      showLogin: false,
-    });
-  };
 
   renderLoginBtn(isSignedIn) {
     if (isSignedIn) {
@@ -47,7 +33,7 @@ class Footer extends React.Component {
       );
     } else {
       return (
-        <button className="footer-link" onClick={this.handleLoginShow}>
+        <button className="footer-link" onClick={this.props.handleLoginShow}>
           Login
         </button>
       );
@@ -56,12 +42,9 @@ class Footer extends React.Component {
 
   render() {
     const { isSignedIn } = this.props;
-    const { showLogin } = this.state;
+
     return (
       <>
-        <Modal show={showLogin} onHide={this.handleLoginClose}>
-          <LoginModal hideFunction={this.handleLoginClose} />
-        </Modal>
         <div id="footer">
           <div className="container">
             <div className="row">
