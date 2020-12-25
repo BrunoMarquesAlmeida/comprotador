@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
 import GoogleAuth from "./Common/GoogleAuth";
+import FBAuth from "./Common/FBAuth";
 
 const LoginModal = (props) => {
   return (
@@ -14,6 +16,8 @@ const LoginModal = (props) => {
       </div>
       <div className="modal-body">
         <GoogleAuth />
+        <hr />
+        <FBAuth hideFunction={props.hideFunction} />
         {/* <hr />
         <form action="customer-orders.html" method="post">
           <div className="form-group">

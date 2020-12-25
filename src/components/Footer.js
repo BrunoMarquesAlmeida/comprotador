@@ -13,7 +13,9 @@ class Footer extends React.Component {
     this.state = {
       showLogin: false,
     };
-    loadGAPI(this.props.signIn, this.props.signOut, this.handleLoginClose);
+    if (this.props.loginType === "Google") {
+      loadGAPI(this.props.signIn, this.props.signOut, this.handleLoginClose);
+    }
   }
 
   handleLoginShow = () => {

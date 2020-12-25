@@ -77,6 +77,24 @@
     <script src="https://apis.google.com/js/api.js"></script>
   </head>
   <body>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "689349495075533",
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: "v9.0",
+          status: true,
+        });
+      };
+    </script>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/pt_PT/sdk.js"
+    ></script>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>

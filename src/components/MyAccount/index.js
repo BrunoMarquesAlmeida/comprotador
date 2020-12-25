@@ -10,7 +10,6 @@ import Encomendas from "./Encomendas";
 import EncomendaDetalhes from "./EncomendaDetalhes";
 
 const MyAccount = (props) => {
-  console.log(props.isSignedIn);
   if (props.isSignedIn === false) {
     return <Redirect to="/" />;
   }

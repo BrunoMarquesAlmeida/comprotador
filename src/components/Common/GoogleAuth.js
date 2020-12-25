@@ -18,13 +18,11 @@ class GoogleAuth extends React.Component {
           this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
-
-    // loadGAPI(this.props.signIn, this.props.signOut);
   }
 
   onAuthChange = (isSignedIn) => {
     if (isSignedIn) {
-      this.props.signIn(this.auth.currentUser.get().getId());
+      this.props.signIn(this.auth.currentUser.get().getId(), "Google");
     } else {
       this.props.signOut();
     }
@@ -52,6 +50,7 @@ class GoogleAuth extends React.Component {
   }
 }
 
+// loadGAPI(this.props.signIn, this.props.signOut);
 export const loadGAPI = (signIn, signOut, handleLoginClose) => {
   window.gapi.load("client:auth2", () => {
     window.gapi.client
@@ -68,7 +67,7 @@ export const loadGAPI = (signIn, signOut, handleLoginClose) => {
   });
   const onAuthChange = (isSignedIn, userID) => {
     if (isSignedIn) {
-      signIn(userID);
+      signIn(userID, "Google");
       if (handleLoginClose) {
         handleLoginClose();
       }

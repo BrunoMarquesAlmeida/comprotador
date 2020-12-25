@@ -1,9 +1,9 @@
 export const SIGN_IN = "SIGN_IN";
 
-export const signIn = (userID) => {
+export const signIn = (userID, loginType) => {
   return {
     type: SIGN_IN,
-    payload: userID,
+    payload: { userID, loginType },
   };
 };
 
