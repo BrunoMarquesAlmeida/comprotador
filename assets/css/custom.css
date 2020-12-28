@@ -20,13 +20,13 @@
   border: none;
 }
 
-.btn-google {
-  background-color: #dd4b39;
-}
-
 .btn-social {
   border-color: rgba(0, 0, 0, 0.2);
   color: #fff;
+}
+
+.btn-google {
+  background-color: #dd4b39;
 }
 
 .btn-google:hover {
@@ -35,6 +35,19 @@
 }
 .btn-google:active {
   background-color: #a32b1c;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  margin-left: 0px !important;
+}
+
+.btn-facebook:hover {
+  color: #fff;
+  background-color: #2d4373;
+}
+.btn-facebook:active {
+  background-color: #23345a;
 }
 
 .link {
