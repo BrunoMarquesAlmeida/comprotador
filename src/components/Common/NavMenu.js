@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withAuth0 } from "@auth0/auth0-react";
 
 import { NavLink, Redirect } from "react-router-dom";
 import { loadGAPI } from "./GoogleAuth";
@@ -45,14 +46,38 @@ class NavMenu extends React.Component {
     });
   };
   handleLogoutClick = () => {
-    if (this.props.loginType === "Google") {
-      window.gapi.auth2.getAuthInstance().signOut();
-    } else if (this.props.loginType === "Facebook") {
-      window.FB.logout((response) => {
-        if (response.status === "unknown") {
-          this.props.signOut();
-        }
-      });
+    const { loginType } = this.props;
+    // if (loginType === "Google") {
+    //   window.gapi.auth2.getAuthInstance().signOut();
+    // } else if (loginType === "Facebook") {
+    //   window.FB.logout((response) => {
+    //     if (response.status === "unknown") {
+    //       this.props.signOut();
+    //     }
+    //   });
+    // } else if (loginType) {
+    //   this.props.auth0.logout({
+    //     returnTo: window.location.origin,
+    //   });
+    // }
+    switch (loginType) {
+      case "Google":
+        window.gapi.auth2.getAuthInstance().signOut();
+        break;
+      case "Facebook":
+        window.FB.logout((response) => {
+          if (response.status === "unknown") {
+            this.props.signOut();
+          }
+        });
+        break;
+      case "Auth0":
+        this.props.auth0.logout({
+          returnTo: window.location.origin,
+        });
+        break;
+      default:
+        return;
     }
     this.setState({
       logoutClick: true,
@@ -88,4 +113,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { signIn, signOut })(NavMenu);
+export default connect(mapStateToProps, { signIn, signOut })(
+  withAuth0(NavMenu)
+);

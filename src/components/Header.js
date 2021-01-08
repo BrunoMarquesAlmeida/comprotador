@@ -3,6 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import { Button, Collapse } from "react-bootstrap";
 import { connect } from "react-redux";
 
+import { withAuth0 } from "@auth0/auth0-react";
+
 import Categorias from "../categorias";
 import { signIn, signOut } from "../actions";
 import { loadGAPI } from "./Common/GoogleAuth";
@@ -15,11 +17,13 @@ class Header extends React.Component {
       navOpen: false,
       activeKey: "",
     };
-    loadGAPI(
-      this.props.signIn,
-      this.props.signOut,
-      this.props.handleLoginClose
-    );
+    if (this.props.loginType === "Google") {
+      loadGAPI(
+        this.props.signIn,
+        this.props.signOut,
+        this.props.handleLoginClose
+      );
+    }
   }
 
   handleCatClick(categoria) {
@@ -111,9 +115,18 @@ class Header extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    const { isAuthenticated } = this.props.auth0;
+
+    if (isAuthenticated) {
+      this.props.signIn(this.props.auth0.user.email, "Auth0");
+    }
+  }
+
   render() {
     const { isSignedIn } = this.props;
-    const { navOpen, searchOpen, showLogin } = this.state;
+    const { navOpen, searchOpen } = this.state;
+
     return (
       <header className="header mb-5">
         {/* Top bar */}
@@ -272,4 +285,4 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps, { signIn, signOut })(Header);
+export default connect(mapStateToProps, { signIn, signOut })(withAuth0(Header));
