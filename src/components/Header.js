@@ -137,7 +137,7 @@ class Header extends React.Component {
                 <Link to="/">
                   <span className="btn btn-success btn-sm">Autenticação</span>
                   <span className="ml-1">
-                    Agora é possível fazer login com o Google!
+                    Agora é possível fazer login com o Auth0!
                   </span>
                 </Link>
               </div>
