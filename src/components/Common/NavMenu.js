@@ -47,19 +47,6 @@ class NavMenu extends React.Component {
   };
   handleLogoutClick = () => {
     const { loginType } = this.props;
-    // if (loginType === "Google") {
-    //   window.gapi.auth2.getAuthInstance().signOut();
-    // } else if (loginType === "Facebook") {
-    //   window.FB.logout((response) => {
-    //     if (response.status === "unknown") {
-    //       this.props.signOut();
-    //     }
-    //   });
-    // } else if (loginType) {
-    //   this.props.auth0.logout({
-    //     returnTo: window.location.origin,
-    //   });
-    // }
     switch (loginType) {
       case "Google":
         window.gapi.auth2.getAuthInstance().signOut();
@@ -73,7 +60,7 @@ class NavMenu extends React.Component {
         break;
       case "Auth0":
         this.props.auth0.logout({
-          returnTo: window.location.origin,
+          returnTo: "https://brunomarquesalmeida.github.io/comprotador",
         });
         break;
       default:
