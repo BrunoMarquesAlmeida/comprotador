@@ -23,6 +23,7 @@ class GoogleAuth extends React.Component {
   onAuthChange = (isSignedIn) => {
     if (isSignedIn) {
       this.props.signIn(this.auth.currentUser.get().getId(), "Google");
+      this.props.handleLoginClose();
     } else {
       this.props.signOut();
     }
@@ -69,7 +70,7 @@ export const loadGAPI = (signIn, signOut, handleLoginClose) => {
     if (isSignedIn) {
       signIn(userID, "Google");
       if (handleLoginClose) {
-        handleLoginClose();
+        console.log(handleLoginClose());
       }
     } else {
       signOut();

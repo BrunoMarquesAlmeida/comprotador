@@ -8,7 +8,7 @@ class FBAuth extends React.Component {
     window.FB.login((response) => {
       if (response.status === "connected") {
         this.props.signIn(response.authResponse.userID, "Facebook");
-        this.props.hideFunction();
+        this.props.handleLoginClose();
       }
     });
   };

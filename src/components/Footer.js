@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import { Modal } from "react-bootstrap";
 import { connect } from "react-redux";
 
-import LoginModal from "./LoginModal";
 import { loadGAPI } from "./Common/GoogleAuth";
 import { signIn, signOut } from "../actions";
 
