@@ -15,8 +15,8 @@ const Auth0ProviderWithHistory = ({ children }) => {
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      // redirectUri={window.location.pathname}
-      redirectUri="https://brunomarquesalmeida.github.io/comprotador"
+      redirectUri={window.location.pathname}
+      // redirectUri="https://brunomarquesalmeida.github.io/comprotador"
       onRedirectCallback={onRedirectCallback}
     >
       {children}
