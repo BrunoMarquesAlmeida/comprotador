@@ -22,11 +22,9 @@ const LoginModal = (props) => {
       </div>
       <div className="modal-body">
         <GoogleAuth handleLoginClose={props.handleLoginClose} />
-
         <hr />
         <FBAuth handleLoginClose={props.handleLoginClose} />
         <hr />
-
         <p className="text-center">
           <button
             className="btn btn-primary"
@@ -35,7 +33,6 @@ const LoginModal = (props) => {
             <i className="fa fa-sign-in"></i> Entrar com email e password
           </button>
         </p>
-
         <p className="text-center text-muted">Não está registado?</p>
         <p className="text-center text-muted">
           <a
