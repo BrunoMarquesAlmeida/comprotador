@@ -1,28 +1,20 @@
 {
-  {
-              "id": "0"
-              "title": "MSI Cenas mil",
-              "specs": {
-                "Marca": ["Asus"],
-                "Armazenamento": ["SSD", "HDD"],
-                "CPU": ["Intel Core i7"],
-                "RAM": ["8 GB"],
-                "Gráficos": ["GeForce RTX 2070 SUPER"]
-              }
-            }
-  "produtos": {
-    "categorias": {
-      "Computadores": {
-        "subCategorias": {
-          "Desktops": [
-            
-          ],
-          "Notebooks": {},
-          "Servidores": {}
-        }
+  "produtos": [
+    {
+      "id": "0",
+      "title": "MSI Cenas mil",
+      "categorias": {
+        "categoria": "Computadores",
+        "subCategoria": "Desktops",
+        "subCategoria2": "Gaming"
       },
-      "Componentes": {},
-      "Periféricos": {}
+      "specs": {
+        "Marca": ["Asus"],
+        "Armazenamento": ["SSD", "HDD"],
+        "CPU": ["Intel Core i7"],
+        "RAM": ["8 GB"],
+        "Gráficos": ["GeForce RTX 2070 SUPER"]
+      }
     }
-  }
+  ]
 }
