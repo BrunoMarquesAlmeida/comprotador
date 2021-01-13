@@ -1,10 +1,6 @@
 {
-  "produtos": {
-    "categorias": {
-      "Computadores": {
-        "subCategorias": {
-          "Desktops": [
-            {
+  {
+              "id": "0"
               "title": "MSI Cenas mil",
               "specs": {
                 "Marca": ["Asus"],
@@ -14,6 +10,12 @@
                 "Gráficos": ["GeForce RTX 2070 SUPER"]
               }
             }
+  "produtos": {
+    "categorias": {
+      "Computadores": {
+        "subCategorias": {
+          "Desktops": [
+            
           ],
           "Notebooks": {},
           "Servidores": {}
