@@ -29,80 +29,67 @@
     },
     {
       "id": "2",
-      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
+      "title": "Mini PC GMK NucBox",
       "categorias": {
         "categoria": "Computadores",
         "subCategoria": "Desktops",
         "subCategoria2": "Gaming"
       },
       "specs": {},
-      "img": "1_332_17.jpg",
-      "precos": { "normal": "39,90€", "desconto": "27,90€" },
-      "ribbons": { "novo": true, "saldos": true }
+      "img": "1_337_1.jpg",
+      "precos": { "normal": "289,90€", "desconto": null },
+      "ribbons": { "novo": true, "saldos": false }
     },
     {
       "id": "3",
-      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
+      "title": "Portátil Asus Zenbook 14",
       "categorias": {
         "categoria": "Computadores",
         "subCategoria": "Desktops",
         "subCategoria2": "Gaming"
       },
       "specs": {},
-      "img": "1_332_17.jpg",
-      "precos": { "normal": "39,90€", "desconto": "27,90€" },
-      "ribbons": { "novo": true, "saldos": true }
+      "img": "1_339_8.jpg",
+      "precos": { "normal": "999.90", "desconto": null },
+      "ribbons": { "novo": true, "saldos": false }
     },
     {
       "id": "4",
-      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
+      "title": "SSD M.2 2280 Gigabyte Aorus Gen4 1TB",
       "categorias": {
         "categoria": "Computadores",
         "subCategoria": "Desktops",
         "subCategoria2": "Gaming"
       },
       "specs": {},
-      "img": "1_332_17.jpg",
-      "precos": { "normal": "39,90€", "desconto": "27,90€" },
-      "ribbons": { "novo": true, "saldos": true }
+      "img": "1_p030470_2.jpg",
+      "precos": { "normal": "187,90€", "desconto": null },
+      "ribbons": { "novo": false, "saldos": false }
     },
     {
       "id": "5",
-      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
+      "title": "Teclado Mecânico Asus Sagaris",
       "categorias": {
         "categoria": "Computadores",
         "subCategoria": "Desktops",
         "subCategoria2": "Gaming"
       },
       "specs": {},
-      "img": "1_332_17.jpg",
-      "precos": { "normal": "39,90€", "desconto": "27,90€" },
+      "img": "1085_1.jpg",
+      "precos": { "normal": "149,90€", "desconto": "54,90€" },
       "ribbons": { "novo": true, "saldos": true }
     },
     {
       "id": "6",
-      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
+      "title": "Portátil MSI 15.6\" GF63 Thin",
       "categorias": {
         "categoria": "Computadores",
         "subCategoria": "Desktops",
         "subCategoria2": "Gaming"
       },
       "specs": {},
-      "img": "1_332_17.jpg",
-      "precos": { "normal": "39,90€", "desconto": "27,90€" },
-      "ribbons": { "novo": true, "saldos": true }
-    },
-    {
-      "id": "7",
-      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
-      "categorias": {
-        "categoria": "Computadores",
-        "subCategoria": "Desktops",
-        "subCategoria2": "Gaming"
-      },
-      "specs": {},
-      "img": "1_332_17.jpg",
-      "precos": { "normal": "39,90€", "desconto": "27,90€" },
+      "img": "MSI156.jpg",
+      "precos": { "normal": "1199,90€", "desconto": "949,90€" },
       "ribbons": { "novo": true, "saldos": true }
     }
   ]
