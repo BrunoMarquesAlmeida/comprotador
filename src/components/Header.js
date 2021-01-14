@@ -134,10 +134,12 @@ class Header extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-6 offer mb-3 mb-lg-0">
-                <Link to="/">
-                  <span className="btn btn-success btn-sm">Autenticação</span>
+                <Link to="/categoria/Computadores/Desktops/Gaming">
+                  <span className="btn btn-success btn-sm">
+                    Lista de produtos exibe dados da API
+                  </span>
                   <span className="ml-1">
-                    Agora é possível fazer login com o Auth0!
+                    Clique aqui para conhecer a última atualização ao site
                   </span>
                 </Link>
               </div>
