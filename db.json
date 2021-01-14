@@ -2,67 +2,108 @@
   "produtos": [
     {
       "id": "0",
-      "title": "MSI Cenas mil",
+      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
       "categorias": {
         "categoria": "Computadores",
         "subCategoria": "Desktops",
         "subCategoria2": "Gaming"
       },
-      "specs": {
-        "Marca": ["Asus"],
-        "Armazenamento": ["SSD", "HDD"],
-        "CPU": ["Intel Core i7"],
-        "RAM": ["8 GB"],
-        "Gráficos": ["GeForce RTX 2070 SUPER"]
-      }
+      "specs": {},
+      "img": "1_332_17.jpg",
+      "precos": { "normal": "39,90€", "desconto": "27,90€" },
+      "ribbons": { "novo": true, "saldos": true }
     },
+
     {
       "id": "1",
-      "title": "MSI Cenas mil",
+      "title": "Subwoofer Edifier T5 70W Preto",
       "categorias": {
         "categoria": "Computadores",
         "subCategoria": "Desktops",
         "subCategoria2": "Gaming"
       },
-      "specs": {
-        "Marca": ["Asus"],
-        "Armazenamento": ["SSD", "HDD"],
-        "CPU": ["Intel Core i7"],
-        "RAM": ["8 GB"],
-        "Gráficos": ["GeForce RTX 2070 SUPER"]
-      }
+      "specs": {},
+      "img": "1_335_2.jpg",
+      "precos": { "normal": "129,90€", "desconto": null },
+      "ribbons": { "novo": true, "saldos": false }
     },
     {
       "id": "2",
-      "title": "MSI Cenas mil",
+      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
       "categorias": {
         "categoria": "Computadores",
         "subCategoria": "Desktops",
         "subCategoria2": "Gaming"
       },
-      "specs": {
-        "Marca": ["Asus"],
-        "Armazenamento": ["SSD", "HDD"],
-        "CPU": ["Intel Core i7"],
-        "RAM": ["8 GB"],
-        "Gráficos": ["GeForce RTX 2070 SUPER"]
-      }
+      "specs": {},
+      "img": "1_332_17.jpg",
+      "precos": { "normal": "39,90€", "desconto": "27,90€" },
+      "ribbons": { "novo": true, "saldos": true }
     },
     {
       "id": "3",
-      "title": "MSI Cenas mil",
+      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
       "categorias": {
         "categoria": "Computadores",
         "subCategoria": "Desktops",
         "subCategoria2": "Gaming"
       },
-      "specs": {
-        "Marca": ["Asus"],
-        "Armazenamento": ["SSD", "HDD"],
-        "CPU": ["Intel Core i7"],
-        "RAM": ["8 GB"],
-        "Gráficos": ["GeForce RTX 2070 SUPER"]
-      }
+      "specs": {},
+      "img": "1_332_17.jpg",
+      "precos": { "normal": "39,90€", "desconto": "27,90€" },
+      "ribbons": { "novo": true, "saldos": true }
+    },
+    {
+      "id": "4",
+      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
+      "categorias": {
+        "categoria": "Computadores",
+        "subCategoria": "Desktops",
+        "subCategoria2": "Gaming"
+      },
+      "specs": {},
+      "img": "1_332_17.jpg",
+      "precos": { "normal": "39,90€", "desconto": "27,90€" },
+      "ribbons": { "novo": true, "saldos": true }
+    },
+    {
+      "id": "5",
+      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
+      "categorias": {
+        "categoria": "Computadores",
+        "subCategoria": "Desktops",
+        "subCategoria2": "Gaming"
+      },
+      "specs": {},
+      "img": "1_332_17.jpg",
+      "precos": { "normal": "39,90€", "desconto": "27,90€" },
+      "ribbons": { "novo": true, "saldos": true }
+    },
+    {
+      "id": "6",
+      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
+      "categorias": {
+        "categoria": "Computadores",
+        "subCategoria": "Desktops",
+        "subCategoria2": "Gaming"
+      },
+      "specs": {},
+      "img": "1_332_17.jpg",
+      "precos": { "normal": "39,90€", "desconto": "27,90€" },
+      "ribbons": { "novo": true, "saldos": true }
+    },
+    {
+      "id": "7",
+      "title": "Suporte p/ Headset Ozone Portal RGB Hub",
+      "categorias": {
+        "categoria": "Computadores",
+        "subCategoria": "Desktops",
+        "subCategoria2": "Gaming"
+      },
+      "specs": {},
+      "img": "1_332_17.jpg",
+      "precos": { "normal": "39,90€", "desconto": "27,90€" },
+      "ribbons": { "novo": true, "saldos": true }
     }
   ]
 }
