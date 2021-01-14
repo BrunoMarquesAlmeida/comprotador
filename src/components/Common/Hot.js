@@ -38,7 +38,7 @@ const Hot = () => {
       )}
       {product(
         "1_p030470_2.jpg",
-        "SD M.2 2280 Gigabyte Aorus Gen4 1TB",
+        "SSD M.2 2280 Gigabyte Aorus Gen4 1TB",
         "187,90€",
         "",
         true,
@@ -66,7 +66,6 @@ const Hot = () => {
 
 const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 5,
   },
