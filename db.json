@@ -15,6 +15,54 @@
         "RAM": ["8 GB"],
         "Gráficos": ["GeForce RTX 2070 SUPER"]
       }
+    },
+    {
+      "id": "1",
+      "title": "MSI Cenas mil",
+      "categorias": {
+        "categoria": "Computadores",
+        "subCategoria": "Desktops",
+        "subCategoria2": "Gaming"
+      },
+      "specs": {
+        "Marca": ["Asus"],
+        "Armazenamento": ["SSD", "HDD"],
+        "CPU": ["Intel Core i7"],
+        "RAM": ["8 GB"],
+        "Gráficos": ["GeForce RTX 2070 SUPER"]
+      }
+    },
+    {
+      "id": "2",
+      "title": "MSI Cenas mil",
+      "categorias": {
+        "categoria": "Computadores",
+        "subCategoria": "Desktops",
+        "subCategoria2": "Gaming"
+      },
+      "specs": {
+        "Marca": ["Asus"],
+        "Armazenamento": ["SSD", "HDD"],
+        "CPU": ["Intel Core i7"],
+        "RAM": ["8 GB"],
+        "Gráficos": ["GeForce RTX 2070 SUPER"]
+      }
+    },
+    {
+      "id": "3",
+      "title": "MSI Cenas mil",
+      "categorias": {
+        "categoria": "Computadores",
+        "subCategoria": "Desktops",
+        "subCategoria2": "Gaming"
+      },
+      "specs": {
+        "Marca": ["Asus"],
+        "Armazenamento": ["SSD", "HDD"],
+        "CPU": ["Intel Core i7"],
+        "RAM": ["8 GB"],
+        "Gráficos": ["GeForce RTX 2070 SUPER"]
+      }
     }
   ]
 }
