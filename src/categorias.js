@@ -10,7 +10,6 @@ const Categorias = {
     "Fontes de Alimentação": ["Modulares", "Semi-Modulares", "Não Modulares"],
     Motherboards: ["Intel", "AMD"],
     Coolers: ["Air Cooling", "Water Cooling"],
-
     Caixas: ["EATX", "ATX", "Micro-ATX"],
     RAM: ["DDR4", "DDR3"],
     Armazenamento: [],
