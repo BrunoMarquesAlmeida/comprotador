@@ -1,6 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL:
-    "https://my-json-server.typicode.com/BrunoMarquesAlmeida/comprotador",
+  baseURL: "https://comprotador-api.herokuapp.com/",
 });
