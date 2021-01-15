@@ -134,9 +134,9 @@ class Header extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-6 offer mb-3 mb-lg-0">
-                <Link to="/categoria/Computadores/Desktops/Gaming">
+                <Link to="/categoria/Computadores">
                   <span className="btn btn-success btn-sm">
-                    Lista de produtos exibe dados da API
+                    Lista de produtos filtra produtos por categoria
                   </span>
                   <span className="ml-1">
                     Clique aqui para conhecer a última atualização ao site
