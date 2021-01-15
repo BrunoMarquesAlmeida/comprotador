@@ -49,7 +49,9 @@ class ProductList extends React.Component {
           </div>
         </div>
         <div className="row products">
-          {this.props.products.map((product) => renderProductList(product))}
+          {this.props.filteredProducts.map((product) =>
+            renderProductList(product)
+          )}
         </div>
         <div className="pages">
           <p className="loadMore">
@@ -117,7 +119,6 @@ const renderTitleBox = (props) => {
 };
 
 const renderProductList = (product) => {
-  console.log(product);
   const { id, title, img, precos, ribbons } = product;
   return (
     <div className="col-lg-4 col-md-6" key={id}>
@@ -156,8 +157,26 @@ const renderProductList = (product) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return { products: Object.values(state.products) };
+const mapStateToProps = (state, ownProps) => {
+  const allProducts = Object.values(state.products);
+  const { categoria, subCategoria, subCategoria2 } = ownProps.categorias;
+  return {
+    filteredProducts: allProducts.filter(({ categorias }) => {
+      if (subCategoria2) {
+        return (
+          categorias.subCategoria2 === subCategoria2 &&
+          categorias.subCategoria === subCategoria &&
+          categorias.categoria === categoria
+        );
+      } else if (subCategoria) {
+        return (
+          categorias.subCategoria === subCategoria &&
+          categorias.categoria === categoria
+        );
+      }
+      return categorias.categoria === categoria;
+    }),
+  };
 };
 
 export default connect(mapStateToProps, { fetchAllProducts })(ProductList);
