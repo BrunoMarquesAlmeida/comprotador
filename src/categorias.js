@@ -1,7 +1,7 @@
 const Categorias = {
   Computadores: {
     Desktops: ["Gaming", "Workstation", "All-in-One"],
-    Notebooks: [],
+    Portáteis: ["Gaming", "Notebooks"],
     Servidores: [],
   },
   Componentes: {
@@ -13,7 +13,7 @@ const Categorias = {
 
     Caixas: ["EATX", "ATX", "Micro-ATX"],
     RAM: ["DDR4", "DDR3"],
-    "Compostos térmicos": [],
+    Armazenamento: [],
   },
   Periféricos: {
     Audio: ["Headsets", "Headphones", "Earbuds", "Microfones", "Colunas"],
