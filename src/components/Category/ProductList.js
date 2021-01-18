@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import React from "react";
 
+import { Spinner } from "react-bootstrap";
+
 import { NewRibbon } from "../Common/Ribbon";
 import { AddCartIcon } from "../Common/AddCartIcon";
 
@@ -11,6 +13,63 @@ class ProductList extends React.Component {
   componentDidMount() {
     this.props.fetchAllProducts();
   }
+
+  renderProductList = () => {
+    if (!this.props.filteredProducts) {
+      return (
+        <div className="container mb-4">
+          <div className="row justify-content-center">
+            <Spinner animation="border" role="status" variant="info">
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.filteredProducts.map((product) => {
+      console.log(product);
+      const { id, title, img, precos, ribbons } = product;
+      return (
+        <div className="col-lg-4 col-md-6" key={id}>
+          <div className="product">
+            <Link to={`/detalhes/${id}`}>
+              <img
+                src={`assets/img/produtos/${img}`}
+                alt=""
+                className="img-fluid"
+              />
+            </Link>
+            <div className="text">
+              <h3>
+                <Link to={`/detalhes/${id}`}>{title}</Link>
+              </h3>
+              <p className="price">
+                {precos.desconto ? (
+                  <>
+                    <del>{precos.normal}</del> {precos.desconto}{" "}
+                  </>
+                ) : (
+                  <>{precos.normal}</>
+                )}
+              </p>
+              <p className="buttons">
+                <Link
+                  to={`/detalhes/${id}`}
+                  className="btn btn-outline-secondary"
+                >
+                  Ver detalhes
+                </Link>
+                <AddCartIcon />
+              </p>
+            </div>
+            {ribbons.novo ? <NewRibbon tipo="novo" /> : null}
+            {ribbons.saldos ? <NewRibbon tipo="saldos" /> : null}
+          </div>
+        </div>
+      );
+    });
+  };
 
   render() {
     return (
@@ -48,11 +107,7 @@ class ProductList extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row products">
-          {this.props.filteredProducts.map((product) =>
-            renderProductList(product)
-          )}
-        </div>
+        <div className="row products">{this.renderProductList()}</div>
         <div className="pages">
           <p className="loadMore">
             <span className="btn btn-primary btn-lg">
@@ -116,45 +171,6 @@ const renderTitleBox = (props) => {
     return subCategoria;
   }
   return categoria;
-};
-
-const renderProductList = (product) => {
-  const { id, title, img, precos, ribbons } = product;
-  return (
-    <div className="col-lg-4 col-md-6" key={id}>
-      <div className="product">
-        <Link to={`/detalhes/${id}`}>
-          <img
-            src={`assets/img/produtos/${img}`}
-            alt=""
-            className="img-fluid"
-          />
-        </Link>
-        <div className="text">
-          <h3>
-            <Link to={`/detalhes/${id}`}>{title}</Link>
-          </h3>
-          <p className="price">
-            {precos.desconto ? (
-              <>
-                <del>{precos.normal}</del> {precos.desconto}{" "}
-              </>
-            ) : (
-              <>{precos.normal}</>
-            )}
-          </p>
-          <p className="buttons">
-            <Link to={`/detalhes/${id}`} className="btn btn-outline-secondary">
-              Ver detalhes
-            </Link>
-            <AddCartIcon />
-          </p>
-        </div>
-        {ribbons.novo ? <NewRibbon tipo="novo" /> : null}
-        {ribbons.saldos ? <NewRibbon tipo="saldos" /> : null}
-      </div>
-    </div>
-  );
 };
 
 const mapStateToProps = (state, ownProps) => {
