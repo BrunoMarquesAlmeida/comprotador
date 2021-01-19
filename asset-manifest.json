@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/comprotador/static/js/main.bc6f2bf6.chunk.js",
-    "main.js.map": "/comprotador/static/js/main.bc6f2bf6.chunk.js.map",
+    "main.js": "/comprotador/static/js/main.79b2c415.chunk.js",
+    "main.js.map": "/comprotador/static/js/main.79b2c415.chunk.js.map",
     "runtime-main.js": "/comprotador/static/js/runtime-main.225a6b63.js",
     "runtime-main.js.map": "/comprotador/static/js/runtime-main.225a6b63.js.map",
     "static/css/2.a21776e0.chunk.css": "/comprotador/static/css/2.a21776e0.chunk.css",
-    "static/js/2.f432238d.chunk.js": "/comprotador/static/js/2.f432238d.chunk.js",
-    "static/js/2.f432238d.chunk.js.map": "/comprotador/static/js/2.f432238d.chunk.js.map",
+    "static/js/2.8cc7a2da.chunk.js": "/comprotador/static/js/2.8cc7a2da.chunk.js",
+    "static/js/2.8cc7a2da.chunk.js.map": "/comprotador/static/js/2.8cc7a2da.chunk.js.map",
     "index.html": "/comprotador/index.html",
     "static/css/2.a21776e0.chunk.css.map": "/comprotador/static/css/2.a21776e0.chunk.css.map",
-    "static/js/2.f432238d.chunk.js.LICENSE.txt": "/comprotador/static/js/2.f432238d.chunk.js.LICENSE.txt",
+    "static/js/2.8cc7a2da.chunk.js.LICENSE.txt": "/comprotador/static/js/2.8cc7a2da.chunk.js.LICENSE.txt",
     "static/media/styles.css": "/comprotador/static/media/revicons.e8746a62.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.225a6b63.js",
     "static/css/2.a21776e0.chunk.css",
-    "static/js/2.f432238d.chunk.js",
-    "static/js/main.bc6f2bf6.chunk.js"
+    "static/js/2.8cc7a2da.chunk.js",
+    "static/js/main.79b2c415.chunk.js"
   ]
 }
