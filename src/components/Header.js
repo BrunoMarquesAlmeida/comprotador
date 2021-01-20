@@ -133,17 +133,17 @@ class Header extends React.Component {
         <div id="top">
           <div className="container">
             <div className="row">
-              <div className="col-lg-6 offer mb-3 mb-lg-0">
-                <Link to="/categoria/Computadores">
+              <div className="col-lg-10 offer mb-3 mb-lg-0">
+                <Link to="/categoria/Componentes">
                   <span className="btn btn-success btn-sm">
-                    Lista de produtos filtra produtos por categoria
+                    Lista de produtos divide resultados por páginas
                   </span>
                   <span className="ml-1">
                     Clique aqui para conhecer a última atualização ao site
                   </span>
                 </Link>
               </div>
-              <div className="col-lg-6 text-center text-lg-right">
+              <div className="col-lg-2 text-center text-lg-right">
                 <ul className="menu list-inline mb-0">
                   <li className="list-inline-item">
                     {this.renderLoginBtn(isSignedIn)}
