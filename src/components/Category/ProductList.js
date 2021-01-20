@@ -10,25 +10,17 @@ import { AddCartIcon } from "../Common/AddCartIcon";
 import { fetchAllProducts } from "../../actions";
 
 class ProductList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { pages: 1, showN: 12, activePage: 1, ordenarPor: "vendas" };
+  }
+
   componentDidMount() {
     this.props.fetchAllProducts();
   }
 
-  renderProductList = () => {
-    if (!this.props.filteredProducts) {
-      return (
-        <div className="container mb-4">
-          <div className="row justify-content-center">
-            <Spinner animation="border" role="status" variant="info">
-              <span className="sr-only">Loading...</span>
-            </Spinner>
-          </div>
-        </div>
-      );
-    }
-
-    return this.props.filteredProducts.map((product) => {
-      console.log(product);
+  renderProductList = (showNProducts) => {
+    const buildProductListJSX = (product) => {
       const { id, title, img, precos, ribbons } = product;
       return (
         <div className="col-lg-4 col-md-6" key={id}>
@@ -68,10 +60,133 @@ class ProductList extends React.Component {
           </div>
         </div>
       );
-    });
+    };
+
+    if (!this.props.productsByCat[0]) {
+      return (
+        <div className="container mb-4">
+          <div className="row justify-content-center">
+            <Spinner animation="border" role="status" variant="info">
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+          </div>
+        </div>
+      );
+    }
+
+    if (this.state.showN === "all") {
+      return this.props.productsByCat.map((product) =>
+        buildProductListJSX(product)
+      );
+    }
+
+    return showNProducts.map((product) => buildProductListJSX(product));
+  };
+
+  pageBtnClick(i) {
+    this.setState({ activePage: i });
+  }
+
+  showBtnClick = (n) => {
+    this.setState({ showN: n });
+    this.setState({ activePage: 1 });
+  };
+
+  showBtnClassName = (n) => {
+    return this.state.showN === n
+      ? "btn btn-sm btn-primary"
+      : "btn btn-outline-secondary btn-sm";
+  };
+
+  renderPageList = () => {
+    const numberOfPages = Math.ceil(
+      this.props.productsByCat.length / this.state.showN
+    );
+    let i;
+    const pages = [];
+
+    for (i = 1; i <= numberOfPages; i++) {
+      pages.push(i);
+    }
+
+    const mapPages = () =>
+      pages.map((i) => {
+        return (
+          <li
+            className={
+              this.state.activePage === i ? "page-item active" : "page-item"
+            }
+            onClick={(e) => this.pageBtnClick(i)}
+            key={i}
+            style={{ cursor: "pointer" }}
+          >
+            <span aria-label="Previous" className="page-link">
+              {i}
+            </span>
+          </li>
+        );
+      });
+
+    const clickPrevNextBtn = (clicked) => {
+      const next = this.state.activePage + 1;
+      const prev = this.state.activePage - 1;
+
+      if (clicked === "Next" && next <= numberOfPages) {
+        this.setState({ activePage: next });
+      } else if (clicked === "Prev" && prev >= 1) {
+        this.setState({ activePage: prev });
+      }
+    };
+
+    return (
+      <>
+        <li className="page-item">
+          <span
+            aria-label="Previous"
+            className="page-link"
+            style={{ cursor: "pointer" }}
+            onClick={(e) => clickPrevNextBtn("Prev")}
+          >
+            <span aria-hidden="true">«</span>
+            <span className="sr-only">Previous</span>
+          </span>
+        </li>
+        {mapPages()}
+        <li className="page-item">
+          <span
+            aria-label="Previous"
+            className="page-link"
+            style={{ cursor: "pointer" }}
+            onClick={(e) => clickPrevNextBtn("Next")}
+          >
+            <span aria-hidden="true">»</span>
+            <span className="sr-only">Next</span>
+          </span>
+        </li>
+      </>
+    );
+  };
+
+  handleSelectChange = ({ target }) => {
+    this.setState({ ordenarPor: target.value });
   };
 
   render() {
+    const { productsByCat } = this.props;
+
+    const startingProduct =
+      this.state.activePage * this.state.showN - this.state.showN;
+
+    const showNProducts = productsByCat.slice(
+      startingProduct,
+      this.state.showN * this.state.activePage
+    );
+
+    const orderedProducts = showNProducts.sort(function (a, b) {
+      return console.log(Number("33.33"));
+      // if(this.state.ordenarPor === )
+    });
+
     return (
       <div className="col-lg-9">
         <div className="box titleBox">
@@ -80,83 +195,69 @@ class ProductList extends React.Component {
         <div className="box info-bar">
           <div className="row">
             <div className="col-md-12 col-lg-4 products-showing">
-              Mostrando <strong>12</strong> de <strong>25</strong> produtos
+              Mostrando{" "}
+              <strong>
+                {this.state.showN === "all"
+                  ? productsByCat.length
+                  : showNProducts.length}
+              </strong>{" "}
+              de <strong>{productsByCat.length}</strong> produtos
             </div>
             <div className="col-md-12 col-lg-7 products-number-sort">
               <form className="form-inline d-block d-lg-flex justify-content-between flex-column flex-md-row">
                 <div className="products-number">
                   <strong>Mostrar</strong>
-                  <span className="btn btn-sm btn-primary">12</span>
-                  <span href="#" className="btn btn-outline-secondary btn-sm">
+                  <span
+                    className={this.showBtnClassName(12)}
+                    onClick={() => this.showBtnClick(12)}
+                  >
+                    12
+                  </span>
+                  <span
+                    className={this.showBtnClassName(24)}
+                    onClick={() => this.showBtnClick(24)}
+                  >
                     24
                   </span>
-                  <span href="#" className="btn btn-outline-secondary btn-sm">
+                  <span
+                    className={this.showBtnClassName("all")}
+                    onClick={() => this.showBtnClick("all")}
+                  >
                     All
                   </span>
                   <span>produtos</span>
                 </div>
                 <div className="products-sort-by mt-2 mt-lg-0">
                   <strong>Ordenar por</strong>
-                  <select name="sort-by" className="form-control">
-                    <option>Preço</option>
-                    <option>Nome</option>
-                    <option>Vendas</option>
+                  <select
+                    name="sort-by"
+                    className="form-control"
+                    value={this.state.ordenarPor}
+                    onChange={this.handleSelectChange}
+                  >
+                    <option value="vendas">Vendas</option>
+                    <option value="AZ">Nome (A - Z)</option>
+                    <option value="ZA">Nome (Z - A)</option>
+                    <option value="priceAsc">Mais barato</option>
+                    <option value="priceDesc">Mais caro</option>
                   </select>
                 </div>
               </form>
             </div>
           </div>
         </div>
-        <div className="row products">{this.renderProductList()}</div>
+        <div className="row products">
+          {this.renderProductList(showNProducts)}
+        </div>
         <div className="pages">
-          <p className="loadMore">
-            <span className="btn btn-primary btn-lg">
-              <i className="fa fa-chevron-down"></i> Load more
-            </span>
-          </p>
           <nav
             aria-label="Page navigation example"
             className="d-flex justify-content-center"
           >
-            <ul className="pagination">
-              <li className="page-item">
-                <span aria-label="Previous" className="page-link">
-                  <span aria-hidden="true">«</span>
-                  <span className="sr-only">Previous</span>
-                </span>
-              </li>
-              <li className="page-item active">
-                <span aria-label="Previous" className="page-link">
-                  1
-                </span>
-              </li>
-              <li className="page-item">
-                <span aria-label="Previous" className="page-link">
-                  2
-                </span>
-              </li>
-              <li className="page-item">
-                <span aria-label="Previous" className="page-link">
-                  3
-                </span>
-              </li>
-              <li className="page-item">
-                <span aria-label="Previous" className="page-link">
-                  4
-                </span>
-              </li>
-              <li className="page-item">
-                <span aria-label="Previous" className="page-link">
-                  5
-                </span>
-              </li>
-              <li className="page-item">
-                <span aria-label="Previous" className="page-link">
-                  <span aria-hidden="true">»</span>
-                  <span className="sr-only">Next</span>
-                </span>
-              </li>
-            </ul>
+            {this.state.showN === "all" ||
+            productsByCat.length <= this.state.showN ? null : (
+              <ul className="pagination">{this.renderPageList()}</ul>
+            )}
           </nav>
         </div>
       </div>
@@ -177,7 +278,7 @@ const mapStateToProps = (state, ownProps) => {
   const allProducts = Object.values(state.products);
   const { categoria, subCategoria, subCategoria2 } = ownProps.categorias;
   return {
-    filteredProducts: allProducts.filter(({ categorias }) => {
+    productsByCat: allProducts.filter(({ categorias }) => {
       if (subCategoria2) {
         return (
           categorias.subCategoria2 === subCategoria2 &&
