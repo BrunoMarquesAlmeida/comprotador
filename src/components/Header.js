@@ -136,7 +136,7 @@ class Header extends React.Component {
               <div className="col-lg-10 offer mb-3 mb-lg-0">
                 <Link to="/categoria/Componentes">
                   <span className="btn btn-success btn-sm">
-                    Lista de produtos divide resultados por páginas
+                    Lista de produtos permite ordenar resultados
                   </span>
                   <span className="ml-1">
                     Clique aqui para conhecer a última atualização ao site
