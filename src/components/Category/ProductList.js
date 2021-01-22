@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import React from "react";
+import _ from "lodash";
 
 import { Spinner } from "react-bootstrap";
 
@@ -39,10 +40,17 @@ class ProductList extends React.Component {
               <p className="price">
                 {precos.desconto ? (
                   <>
-                    <del>{precos.normal}</del> {precos.desconto}{" "}
+                    <del>
+                      {precos.normal.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")}
+                      {" €"}
+                    </del>{" "}
+                    {precos.desconto}
+                    {" €"}
                   </>
                 ) : (
-                  <>{precos.normal}</>
+                  <>
+                    {precos.normal.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")} €
+                  </>
                 )}
               </p>
               <p className="buttons">
@@ -83,7 +91,18 @@ class ProductList extends React.Component {
     return showNProducts.map((product) => buildProductListJSX(product));
   };
 
-  pageBtnClick(i) {
+  pageBtnClick(i, numberOfPages) {
+    const next = this.state.activePage + 1;
+    const prev = this.state.activePage - 1;
+
+    if (i === "»" && next <= numberOfPages) {
+      this.setState({ activePage: next });
+      return;
+    }
+    if (i === "«" && prev >= 1) {
+      this.setState({ activePage: prev });
+      return;
+    }
     this.setState({ activePage: i });
   }
 
@@ -99,24 +118,59 @@ class ProductList extends React.Component {
   };
 
   renderPageList = () => {
+    const { activePage } = this.state;
     const numberOfPages = Math.ceil(
       this.props.productsByCat.length / this.state.showN
     );
-    let i;
-    const pages = [];
+    const pageNeighbours = 2;
+    const totalNumbers = pageNeighbours * 2 + 2;
+    const totalBlocks = totalNumbers;
 
-    for (i = 1; i <= numberOfPages; i++) {
-      pages.push(i);
-    }
+    const fetchPageNumbers = () => {
+      if (numberOfPages > totalBlocks) {
+        const startPage = Math.max(2, activePage - pageNeighbours);
+        const endPage = Math.min(
+          numberOfPages - 1,
+          activePage + pageNeighbours
+        );
+        let pages = _.range(startPage, endPage + 1);
+
+        const hasLeftSpill = startPage > 2;
+        const hasRightSpill = numberOfPages - endPage > 1;
+        const spillOffset = totalNumbers - pages.length;
+
+        switch (true) {
+          case hasLeftSpill && !hasRightSpill: {
+            const extraPages = _.range(startPage - spillOffset, startPage);
+            pages = ["«", ...extraPages, ...pages];
+            break;
+          }
+          case !hasLeftSpill && hasRightSpill: {
+            const extraPages = _.range(endPage + 1, endPage + spillOffset + 1);
+            pages = [...pages, ...extraPages, "»"];
+            break;
+          }
+          case hasLeftSpill && hasRightSpill: {
+            pages = ["«", ...pages, "»"];
+            break;
+          }
+          default: {
+            break;
+          }
+        }
+        return [1, ...pages, numberOfPages];
+      }
+      return _.range(1, numberOfPages + 1);
+    };
+
+    const pages = fetchPageNumbers();
 
     const mapPages = () =>
       pages.map((i) => {
         return (
           <li
-            className={
-              this.state.activePage === i ? "page-item active" : "page-item"
-            }
-            onClick={(e) => this.pageBtnClick(i)}
+            className={activePage === i ? "page-item active" : "page-item"}
+            onClick={(e) => this.pageBtnClick(i, numberOfPages)}
             key={i}
             style={{ cursor: "pointer" }}
           >
@@ -127,44 +181,7 @@ class ProductList extends React.Component {
         );
       });
 
-    const clickPrevNextBtn = (clicked) => {
-      const next = this.state.activePage + 1;
-      const prev = this.state.activePage - 1;
-
-      if (clicked === "Next" && next <= numberOfPages) {
-        this.setState({ activePage: next });
-      } else if (clicked === "Prev" && prev >= 1) {
-        this.setState({ activePage: prev });
-      }
-    };
-
-    return (
-      <>
-        <li className="page-item">
-          <span
-            aria-label="Previous"
-            className="page-link"
-            style={{ cursor: "pointer" }}
-            onClick={(e) => clickPrevNextBtn("Prev")}
-          >
-            <span aria-hidden="true">«</span>
-            <span className="sr-only">Previous</span>
-          </span>
-        </li>
-        {mapPages()}
-        <li className="page-item">
-          <span
-            aria-label="Previous"
-            className="page-link"
-            style={{ cursor: "pointer" }}
-            onClick={(e) => clickPrevNextBtn("Next")}
-          >
-            <span aria-hidden="true">»</span>
-            <span className="sr-only">Next</span>
-          </span>
-        </li>
-      </>
-    );
+    return mapPages();
   };
 
   handleSelectChange = ({ target }) => {
@@ -174,18 +191,53 @@ class ProductList extends React.Component {
   render() {
     const { productsByCat } = this.props;
 
+    const orderedProducts = productsByCat.sort((a, b) => {
+      if (this.state.ordenarPor === "priceAsc") {
+        if (parseFloat(a.precos.normal) > parseFloat(b.precos.normal)) {
+          return 1;
+        }
+        if (parseFloat(a.precos.normal) < parseFloat(b.precos.normal)) {
+          return -1;
+        }
+        return 0;
+      }
+      if (this.state.ordenarPor === "priceDesc") {
+        if (parseFloat(a.precos.normal) < parseFloat(b.precos.normal)) {
+          return 1;
+        }
+        if (parseFloat(a.precos.normal) > parseFloat(b.precos.normal)) {
+          return -1;
+        }
+        return 0;
+      }
+      if (this.state.ordenarPor === "AZ") {
+        if (a.title > b.title) {
+          return 1;
+        }
+        if (a.title < b.title) {
+          return -1;
+        }
+        return 0;
+      }
+      if (this.state.ordenarPor === "ZA") {
+        if (a.title < b.title) {
+          return 1;
+        }
+        if (a.title > b.title) {
+          return -1;
+        }
+        return 0;
+      }
+      return null;
+    });
+
     const startingProduct =
       this.state.activePage * this.state.showN - this.state.showN;
 
-    const showNProducts = productsByCat.slice(
+    const showNProducts = orderedProducts.slice(
       startingProduct,
       this.state.showN * this.state.activePage
     );
-
-    const orderedProducts = showNProducts.sort(function (a, b) {
-      return console.log(Number("33.33"));
-      // if(this.state.ordenarPor === )
-    });
 
     return (
       <div className="col-lg-9">
