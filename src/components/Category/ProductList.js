@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 import React from "react";
 import _ from "lodash";
 
@@ -8,16 +7,10 @@ import { Spinner } from "react-bootstrap";
 import { NewRibbon } from "../Common/Ribbon";
 import { AddCartIcon } from "../Common/AddCartIcon";
 
-import { fetchAllProducts } from "../../actions";
-
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
     this.state = { pages: 1, showN: 12, activePage: 1, ordenarPor: "vendas" };
-  }
-
-  componentDidMount() {
-    this.props.fetchAllProducts();
   }
 
   renderProductList = (showNProducts) => {
@@ -123,8 +116,8 @@ class ProductList extends React.Component {
       this.props.productsByCat.length / this.state.showN
     );
     const pageNeighbours = 2;
-    const totalNumbers = pageNeighbours * 2 + 2;
-    const totalBlocks = totalNumbers;
+    const totalNumbers = pageNeighbours * 2 + 1;
+    const totalBlocks = totalNumbers + 2;
 
     const fetchPageNumbers = () => {
       if (numberOfPages > totalBlocks) {
@@ -240,7 +233,7 @@ class ProductList extends React.Component {
     );
 
     return (
-      <div className="col-lg-9">
+      <div className="col-lg-9 order-1 order-lg-2">
         <div className="box titleBox">
           <h1>{renderTitleBox(this.props)}</h1>
         </div>
@@ -326,26 +319,4 @@ const renderTitleBox = (props) => {
   return categoria;
 };
 
-const mapStateToProps = (state, ownProps) => {
-  const allProducts = Object.values(state.products);
-  const { categoria, subCategoria, subCategoria2 } = ownProps.categorias;
-  return {
-    productsByCat: allProducts.filter(({ categorias }) => {
-      if (subCategoria2) {
-        return (
-          categorias.subCategoria2 === subCategoria2 &&
-          categorias.subCategoria === subCategoria &&
-          categorias.categoria === categoria
-        );
-      } else if (subCategoria) {
-        return (
-          categorias.subCategoria === subCategoria &&
-          categorias.categoria === categoria
-        );
-      }
-      return categorias.categoria === categoria;
-    }),
-  };
-};
-
-export default connect(mapStateToProps, { fetchAllProducts })(ProductList);
+export default ProductList;
