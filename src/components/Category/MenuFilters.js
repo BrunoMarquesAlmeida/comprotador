@@ -1,14 +1,49 @@
 import React, { useContext } from "react";
 import { Accordion, Card } from "react-bootstrap";
 import AccordionContext from "react-bootstrap/AccordionContext";
+import _ from "lodash";
 
-import Produtos from "../../produtos";
+import { db } from "../../produtos";
 
-const MenuFilters = () => {
-  const { specs } = Produtos.categorias.Computadores.subCategorias.Desktops[0];
-  return (
-    <div className="col-lg-3">
-      {Object.keys(specs).map((spec) => {
+class MenuFilters extends React.Component {
+  buildCheckboxes = (spec) => {
+    const { produtos } = db;
+    const specList = [];
+
+    produtos.map(({ specs }) => {
+      if (Array.isArray(specs)) {
+        specs.map(({ title, content }) => {
+          content.map((iContent) => {
+            if (title === spec) {
+              specList.push(iContent);
+            }
+          });
+        });
+      }
+    });
+
+    const checkBoxList = _.uniq(specList);
+    return checkBoxList.map((c) => {
+      return (
+        <div className="checkbox" key={c}>
+          <label>
+            <input
+              type="checkbox"
+              name={c}
+              onChange={() => this.props.onFilterClick(c)}
+            />{" "}
+            {c}
+          </label>
+        </div>
+      );
+    });
+  };
+
+  mapSpecTitles = (categoria, subCategoria) => {
+    const specs = catSpecs[categoria][subCategoria];
+
+    if (specs) {
+      return specs.map((spec) => {
         return (
           <Accordion key={spec}>
             <Card className="card sidebar-menu mb-4">
@@ -24,9 +59,7 @@ const MenuFilters = () => {
                   <ContextAwareToggle eventKey={spec}></ContextAwareToggle>
                   <button
                     className="btn btn-sm btn-danger pull-right"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                    }}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <i className="fa fa-times-circle"></i> Limpar
                   </button>
@@ -36,20 +69,9 @@ const MenuFilters = () => {
                 <div id={spec}>
                   <div className="card-body">
                     <form>
-                      <div className="form-group">
-                        {Object.values(specs[spec]).map((check) => {
-                          return (
-                            <div className="checkbox" key={check}>
-                              <label>
-                                <input type="checkbox" /> {check}
-                              </label>
-                            </div>
-                          );
-                        })}
+                      <div className="form-group mb-0">
+                        {this.buildCheckboxes(spec)}
                       </div>
-                      <button className="btn btn-default btn-sm btn-primary">
-                        <i className="fa fa-pencil"></i> Apply
-                      </button>
                     </form>
                   </div>
                 </div>
@@ -57,10 +79,20 @@ const MenuFilters = () => {
             </Card>
           </Accordion>
         );
-      })}
-    </div>
-  );
-};
+      });
+    }
+  };
+
+  render() {
+    const { categoria, subCategoria } = this.props.categorias;
+
+    return (
+      <div className="col-lg-3">
+        {this.mapSpecTitles(categoria, subCategoria)}
+      </div>
+    );
+  }
+}
 
 function ContextAwareToggle({ eventKey }) {
   const currentEventKey = useContext(AccordionContext);
@@ -76,5 +108,101 @@ function ContextAwareToggle({ eventKey }) {
     ></i>
   );
 }
+
+const catSpecs = {
+  Computadores: {
+    Desktops: [
+      "Marca",
+      "Armazenamento",
+      "CPU",
+      "RAM",
+      "Gráficos",
+      "Sistema Operativo",
+      "Formato",
+    ],
+    Portáteis: [
+      "Marca",
+      "Armazenamento",
+      "CPU",
+      "RAM",
+      "Gráficos",
+      "Tipo teclado",
+      "Ecrã touch",
+      "Tamanho ecrã",
+      "Resolução",
+      "Taxa de atualização",
+      "Sistema Operativo",
+    ],
+    Servidores: ["Marca", "Armazenamento", "CPU", "RAM", "Gráficos"],
+  },
+  Componentes: {
+    "Placas gráficas": ["Marca", "Memória", "Gama", "Gráficos", "Portas I/O"],
+    Processadores: [
+      "Série",
+      "Socket",
+      "Núcleos",
+      "Gráficos",
+      "Cooler incluído",
+    ],
+    "Fontes de Alimentação": ["Marca", "Eficiência", "Cablagem", "Potência"],
+    Motherboards: [
+      "Marca",
+      "Chipset",
+      "Socket",
+      "Formato",
+      "Suporte memória",
+      "WiFi",
+      "Bluetooth",
+    ],
+    Coolers: ["Socket", "Tipo", "Iluminação", "Tamanho ventoinha"],
+    Caixas: [
+      "Marca",
+      "Suporte motherboards",
+      "Tipo",
+      "Janela lateral",
+      "Iluminação",
+      'Baías 5.25"',
+      'Baías 3.5"',
+      'Baías 2.5"',
+      "Portas I/O",
+      "Ventoínhas incluídas",
+    ],
+    RAM: [
+      "Marca",
+      "Formato",
+      "Configuração",
+      "Velocidade",
+      "Latência",
+      "Iluminação",
+    ],
+    Armazenamento: ["Marca", "Formato", "Capacidade", "Interface"],
+  },
+  Periféricos: {
+    Audio: ["Marca", "Canais", "Tipo", "Sem fios", "Portas I/O"],
+    "Ratos e Teclados": [
+      "Marca",
+      "DPI",
+      "Layout teclado",
+      "Formato teclado",
+      "Iluminação",
+      "Interruptores",
+      "Conexão",
+      "",
+    ],
+    Monitores: [
+      "Marca",
+      "Tamanho",
+      "Resolução",
+      "Painel",
+      "Tempo de resposta",
+      "Ratio",
+      "Taxa de atualização",
+      "Portas I/O",
+      "Ajustabilidade",
+      "VESA",
+    ],
+    Controladores: ["Marca", "Tipo"],
+  },
+};
 
 export default MenuFilters;
