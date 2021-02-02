@@ -190,7 +190,6 @@ const catSpecs = {
       "Iluminação",
       "Interruptores",
       "Conexão",
-      "",
     ],
     Monitores: [
       "Marca",
