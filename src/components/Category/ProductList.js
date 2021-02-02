@@ -68,7 +68,7 @@ class ProductList extends React.Component {
       );
     };
 
-    if (!this.props.productsByCat[0]) {
+    if (!this.props.fetchComplete) {
       return (
         <div className="container mb-4">
           <div className="row justify-content-center">
@@ -242,8 +242,14 @@ class ProductList extends React.Component {
     if (specFiltersSelected.length > 0) {
       showNProducts.map((product) =>
         product.specs.map(({ content }) => {
-          if (specFiltersSelected.includes(content[0])) {
-            finalProductList = [...finalProductList, product];
+          const productIncludesSelectedSpec = specFiltersSelected.includes(
+            content[0]
+          );
+          if (productIncludesSelectedSpec) {
+            const productIsNotInList = !finalProductList.includes(product);
+            if (productIsNotInList) {
+              finalProductList = [...finalProductList, product];
+            }
           }
         })
       );

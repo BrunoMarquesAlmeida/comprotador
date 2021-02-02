@@ -18,6 +18,10 @@ class Category extends React.Component {
     };
   }
 
+  onRemoveFiltersClick = () => {
+    this.setState({ specFiltersSelected: [] });
+  };
+
   onFilterClick = (c) => {
     const { specFiltersSelected } = this.state;
     if (specFiltersSelected.includes(c)) {
@@ -42,8 +46,10 @@ class Category extends React.Component {
         <MenuFilters
           productsByCat={this.props.productsByCat}
           categorias={this.props.match.params}
+          isFiltersSelected={this.state.specFiltersSelected.length > 0}
           specFiltersSelected={this.state.specFiltersSelected}
           onFilterClick={this.onFilterClick}
+          onRemoveFiltersClick={this.onRemoveFiltersClick}
         />
       );
     }
@@ -62,6 +68,7 @@ class Category extends React.Component {
               specFiltersSelected={this.state.specFiltersSelected}
               categorias={this.props.match.params}
               productsByCat={this.props.productsByCat}
+              fetchComplete={this.props.fetchComplete}
             />
           </div>
         </div>
@@ -89,6 +96,7 @@ const mapStateToProps = (state, ownProps) => {
       }
       return categorias.categoria === categoria;
     }),
+    fetchComplete: state.products.fetchComplete,
   };
 };
 

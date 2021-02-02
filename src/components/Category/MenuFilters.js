@@ -28,6 +28,7 @@ class MenuFilters extends React.Component {
               type="checkbox"
               name={c}
               onChange={() => this.props.onFilterClick(c)}
+              checked={this.props.specFiltersSelected.includes(c)}
             />{" "}
             {c}
           </label>
@@ -54,12 +55,6 @@ class MenuFilters extends React.Component {
 
                   <> </>
                   <ContextAwareToggle eventKey={spec}></ContextAwareToggle>
-                  <button
-                    className="btn btn-sm btn-danger pull-right"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <i className="fa fa-times-circle"></i> Limpar
-                  </button>
                 </h3>
               </Accordion.Toggle>
               <Accordion.Collapse eventKey={spec}>
@@ -82,10 +77,21 @@ class MenuFilters extends React.Component {
 
   render() {
     const { categoria, subCategoria } = this.props.categorias;
+    const { isFiltersSelected } = this.props;
 
     return (
       <div className="col-lg-3">
         {this.mapSpecTitles(categoria, subCategoria)}
+        <button
+          className={
+            isFiltersSelected
+              ? "btn btn-sm btn-danger mb-4"
+              : "btn btn-sm btn-danger mb-4 invisible "
+          }
+          onClick={() => this.props.onRemoveFiltersClick()}
+        >
+          <i className="fa fa-times-circle"></i> Limpar todos os filtros
+        </button>
       </div>
     );
   }
