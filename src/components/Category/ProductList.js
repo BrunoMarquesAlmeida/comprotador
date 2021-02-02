@@ -10,7 +10,12 @@ import { AddCartIcon } from "../Common/AddCartIcon";
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { pages: 1, showN: 12, activePage: 1, ordenarPor: "vendas" };
+    this.state = {
+      pages: 1,
+      showN: 12,
+      activePage: 1,
+      ordenarPor: "vendas",
+    };
   }
 
   renderProductList = (showNProducts) => {
@@ -182,7 +187,7 @@ class ProductList extends React.Component {
   };
 
   render() {
-    const { productsByCat } = this.props;
+    const { productsByCat, specFiltersSelected } = this.props;
 
     const orderedProducts = productsByCat.sort((a, b) => {
       if (this.state.ordenarPor === "priceAsc") {
@@ -231,6 +236,20 @@ class ProductList extends React.Component {
       startingProduct,
       this.state.showN * this.state.activePage
     );
+
+    let finalProductList = [];
+
+    if (specFiltersSelected.length > 0) {
+      showNProducts.map((product) =>
+        product.specs.map(({ content }) => {
+          if (specFiltersSelected.includes(content[0])) {
+            finalProductList = [...finalProductList, product];
+          }
+        })
+      );
+    } else {
+      finalProductList = showNProducts;
+    }
 
     return (
       <div className="col-lg-9 order-1 order-lg-2">
@@ -292,7 +311,7 @@ class ProductList extends React.Component {
           </div>
         </div>
         <div className="row products">
-          {this.renderProductList(showNProducts)}
+          {this.renderProductList(finalProductList)}
         </div>
         <div className="pages">
           <nav
