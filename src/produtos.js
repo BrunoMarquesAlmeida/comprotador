@@ -9,11 +9,11 @@ export const db = {
         subCategoria2: null,
       },
       specs: [
-        { title: "Marca", content: ["Asus"] },
+        { title: "Marca", content: ["Ozone"] },
         { title: "Canais", content: ["SSD"] },
         { title: "Tipo", content: ["Intel Core i7"] },
         { title: "Sem fios", content: ["8 GB"] },
-        { title: "Portas I7O", content: ["GeForce RTX 2070 SUPER"] },
+        { title: "Portas I/O", content: ["GeForce RTX 2070 SUPER"] },
       ],
       img: "1_332_17.jpg",
       precos: { normal: "39.90", desconto: "27.90" },
@@ -29,7 +29,7 @@ export const db = {
         subCategoria2: "Colunas",
       },
       specs: [
-        { title: "Marca", content: ["MSI"] },
+        { title: "Marca", content: ["Edifier"] },
         { title: "Canais", content: ["HDD"] },
         { title: "Tipo", content: ["Intel Core i7"] },
         { title: "Sem fios", content: ["8 GB"] },
