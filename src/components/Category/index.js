@@ -40,20 +40,22 @@ class Category extends React.Component {
 
   renderSideBar() {
     const { subCategoria } = this.props.match.params;
+    const noResults = this.props.productsByCat.length === 0;
+    console.log(noResults);
 
-    if (subCategoria !== undefined) {
-      return (
-        <MenuFilters
-          productsByCat={this.props.productsByCat}
-          categorias={this.props.match.params}
-          isFiltersSelected={this.state.specFiltersSelected.length > 0}
-          specFiltersSelected={this.state.specFiltersSelected}
-          onFilterClick={this.onFilterClick}
-          onRemoveFiltersClick={this.onRemoveFiltersClick}
-        />
-      );
+    if (subCategoria === undefined || noResults) {
+      return <NavMenu />;
     }
-    return <NavMenu />;
+    return (
+      <MenuFilters
+        productsByCat={this.props.productsByCat}
+        categorias={this.props.match.params}
+        isFiltersSelected={this.state.specFiltersSelected.length > 0}
+        specFiltersSelected={this.state.specFiltersSelected}
+        onFilterClick={this.onFilterClick}
+        onRemoveFiltersClick={this.onRemoveFiltersClick}
+      />
+    );
   }
 
   render() {
