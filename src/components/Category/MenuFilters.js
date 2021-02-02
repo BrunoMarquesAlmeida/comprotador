@@ -3,14 +3,11 @@ import { Accordion, Card } from "react-bootstrap";
 import AccordionContext from "react-bootstrap/AccordionContext";
 import _ from "lodash";
 
-import { db } from "../../produtos";
-
 class MenuFilters extends React.Component {
   buildCheckboxes = (spec) => {
-    const { produtos } = db;
     const specList = [];
 
-    produtos.map(({ specs }) => {
+    this.props.productsByCat.map(({ specs }) => {
       if (Array.isArray(specs)) {
         specs.map(({ title, content }) => {
           content.map((iContent) => {
