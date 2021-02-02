@@ -8,6 +8,8 @@ import NavMenu from "../Detail/NavMenu";
 
 import { fetchAllProducts } from "../../actions";
 
+import { db } from "../../produtos";
+
 class Category extends React.Component {
   constructor(props) {
     super(props);
@@ -20,11 +22,12 @@ class Category extends React.Component {
     const { specFiltersSelected } = this.state;
     if (specFiltersSelected.includes(c)) {
       const index = specFiltersSelected.indexOf(c);
-      specFiltersSelected.splice(index, 1);
+      const newFilter = [...specFiltersSelected];
+      newFilter.splice(index, 1);
+      this.setState({ specFiltersSelected: newFilter });
     } else {
-      specFiltersSelected.push(c);
+      this.setState({ specFiltersSelected: [...specFiltersSelected, c] });
     }
-    console.log(specFiltersSelected);
   };
 
   componentDidMount() {
@@ -56,6 +59,7 @@ class Category extends React.Component {
 
             {this.renderSideBar()}
             <ProductList
+              specFiltersSelected={this.state.specFiltersSelected}
               categorias={this.props.match.params}
               productsByCat={this.props.productsByCat}
             />
@@ -70,7 +74,7 @@ const mapStateToProps = (state, ownProps) => {
   const allProducts = Object.values(state.products);
   const { categoria, subCategoria, subCategoria2 } = ownProps.match.params;
   return {
-    productsByCat: allProducts.filter(({ categorias }) => {
+    productsByCat: db.produtos.filter(({ categorias }) => {
       if (subCategoria2) {
         return (
           categorias.subCategoria2 === subCategoria2 &&
