@@ -41,7 +41,6 @@ class Category extends React.Component {
   renderSideBar() {
     const { subCategoria } = this.props.match.params;
     const noResults = this.props.productsByCat.length === 0;
-    console.log(noResults);
 
     if (subCategoria === undefined || noResults) {
       return <NavMenu />;
@@ -83,20 +82,25 @@ const mapStateToProps = (state, ownProps) => {
   const allProducts = Object.values(state.products);
   const { categoria, subCategoria, subCategoria2 } = ownProps.match.params;
   return {
-    productsByCat: db.produtos.filter(({ categorias }) => {
-      if (subCategoria2) {
-        return (
-          categorias.subCategoria2 === subCategoria2 &&
-          categorias.subCategoria === subCategoria &&
-          categorias.categoria === categoria
-        );
-      } else if (subCategoria) {
-        return (
-          categorias.subCategoria === subCategoria &&
-          categorias.categoria === categoria
-        );
+    productsByCat: allProducts.filter((produto) => {
+      const isNotFetchComplete =
+        typeof produto === "object" && produto !== null;
+      if (isNotFetchComplete) {
+        const { categorias } = produto;
+        if (subCategoria2) {
+          return (
+            categorias.subCategoria2 === subCategoria2 &&
+            categorias.subCategoria === subCategoria &&
+            categorias.categoria === categoria
+          );
+        } else if (subCategoria) {
+          return (
+            categorias.subCategoria === subCategoria &&
+            categorias.categoria === categoria
+          );
+        }
+        return categorias.categoria === categoria;
       }
-      return categorias.categoria === categoria;
     }),
     fetchComplete: state.products.fetchComplete,
   };
