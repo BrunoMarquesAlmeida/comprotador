@@ -139,7 +139,7 @@ const catSpecs = {
     Servidores: ["Marca", "Armazenamento", "CPU", "RAM", "Gráficos"],
   },
   Componentes: {
-    "Placas gráficas": ["Marca", "Memória", "Gama", "Gráficos", "Portas I/O"],
+    "Placas gráficas": ["Memória", "Gama", "Gráficos", "Portas I/O"],
     Processadores: [
       "Série",
       "Socket",
