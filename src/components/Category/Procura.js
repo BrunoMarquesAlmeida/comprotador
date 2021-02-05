@@ -10,7 +10,7 @@ import { fetchAllProducts } from "../../actions";
 
 import { db } from "../../produtos";
 
-class Category extends React.Component {
+class Procura extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -67,7 +67,7 @@ class Category extends React.Component {
             {this.renderSideBar()}
             <ProductList
               specFiltersSelected={this.state.specFiltersSelected}
-              categorias={this.props.match.params}
+              params={this.props.match.params}
               productsByCat={this.props.productsByCat}
               fetchComplete={this.props.fetchComplete}
             />
@@ -80,30 +80,51 @@ class Category extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const allProducts = Object.values(state.products);
-  const { categoria, subCategoria, subCategoria2 } = ownProps.match.params;
+  const searchTerm = ownProps.match.params.searchTerm.toLowerCase();
   return {
     productsByCat: allProducts.filter((produto) => {
       const isNotFetchComplete =
         typeof produto === "object" && produto !== null;
       if (isNotFetchComplete) {
-        const { categorias } = produto;
-        if (subCategoria2) {
-          return (
-            categorias.subCategoria2 === subCategoria2 &&
-            categorias.subCategoria === subCategoria &&
-            categorias.categoria === categoria
-          );
-        } else if (subCategoria) {
-          return (
-            categorias.subCategoria === subCategoria &&
-            categorias.categoria === categoria
-          );
+        const { title, categorias } = produto;
+
+        if (searchTerm === "todos") {
+          return true;
         }
-        return categorias.categoria === categoria;
+
+        const title_Includes_SearchTerm = title
+          .toLowerCase()
+          .includes(searchTerm);
+        if (title_Includes_SearchTerm) {
+          return true;
+        }
+
+        const categoria_Includes_SearchTerm = categorias.categoria
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+        if (categoria_Includes_SearchTerm) {
+          return true;
+        }
+
+        const subCategoria_Includes_SearchTerm = categorias.subCategoria
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+        if (subCategoria_Includes_SearchTerm) {
+          return true;
+        }
+
+        const subCategoria2_Includes_SearchTerm =
+          categorias.subCategoria2 &&
+          categorias.subCategoria2
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase());
+        if (subCategoria2_Includes_SearchTerm) {
+          return true;
+        }
       }
     }),
     fetchComplete: state.products.fetchComplete,
   };
 };
 
-export default connect(mapStateToProps, { fetchAllProducts })(Category);
+export default connect(mapStateToProps, { fetchAllProducts })(Procura);

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, withRouter } from "react-router-dom";
 import { Button, Collapse } from "react-bootstrap";
 import { connect } from "react-redux";
 
@@ -16,6 +16,7 @@ class Header extends React.Component {
       searchOpen: false,
       navOpen: false,
       activeKey: "",
+      searchTerm: "",
     };
     if (this.props.loginType === "Google") {
       loadGAPI(
@@ -122,6 +123,19 @@ class Header extends React.Component {
       this.props.signIn(this.props.auth0.user.email, "Auth0");
     }
   }
+
+  onSearchSubmit = (e) => {
+    e.preventDefault();
+    const { searchTerm } = this.state;
+    const searchTermIsNotEmpty = searchTerm !== "";
+    if (searchTermIsNotEmpty) {
+      this.props.history.push(`/procura/${this.state.searchTerm}`);
+    }
+  };
+
+  onSearchChange = (e) => {
+    this.setState({ searchTerm: e.target.value });
+  };
 
   render() {
     const { isSignedIn } = this.props;
@@ -260,15 +274,25 @@ class Header extends React.Component {
           <div id="collapse-search">
             <div id="search">
               <div className="container">
-                <form role="search" className="ml-auto">
+                <form
+                  role="search"
+                  className="ml-auto"
+                  onSubmit={this.onSearchSubmit}
+                >
                   <div className="input-group">
                     <input
                       type="text"
                       placeholder="Search"
                       className="form-control"
+                      onChange={this.onSearchChange}
+                      value={this.state.searchTerm}
                     />
                     <div className="input-group-append">
-                      <button type="button" className="btn btn-primary">
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={this.onSearchSubmit}
+                      >
                         <i className="fa fa-search"></i>
                       </button>
                     </div>
@@ -287,4 +311,6 @@ const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps, { signIn, signOut })(withAuth0(Header));
+export default withRouter(
+  connect(mapStateToProps, { signIn, signOut })(withAuth0(Header))
+);

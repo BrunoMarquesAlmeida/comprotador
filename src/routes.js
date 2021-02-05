@@ -3,6 +3,7 @@ import Detail from "./components/Detail";
 import MyAccount from "./components/MyAccount";
 import ShoppingCart from "./components/ShoppingCart";
 import Info from "./components/Info";
+import Procura from "./components/Category/Procura";
 
 export default [
   {
@@ -84,5 +85,10 @@ export default [
     path: "/info/contctos",
     name: "Informações - Contactos",
     Component: Info,
+  },
+  {
+    path: "/procura/:searchTerm",
+    name: "Procura",
+    Component: Procura,
   },
 ];

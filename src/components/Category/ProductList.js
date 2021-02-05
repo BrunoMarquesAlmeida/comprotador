@@ -336,12 +336,16 @@ class ProductList extends React.Component {
 }
 
 const renderTitleBox = (props) => {
-  const { categoria, subCategoria } = props.categorias;
-
-  if (subCategoria) {
-    return subCategoria;
+  if (props.categorias) {
+    const { categoria, subCategoria } = props.categorias;
+    if (props.categorias.subCategoria) {
+      return subCategoria;
+    }
+    if (categoria) {
+      return categoria;
+    }
   }
-  return categoria;
+  return `Procura: \"${props.params.searchTerm}\"`;
 };
 
 export default ProductList;
