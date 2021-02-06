@@ -11,9 +11,6 @@ class ProductList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pages: 1,
-      showN: 12,
-      activePage: 1,
       ordenarPor: "vendas",
     };
   }
@@ -80,7 +77,7 @@ class ProductList extends React.Component {
       );
     }
 
-    if (this.state.showN === "all") {
+    if (this.props.showN === "all") {
       return this.props.productsByCat.map((product) =>
         buildProductListJSX(product)
       );
@@ -89,37 +86,15 @@ class ProductList extends React.Component {
     return showNProducts.map((product) => buildProductListJSX(product));
   };
 
-  pageBtnClick(i, numberOfPages) {
-    const next = this.state.activePage + 1;
-    const prev = this.state.activePage - 1;
-
-    if (i === "»" && next <= numberOfPages) {
-      this.setState({ activePage: next });
-      return;
-    }
-    if (i === "«" && prev >= 1) {
-      this.setState({ activePage: prev });
-      return;
-    }
-    this.setState({ activePage: i });
-  }
-
-  showBtnClick = (n) => {
-    this.setState({ showN: n });
-    this.setState({ activePage: 1 });
-  };
-
   showBtnClassName = (n) => {
-    return this.state.showN === n
+    return this.props.showN === n
       ? "btn btn-sm btn-primary"
       : "btn btn-outline-secondary btn-sm";
   };
 
-  renderPageList = () => {
-    const { activePage } = this.state;
-    const numberOfPages = Math.ceil(
-      this.props.productsByCat.length / this.state.showN
-    );
+  renderPageList = (productListLength) => {
+    const { activePage } = this.props;
+    const numberOfPages = Math.ceil(productListLength / this.props.showN);
     const pageNeighbours = 2;
     const totalNumbers = pageNeighbours * 2 + 1;
     const totalBlocks = totalNumbers + 2;
@@ -168,7 +143,7 @@ class ProductList extends React.Component {
         return (
           <li
             className={activePage === i ? "page-item active" : "page-item"}
-            onClick={(e) => this.pageBtnClick(i, numberOfPages)}
+            onClick={(e) => this.props.pageBtnClick(i, numberOfPages)}
             key={i}
             style={{ cursor: "pointer" }}
           >
@@ -230,32 +205,31 @@ class ProductList extends React.Component {
     });
 
     const startingProduct =
-      this.state.activePage * this.state.showN - this.state.showN;
+      this.props.activePage * this.props.showN - this.props.showN;
 
-    const showNProducts = orderedProducts.slice(
-      startingProduct,
-      this.state.showN * this.state.activePage
-    );
-
-    let finalProductList = [];
-
+    let filteredProductList = [];
     if (specFiltersSelected.length > 0) {
-      showNProducts.map((product) =>
+      orderedProducts.map((product) =>
         product.specs.map(({ content }) => {
           const productIncludesSelectedSpec = specFiltersSelected.includes(
             content[0]
           );
           if (productIncludesSelectedSpec) {
-            const productIsNotInList = !finalProductList.includes(product);
+            const productIsNotInList = !filteredProductList.includes(product);
             if (productIsNotInList) {
-              finalProductList = [...finalProductList, product];
+              filteredProductList = [...filteredProductList, product];
             }
           }
         })
       );
     } else {
-      finalProductList = showNProducts;
+      filteredProductList = orderedProducts;
     }
+
+    const finalProductList = filteredProductList.slice(
+      startingProduct,
+      this.props.showN * this.props.activePage
+    );
 
     return (
       <div className="col-lg-9 order-1 order-lg-2">
@@ -267,9 +241,9 @@ class ProductList extends React.Component {
             <div className="col-md-12 col-lg-4 products-showing">
               Mostrando{" "}
               <strong>
-                {this.state.showN === "all"
+                {this.props.showN === "all"
                   ? productsByCat.length
-                  : showNProducts.length}
+                  : finalProductList.length}
               </strong>{" "}
               de <strong>{productsByCat.length}</strong> produtos
             </div>
@@ -279,19 +253,19 @@ class ProductList extends React.Component {
                   <strong>Mostrar</strong>
                   <span
                     className={this.showBtnClassName(12)}
-                    onClick={() => this.showBtnClick(12)}
+                    onClick={() => this.props.showBtnClick(12)}
                   >
                     12
                   </span>
                   <span
                     className={this.showBtnClassName(24)}
-                    onClick={() => this.showBtnClick(24)}
+                    onClick={() => this.props.showBtnClick(24)}
                   >
                     24
                   </span>
                   <span
                     className={this.showBtnClassName("all")}
-                    onClick={() => this.showBtnClick("all")}
+                    onClick={() => this.props.showBtnClick("all")}
                   >
                     All
                   </span>
@@ -324,9 +298,11 @@ class ProductList extends React.Component {
             aria-label="Page navigation example"
             className="d-flex justify-content-center"
           >
-            {this.state.showN === "all" ||
-            productsByCat.length <= this.state.showN ? null : (
-              <ul className="pagination">{this.renderPageList()}</ul>
+            {this.props.showN === "all" ||
+            productsByCat.length <= this.props.showN ? null : (
+              <ul className="pagination">
+                {this.renderPageList(filteredProductList.length)}
+              </ul>
             )}
           </nav>
         </div>
@@ -345,7 +321,7 @@ const renderTitleBox = (props) => {
       return categoria;
     }
   }
-  return `Procura: \"${props.params.searchTerm}\"`;
+  return `Procura: "${props.params.searchTerm}"`;
 };
 
 export default ProductList;

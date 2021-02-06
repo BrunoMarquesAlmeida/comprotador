@@ -15,11 +15,32 @@ class Category extends React.Component {
     super(props);
     this.state = {
       specFiltersSelected: [],
+      activePage: 1,
+      showN: 12,
     };
   }
 
+  showBtnClick = (n) => {
+    this.setState({ showN: n, activePage: 1 });
+  };
+
+  pageBtnClick = (i, numberOfPages) => {
+    const next = this.state.activePage + 1;
+    const prev = this.state.activePage - 1;
+
+    if (i === "»" && next <= numberOfPages) {
+      this.setState({ activePage: next });
+      return;
+    }
+    if (i === "«" && prev >= 1) {
+      this.setState({ activePage: prev });
+      return;
+    }
+    this.setState({ activePage: i });
+  };
+
   onRemoveFiltersClick = () => {
-    this.setState({ specFiltersSelected: [] });
+    this.setState({ specFiltersSelected: [], activePage: 1 });
   };
 
   onFilterClick = (c) => {
@@ -28,9 +49,12 @@ class Category extends React.Component {
       const index = specFiltersSelected.indexOf(c);
       const newFilter = [...specFiltersSelected];
       newFilter.splice(index, 1);
-      this.setState({ specFiltersSelected: newFilter });
+      this.setState({ specFiltersSelected: newFilter, activePage: 1 });
     } else {
-      this.setState({ specFiltersSelected: [...specFiltersSelected, c] });
+      this.setState({
+        specFiltersSelected: [...specFiltersSelected, c],
+        activePage: 1,
+      });
     }
   };
 
@@ -70,6 +94,10 @@ class Category extends React.Component {
               categorias={this.props.match.params}
               productsByCat={this.props.productsByCat}
               fetchComplete={this.props.fetchComplete}
+              pageBtnClick={this.pageBtnClick}
+              activePage={this.state.activePage}
+              showBtnClick={this.showBtnClick}
+              showN={this.state.showN}
             />
           </div>
         </div>
