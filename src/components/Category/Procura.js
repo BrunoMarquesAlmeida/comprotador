@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 
 import BreadCrumb from "./BreadCrumb";
-import MenuFilters from "./MenuFilters";
 import ProductList from "./ProductList";
 import NavMenu from "../Detail/NavMenu";
 
