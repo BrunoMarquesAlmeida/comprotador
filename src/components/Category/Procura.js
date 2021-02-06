@@ -15,46 +15,13 @@ class Procura extends React.Component {
     super(props);
     this.state = {
       specFiltersSelected: [],
+      activePage: 1,
+      showN: 12,
     };
   }
 
-  onRemoveFiltersClick = () => {
-    this.setState({ specFiltersSelected: [] });
-  };
-
-  onFilterClick = (c) => {
-    const { specFiltersSelected } = this.state;
-    if (specFiltersSelected.includes(c)) {
-      const index = specFiltersSelected.indexOf(c);
-      const newFilter = [...specFiltersSelected];
-      newFilter.splice(index, 1);
-      this.setState({ specFiltersSelected: newFilter });
-    } else {
-      this.setState({ specFiltersSelected: [...specFiltersSelected, c] });
-    }
-  };
-
   componentDidMount() {
     this.props.fetchAllProducts();
-  }
-
-  renderSideBar() {
-    const { subCategoria } = this.props.match.params;
-    const noResults = this.props.productsByCat.length === 0;
-
-    if (subCategoria === undefined || noResults) {
-      return <NavMenu />;
-    }
-    return (
-      <MenuFilters
-        productsByCat={this.props.productsByCat}
-        categorias={this.props.match.params}
-        isFiltersSelected={this.state.specFiltersSelected.length > 0}
-        specFiltersSelected={this.state.specFiltersSelected}
-        onFilterClick={this.onFilterClick}
-        onRemoveFiltersClick={this.onRemoveFiltersClick}
-      />
-    );
   }
 
   render() {
@@ -63,13 +30,16 @@ class Procura extends React.Component {
         <div className="container">
           <div className="row">
             <BreadCrumb params={this.props.match.params} />
-
-            {this.renderSideBar()}
+            <NavMenu />
             <ProductList
               specFiltersSelected={this.state.specFiltersSelected}
               params={this.props.match.params}
               productsByCat={this.props.productsByCat}
               fetchComplete={this.props.fetchComplete}
+              pageBtnClick={this.pageBtnClick}
+              activePage={this.state.activePage}
+              showBtnClick={this.showBtnClick}
+              showN={this.state.showN}
             />
           </div>
         </div>
