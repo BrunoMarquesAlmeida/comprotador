@@ -8,13 +8,6 @@ import { NewRibbon } from "../Common/Ribbon";
 import { AddCartIcon } from "../Common/AddCartIcon";
 
 class ProductList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ordenarPor: "vendas",
-    };
-  }
-
   renderProductList = (showNProducts) => {
     const buildProductListJSX = (product) => {
       const { id, title, img, precos, ribbons } = product;
@@ -157,15 +150,11 @@ class ProductList extends React.Component {
     return mapPages();
   };
 
-  handleSelectChange = ({ target }) => {
-    this.setState({ ordenarPor: target.value });
-  };
-
   render() {
     const { productsByCat, specFiltersSelected } = this.props;
 
     const orderedProducts = productsByCat.sort((a, b) => {
-      if (this.state.ordenarPor === "priceAsc") {
+      if (this.props.ordenarPor === "priceAsc") {
         if (parseFloat(a.precos.normal) > parseFloat(b.precos.normal)) {
           return 1;
         }
@@ -174,7 +163,7 @@ class ProductList extends React.Component {
         }
         return 0;
       }
-      if (this.state.ordenarPor === "priceDesc") {
+      if (this.props.ordenarPor === "priceDesc") {
         if (parseFloat(a.precos.normal) < parseFloat(b.precos.normal)) {
           return 1;
         }
@@ -183,7 +172,7 @@ class ProductList extends React.Component {
         }
         return 0;
       }
-      if (this.state.ordenarPor === "AZ") {
+      if (this.props.ordenarPor === "AZ") {
         if (a.title > b.title) {
           return 1;
         }
@@ -192,7 +181,7 @@ class ProductList extends React.Component {
         }
         return 0;
       }
-      if (this.state.ordenarPor === "ZA") {
+      if (this.props.ordenarPor === "ZA") {
         if (a.title < b.title) {
           return 1;
         }
@@ -200,6 +189,12 @@ class ProductList extends React.Component {
           return -1;
         }
         return 0;
+      }
+      if (this.props.ordenarPor === "vendas") {
+        if (a.vendas) {
+          return b.vendas - a.vendas;
+        }
+        return 1;
       }
       return null;
     });
@@ -276,8 +271,8 @@ class ProductList extends React.Component {
                   <select
                     name="sort-by"
                     className="form-control"
-                    value={this.state.ordenarPor}
-                    onChange={this.handleSelectChange}
+                    value={this.props.ordenarPor}
+                    onChange={this.props.handleSelectChange}
                   >
                     <option value="vendas">Vendas</option>
                     <option value="AZ">Nome (A - Z)</option>
