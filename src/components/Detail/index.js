@@ -1,21 +1,47 @@
+import React from "react";
+import { connect } from "react-redux";
+
 import BreadCrumb from "./BreadCrumb";
 import ProductDetail from "./ProductDetail";
 import NavMenu from "./NavMenu";
 
-const Detail = () => {
-  return (
-    <div id="content">
-      <div className="container">
-        <div className="row">
-          <BreadCrumb />
-          <NavMenu />
+import { fetchProduct } from "../../actions";
 
-          <ProductDetail />
+class Detail extends React.Component {
+  componentDidMount() {
+    this.props.fetchProduct(this.props.match.params.id);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      this.props.fetchProduct(this.props.match.params.id);
+    }
+  }
+
+  render() {
+    return (
+      <div id="content" key={this.props.match.params}>
+        <div className="container">
+          <div className="row">
+            <BreadCrumb />
+            <NavMenu />
+            <ProductDetail
+              product={this.props.product}
+              fetchComplete={this.props.fetchComplete}
+            />
+          </div>
+          <div style={{ marginBottom: "30px" }} />
         </div>
-        <div style={{ marginBottom: "30px" }} />
       </div>
-    </div>
-  );
+    );
+  }
+}
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    product: state.products[ownProps.match.params.id],
+    fetchComplete: state.products.fetchComplete,
+  };
 };
 
-export default Detail;
+export default connect(mapStateToProps, { fetchProduct })(Detail);
