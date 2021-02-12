@@ -18,6 +18,12 @@ export const signOut = () => {
 export const FETCH_ALLPRODUCTS = "FETCH_ALLPRODUCTS";
 export const fetchAllProducts = () => async (dispatch) => {
   const response = await api.get(`/produtos`);
-
   dispatch({ type: FETCH_ALLPRODUCTS, payload: response.data });
+};
+
+export const FETCH_PRODUCT = "FETCH_PRODUCT";
+export const fetchProduct = (id) => async (dispatch) => {
+  const response = await api.get(`/produtos/${id}`);
+
+  dispatch({ type: FETCH_PRODUCT, payload: response.data });
 };
