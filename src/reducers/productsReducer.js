@@ -1,6 +1,6 @@
 import _ from "lodash";
 
-import { FETCH_ALLPRODUCTS } from "../actions";
+import { FETCH_ALLPRODUCTS, FETCH_PRODUCT } from "../actions";
 
 export default (state = { fetchComplete: null }, action) => {
   switch (action.type) {
@@ -8,6 +8,12 @@ export default (state = { fetchComplete: null }, action) => {
       return {
         ...state,
         ..._.mapKeys(action.payload, "id"),
+        fetchComplete: true,
+      };
+    case FETCH_PRODUCT:
+      return {
+        ...state,
+        [action.payload.id]: action.payload,
         fetchComplete: true,
       };
     default:
