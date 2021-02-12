@@ -7,7 +7,6 @@ import ProductList from "./ProductList";
 import NavMenu from "../Detail/NavMenu";
 
 import { fetchAllProducts } from "../../actions";
-
 import { db } from "../../produtos";
 
 class Category extends React.Component {
@@ -17,8 +16,13 @@ class Category extends React.Component {
       specFiltersSelected: [],
       activePage: 1,
       showN: 12,
+      ordenarPor: "vendas",
     };
   }
+
+  handleSelectChange = ({ target }) => {
+    this.setState({ ordenarPor: target.value, activePage: 1 });
+  };
 
   showBtnClick = (n) => {
     this.setState({ showN: n, activePage: 1 });
@@ -98,6 +102,8 @@ class Category extends React.Component {
               activePage={this.state.activePage}
               showBtnClick={this.showBtnClick}
               showN={this.state.showN}
+              handleSelectChange={this.handleSelectChange}
+              ordenarPor={this.state.ordenarPor}
             />
           </div>
         </div>
