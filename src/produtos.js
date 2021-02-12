@@ -19,6 +19,7 @@ export const db = {
       img: "1_332_17.jpg",
       precos: { normal: "39.90", desconto: "27.90" },
       ribbons: { novo: true, saldos: true },
+      vendas: 0,
     },
 
     {
@@ -39,6 +40,7 @@ export const db = {
       img: "1_335_2.jpg",
       precos: { normal: "129.90", desconto: null },
       ribbons: { novo: true, saldos: false },
+      vendas: 1,
     },
     {
       id: "2",
@@ -60,6 +62,7 @@ export const db = {
       img: "1_337_1.jpg",
       precos: { normal: "289.90", desconto: null },
       ribbons: { novo: true, saldos: false },
+      vendas: 2,
     },
     {
       id: "3",
@@ -85,6 +88,7 @@ export const db = {
       img: "1_339_8.jpg",
       precos: { normal: "999.90", desconto: null },
       ribbons: { novo: true, saldos: false },
+      vendas: 3,
     },
     {
       id: "4",
@@ -103,6 +107,7 @@ export const db = {
       img: "1_p030470_2.jpg",
       precos: { normal: "187.90", desconto: null },
       ribbons: { novo: false, saldos: false },
+      vendas: 4,
     },
     {
       id: "5",
@@ -125,6 +130,7 @@ export const db = {
       img: "1085_1.jpg",
       precos: { normal: "149.90", desconto: "54.90" },
       ribbons: { novo: true, saldos: true },
+      vendas: 5,
     },
     {
       id: "6",
@@ -160,6 +166,7 @@ export const db = {
       img: "MSI156.jpg",
       precos: { normal: "1199.90", desconto: "949.90" },
       ribbons: { novo: true, saldos: true },
+      vendas: 6,
     },
     {
       id: "7",
@@ -187,6 +194,7 @@ export const db = {
       img: "1_292_12.jpg",
       precos: { normal: "899.90", desconto: null },
       ribbons: { novo: false, saldos: false },
+      vendas: 7,
     },
     {
       id: "8",
@@ -206,6 +214,7 @@ export const db = {
       img: "sem-ti_tulo-178_1.jpg",
       precos: { normal: "249.90", desconto: null },
       ribbons: { novo: false, saldos: false },
+      vendas: 8,
     },
     {
       id: "9",
@@ -225,6 +234,7 @@ export const db = {
       img: "1_p025452.jpg",
       precos: { normal: "259.90", desconto: null },
       ribbons: { novo: false, saldos: false },
+      vendas: 9,
     },
     {
       id: "10",
@@ -245,6 +255,7 @@ export const db = {
       img: "kjf_1.jpg",
       precos: { normal: "744.90", desconto: null },
       ribbons: { novo: false, saldos: false },
+      vendas: 10,
     },
     {
       id: "11",
@@ -265,6 +276,7 @@ export const db = {
       img: "1_342_25.jpg",
       precos: { normal: "1949.90", desconto: null },
       ribbons: { novo: false, saldos: false },
+      vendas: 11,
     },
     {
       id: "12",
@@ -283,6 +295,7 @@ export const db = {
       img: "product-p011502-10173.jpg",
       precos: { normal: "227.00", desconto: "199.90" },
       ribbons: { novo: false, saldos: true },
+      vendas: 12,
     },
     {
       id: "13",
@@ -301,6 +314,7 @@ export const db = {
       img: "product-p015954-56212.jpg",
       precos: { normal: "64.90", desconto: "54.90" },
       ribbons: { novo: false, saldos: true },
+      vendas: 13,
     },
     {
       id: "14",
@@ -320,6 +334,7 @@ export const db = {
       img: "product-p016157-55456_2.jpg",
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
+      vendas: 14,
     },
     {
       id: "500",
