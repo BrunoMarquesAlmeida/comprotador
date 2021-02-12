@@ -1,11 +1,17 @@
 import "react-image-gallery/styles/css/image-gallery.css";
 import ReactImageGallery from "react-image-gallery";
+import { Redirect } from "react-router-dom";
 
 import { NewRibbon } from "../Common/Ribbon";
 import { AddCartIcon } from "../Common/AddCartIcon";
 import Recomendados from "../Common/Recomendados";
 
-const ProductDetail = () => {
+const ProductDetail = (props) => {
+  const { product, fetchComplete } = props;
+
+  // if (product === undefined && fetchComplete) {
+  //   return <Redirect to="/404" />;
+  // }
   return (
     <div className="col-lg-9 order-1 order-lg-2">
       <div id="productMain" className="row">
