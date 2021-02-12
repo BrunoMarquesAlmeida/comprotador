@@ -19,7 +19,16 @@ class MenuFilters extends React.Component {
       }
     });
 
-    const checkBoxList = _.uniq(specList);
+    const checkBoxList = _.uniq(specList).sort((a, b) => {
+      if (a > b) {
+        return 1;
+      }
+      if (a < b) {
+        return -1;
+      }
+      return 0;
+    });
+
     return checkBoxList.map((c) => {
       return (
         <div className="checkbox" key={c}>
