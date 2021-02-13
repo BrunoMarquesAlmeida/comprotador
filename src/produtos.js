@@ -16,7 +16,12 @@ export const db = {
         { title: "Sem fios", content: ["Não"] },
         { title: "Portas I/O", content: ["USB 3.0 (x3)"] },
       ],
-      img: "1_332_17.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/1_332_17.jpg",
+          thumbnail: "assets/img/produtos/1_332_17.jpg",
+        },
+      ],
       precos: { normal: "39.90", desconto: "27.90" },
       ribbons: { novo: true, saldos: true },
       vendas: 0,
