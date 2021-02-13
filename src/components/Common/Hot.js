@@ -25,7 +25,6 @@ class Hot extends React.Component {
     });
 
     const hotProducts = sortedProducts.slice(0, 15);
-    console.log(this.props.productsByCat);
 
     return hotProducts.map(({ img, title, id, ribbons, precos }) => {
       return (
