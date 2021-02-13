@@ -9,12 +9,12 @@ import { fetchProduct } from "../../actions";
 
 class Detail extends React.Component {
   componentDidMount() {
-    this.props.fetchProduct(this.props.match.params.id);
+    this.props.fetchProduct(this.props);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.id !== prevProps.match.params.id) {
-      this.props.fetchProduct(this.props.match.params.id);
+      this.props.fetchProduct(this.props);
     }
   }
 
@@ -23,7 +23,10 @@ class Detail extends React.Component {
       <div id="content" key={this.props.match.params}>
         <div className="container">
           <div className="row">
-            <BreadCrumb />
+            <BreadCrumb
+              product={this.props.product}
+              fetchComplete={this.props.fetchComplete}
+            />
             <NavMenu />
             <ProductDetail
               product={this.props.product}
