@@ -148,9 +148,9 @@ class Header extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-10 offer mb-3 mb-lg-0">
-                <Link to="/procura/fonte">
+                <Link to="/detalhes/5">
                   <span className="btn btn-success btn-sm">
-                    Agora é possível procurar por texto
+                    Página de produto exibe informações
                   </span>
                   <span className="ml-1">
                     Clique aqui para conhecer a última atualização ao site
