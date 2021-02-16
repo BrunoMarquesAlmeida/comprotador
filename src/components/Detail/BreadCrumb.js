@@ -12,16 +12,22 @@ const BreadCrumb = (props) => {
               <Link to="/">Home</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to="/categoria/Computadores">{categoria}</Link>
+              <Link to={`/categoria/${categoria}`}>{categoria}</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to="/categoria/Computadores/Desktops">{subCategoria}</Link>
-            </li>
-            <li className="breadcrumb-item">
-              <Link to="/categoria/Computadores/Desktops/Gaming">
-                {subCategoria2}
+              <Link to={`/categoria/${categoria}/${subCategoria}`}>
+                {subCategoria}
               </Link>
             </li>
+            {subCategoria2 ? (
+              <li className="breadcrumb-item">
+                <Link
+                  to={`/categoria/${categoria}/${subCategoria}/${subCategoria2}`}
+                >
+                  {subCategoria2}
+                </Link>
+              </li>
+            ) : null}
             <li className="breadcrumb-item active">{title}</li>
           </ol>
         </nav>
