@@ -3,6 +3,35 @@ export const db = {
     {
       id: "0",
       title: "Suporte p/ Headset Ozone Portal RGB Hub",
+      description: [
+        // { sectionTitle: "SEMPRE PRONTO", content: "Content" },]
+        {
+          sectionTitle: "",
+          content:
+            "O Ozone Portal é um suporte de headset versátil com iluminação RGB poderosa, som surround 7.1 virtual para mergulhar no jogo e três portas USB 3.0 de alta velocidade para carregar os seus dispositivos rapidamente. Exiba os seus fones e otimize a sua mesa de jogo com o Portal da Ozone, o acessório de jogo essencial em qualquer configuração.",
+        },
+        {
+          sectionTitle: "DESIGN COMPACTO",
+          content:
+            "A sua estrutura vertical com uma base elevada robusta em preto elegante destaca-se da multidão. Fabricado em materiais de alta qualidade e com um design cuidado, possui uma almofada antiderrapante integrada que permite a sua adaptação a todos os ambientes e evita que escorregue. A área de descanso dos fones foi projetada de forma a evitar que o acolchoamento da faixa de cabeça fique deformado, ao mesmo tempo que distribui o peso de maneira uniforme e proporciona a estabilidade necessária.",
+        },
+
+        {
+          sectionTitle: "SEMPRE PRONTO",
+          content:
+            "Possui 3 portas USB 3.0 de alta velocidade localizadas no seu lado esquerdo, o que permite conectar os fones sem fiso para que estejam sempre prontos, além de carregar rapidamente qualquer outro tipo de dispositivo, como o seu smartphone, através de USB, enquanto mantem os seus cabos em ordem ao mesmo tempo.",
+        },
+        {
+          sectionTitle: "SOM SURROUND",
+          content:
+            "O Ozone Portal incorpora uma placa de som virtual 7.1 que oferece som estéreo de alcance total, mas também possibilita ouvir som surround nos seus fones através do seu conector de 3,5 mm, com três modos de equalização à escolha. Além disso, este acessório de jogo também inclui uma entrada de microfone.",
+        },
+        {
+          sectionTitle: "ILUMINE O SEU ESPAÇO",
+          content:
+            "O Ozone Portal incorpora iluminação RGB, com uma escolha de 16,8 milhões de cores, desfrutando de outro nível de experiência de jogo. Você pode escolher entre doze modos de iluminação com apenas o pressionar de um botão, e é fácil desligar quando não estiver em uso. Escolha a cor e transição que deseja e deixe-se levar pelo espetáculo de uma iluminação única, criando uma atmosfera de jogo invejável.",
+        },
+      ],
       categorias: {
         categoria: "Periféricos",
         subCategoria: "Audio",
@@ -11,8 +40,7 @@ export const db = {
       specs: [
         { title: "Marca", content: ["Ozone"] },
         { title: "Canais", content: ["7.1"] },
-        { title: "Tipo", content: ["Suporte"] },
-        { title: "Tipo", content: ["Placa de som"] },
+        { title: "Tipo", content: ["Suporte", "Placa de som"] },
         { title: "Sem fios", content: ["Não"] },
         { title: "Portas I/O", content: ["USB 3.0 (x3)"] },
       ],
@@ -53,6 +81,33 @@ export const db = {
     {
       id: "1",
       title: "Subwoofer Edifier T5 70W Preto",
+      description: [
+        {
+          sectionTitle: "FILTRO LOW PASS",
+          content:
+            "Garante que o subwoofer reproduza apenas sons muito baixos para que as colunas tenham uma saída adequada sem distorção. Complemente as suas colunas de alto e médio alcance com graves que você realmente pode sentir até à faixa de 38Hz.",
+        },
+        {
+          sectionTitle: 'DRIVER PARA BASS DE 8" COM DSP',
+          content:
+            "Um driver de 8” oferece 70 W de som poderoso com graves ricos e altamente precisos para fornecer a você a melhor experiência de audição. Baixos profundos não precisam soar distorcidos e exagerados. A Edifier projetou o T5 para oferecer uma experiência de audição limpa para todos.",
+        },
+        {
+          sectionTitle: "STANDBY AUTOMÁTICO",
+          content:
+            "Economize eletricidade com um recurso de standby automático que garante que a unidade não use energia desnecessária quando deixada em idle. Deixe o aparelho conectado sem se preocupar em aumentar a sua conta de luz.",
+        },
+        {
+          sectionTitle: "CAIXA EM MDF",
+          content:
+            "A ressonância é ótima quando é a sua sala a tremer com os graves, não tanto quando é a caixa do subwoofer a tremer devido ao design fraco. O T5 utiliza materiais de placa de fibra de média densidade (MDF) de alta qualidade que oferece ressonância reduzida para o som mais limpo.",
+        },
+        {
+          sectionTitle: "BASS E FREQUÊNCIA AJUSTÁVEL",
+          content:
+            "Altere o volume dos graves rapidamente com um botão conveniente localizado no painel traseiro da unidade. Um botão adjacente controla a faixa de frequência do subwoofer, permitindo a você aumentar ou diminuir a frequência de onde começa a filtrar o som.",
+        },
+      ],
       categorias: {
         categoria: "Periféricos",
         subCategoria: "Audio",
@@ -90,6 +145,58 @@ export const db = {
     {
       id: "2",
       title: "Mini PC GMK NucBox",
+      description: [
+        {
+          sectionTitle: "O MINI PC 4K QUE CABE NA PALMA DA SUA MÃO",
+          content:
+            "O Nucbox é um PC ultra pequeno, mas com uma grande performance. O seu design é a pensar na sua produtividade móvel e no entretenimento 4K.",
+        },
+        {
+          sectionTitle: "MENOS É MAIS",
+          content:
+            "O seu design metálico texturizado dá-lhe um toque robusto e luxuoso. O NucBox é ultra compacto, leve e portátil, de transporte tão simples como guardá-lo na sua mala própria e colocá-lo no bolso do seu casaco.",
+        },
+        {
+          sectionTitle: "UMA GRANDE PERFORMANCE CHEGA NUM PEQUENO FORMATO",
+          content:
+            "Apresentado um CPU Intel® Celeron® J4125 de alto desempenho que possui 4 núcleos com frequência de até 2,7 GHz e gráficos Intel® UHD Graphics 600, ele certamente levará a sua capacidade de computação para o próximo nível. O poderoso desempenho permite que você aproveite livremente uma fluidez incomparável e uma velocidade de resposta inacreditável no GMK NucBox.",
+        },
+        {
+          sectionTitle: "GRÁFICOS INTEL UHD GRAPHICS 600",
+          content:
+            "Depois de uma intensa série de testes, o NucBox consegue correr uma enorme quantidade de jogos e aplicações de forma suave com uma boa taxa de frames.",
+        },
+        {
+          sectionTitle: "FANTÁSTICA REPRODUÇÃO DE VÍDEO 4K UHD",
+          content:
+            "O NucBox oferece uma experiência fantástica de entretenimento. Graças à sua reprodução de video avançada em 4K@60Hz, e ao seu suporte de codificação e descodificação de vídeo H.264, H.265/HEVC e VP-9, poderá assistir aos seus filmes ou programas de TV favoritos.",
+        },
+        {
+          sectionTitle: "MEMÓRIA LPDDR4 E SSD DE ALTO DESEMPENHO",
+          content:
+            "São 8GB de memória LPDDR4 que oferece uma performance perfeita e sem demoras para multitasking. Inclui ainda um SSD de alto desempenho para acesso ao seu conteúdo a alta velocidade.",
+        },
+        {
+          sectionTitle: "CONECTIVIDADE BLUETOOTH",
+          content:
+            "Consegue emparelhar a todo o tipo de dispositivos com conectividade bluetooth. Conecte-se a ratos, teclados, colunas, entre muitos outros dispositivos bluetooth e livre-se dos fios.",
+        },
+        {
+          sectionTitle: "CONECTIVIDADE WIRELESS INTEL AC 2x2 867 MB/S",
+          content:
+            "Graças à placa Intel Wi-Fi, o GMK NucBox fornece uma conexão de internet sem fio super rápida e estável em qualquer lugar, a qualquer hora. Com 2,4 GHz / 5 GHz de banda dupla 2x2 AC Wi-Fi, ele pode atingir até 867 Mb/s de velocidade de transferência sem fio, que é 2 vezes mais rápida do que alguns dispositivos que usam AC 1x1 (apenas 433 Mb/s).",
+        },
+        {
+          sectionTitle: "DESIGN TÉRMICO SILENCIOSO",
+          content:
+            "O design de 10W de baixo consumo energético e a ventoinha de 90mm vão manter a temperatura baixa dos componentes essenciais. Desfrute de desempenho máximo num ambiente mais silencioso com controlo de ruído a rondar os 19db.",
+        },
+        {
+          sectionTitle: "SUPORTA VÁRIOS SISTEMAS OPERATIVOS",
+          content:
+            "Compatível com vários sistemas operativos, o NucBox irá aumentar significativamente a sua produtividade. É compatível com Windows e Linux/Ubuntu.",
+        },
+      ],
       categorias: {
         categoria: "Computadores",
         subCategoria: "Desktops",
@@ -133,6 +240,38 @@ export const db = {
     {
       id: "3",
       title: "Portátil Asus Zenbook 14",
+      description: [
+        {
+          sectionTitle: "",
+          content:
+            "O novo e belo ZenBook 14 é mais portátil do que nunca. É mais fino, mais leve e incrivelmente compacto, e inclui HDMI, Thunderbolt™ 3 USB-C™, USB Type-A e leitor de cartões MicroSD para uma versatilidade inigualável. Construído para proporcionar um desempenho potente, o ZenBook 14 é a escolha perfeita para um estilo de vida em movimento sem esforços.",
+        },
+        {
+          sectionTitle: "VIAJE LEVE E DE FORMA INTELIGENTE",
+          content:
+            "O design compacto, fino e ultraleve totalmente metálico do ZenBook 14 torna-o no companheiro de viagem ideal. É também o portátil de 14” mais fino do mundo, com um conjunto completo de portas de I/O1 - incluindo HDMI e USB Type-A - para desfrutar de uma conectividade versátil em qualquer lugar.tentCo",
+        },
+        {
+          sectionTitle: "SEM CARREGADOR? NÃO HÁ PROBLEMA",
+          content:
+            "Com a incrível duração de 22 horas da bateria do ZenBook 14, viajar sem carregador não é um grande problema. Quando for necesário recarregar, a função de carregamento rápido pode restaurar a bateria a um nível de carga de 60% em apenas 49 minutos, pelo que estará pronto para partir em pouco tempo.",
+        },
+        {
+          sectionTitle: "ECRÃ BRILHANTE, CLARO E ENERGETICAMENTE EFICIENTE",
+          content:
+            "O ZenBook 14 dispõe de um ecrã NanoEdge de quatro lados brilhante e claro, com molduras finas que criam uma relação ecrã/corpo de 90% para uma experiência de visualização mais envolvente.",
+        },
+        {
+          sectionTitle: "LIGUE-SE RAPIDAMENTE EM QUALQUER LUGAR",
+          content:
+            "O ZenBook 14 redefine as possibilidades num portátil ultraleve para fornecer um complemento completo de portas de I/O, incluindo portas HDMI e USB Type-A de tamanho integral. A potência da Thunderbolt™ 3 está também à disposição, com duas portas Thunderbolt™ 3 USB-C™ que suportam carregamento rápido, ecrãs externos UHD 4K e velocidades de transferência de dados até 40Gbps. Para transferências de dados simplificadas a partir de dispositivos móveis, dispõe também de um leitor de cartões MicroSD.",
+        },
+        {
+          sectionTitle: "MAIS POTÊNCIA EM MOVIMENTO",
+          content:
+            "Os mais recentes processadores Intel® Core™ da 10ª Geração instalados no ZenBook 14 oferecem um desempenho melhorado, lidando facilmente com multitarefa, produtividade e entretenimento. O ZenBook 14 também dispõe de um SSD ultrarrápido PCIe® 3.0 x4 e a mais recente Intel WiFi 6 com Gig+ (802.11ax) para uma performance global soberba.",
+        },
+      ],
       categorias: {
         categoria: "Computadores",
         subCategoria: "Portáteis",
@@ -149,7 +288,6 @@ export const db = {
         { title: "Ecrã touch", content: ["Não"] },
         { title: "Tamanho ecrã", content: ['14"'] },
         { title: "Resolução", content: ["1920 x 1080"] },
-        { title: "Taxa de atualização", content: [] },
       ],
       img: [
         {
@@ -188,6 +326,24 @@ export const db = {
     {
       id: "4",
       title: "SSD M.2 2280 Gigabyte Aorus Gen4 1TB",
+      description: [
+        // { sectionTitle: "SEMPRE PRONTO", content: "Content" },
+        {
+          sectionTitle: "CONTROLADOR PCIE 4.0x4",
+          content:
+            "O primeiro controlador PCIe 4.0x4 do mundo, controlador Phison PS5016-E16, feito com tecnologia de fabrico de 28nm. O processo de fabrico avançado garante que o PS5016-E16 tenha poder de computação suficiente para processamento ECC ao adotar a mais recente flash 3D TLC NAND. O PS5016-E16 também possui oito canais NAND com alvos 32 CE, cache DDR4 DRAM e uma interface PCIe 4.0x4. Quanto aos recursos, o chip suporta o protocolo NVMe 1.3, correção de erros LDPC e tecnologias de Nivelamento de Desgaste e Superprovisão para melhorar a fiabilidade e durabilidade do SSD.",
+        },
+        {
+          sectionTitle: "FLASH 3D TLC NAND SELECIONADA DE ALTA VELOCIDADE",
+          content:
+            "A NAND Flash selecionadA e de alta qualidade otimiza os circuitos e a arquitetura aumentando para 96 camadas para maior espaço de armazenamento por unidade de área. A taxa de transferência de 800MT/s no SSD AORUS Gen 4 excede em muito a dos dispositivos PCIe 3.0x4 para desempenho de armazenamento superior.",
+        },
+        {
+          sectionTitle: "SSD TOOL BOX",
+          content:
+            "O SSD Tool Box recém-atualizado é um software que oferece aos utilizadores uma visão geral do status do SSD e vários aspectos, como nome do modelo, versão do FW, condição de saúde e temperatura do sensor. Além disso, os utilizadores podem limpar todos os dados com a função Secure Erase.",
+        },
+      ],
       categorias: {
         categoria: "Componentes",
         subCategoria: "Armazenamento",
@@ -220,6 +376,29 @@ export const db = {
     {
       id: "5",
       title: "Teclado Mecânico Asus Sagaris",
+      description: [
+        {
+          sectionTitle: "DESENVOLVIDO PARA JOGABILIDADE INCRÍVEL",
+          content:
+            "O teclado para jogos ASUS Sagaris GK1100 possui interruptores mecânicos Cherry MX Blue com vida útil de 50 milhões de pressionamentos de teclas. As teclas com retroiluminação por LED RGB fornecem até sete modos de iluminação que podem ser personalizados através de uma interface intuitiva. Você também pode criar macros e atalhos para todas as teclas. O ASUS GK1100 permite programar até 12 macros compreendendo até 60 pressionamentos de tecla cada para ações ou comandos complexos do jogo.",
+        },
+        {
+          sectionTitle: "DESIGN CLÁSSICO EM ALUMÍNIO",
+          content:
+            "O ASUS Sagaris GK1100 apresenta um visual limpo e clássico, com o seu chassi de alumínio durável com acabamento em preto.",
+        },
+        {
+          sectionTitle: "100% ANTI-GHOSTING COM N-KEY ROLLOVER",
+          content:
+            "Anti-ghosting com a tecnologia N-Key Rollover (NKRO) permite que o ASUS Sagaris GK1100 registe todas as suas teclas digitadas, mesmo se você pressionar várias teclas simultaneamente.",
+        },
+        {
+          sectionTitle:
+            "MACROS PERSONALIZÁVEIS ATRAVÉS DE UMA INTERFACE INTUITIVA",
+          content:
+            "A interface de utilizador intuitiva do ASUS Sagaris GK1100 permite criar macros e atalhos para todas as teclas. A partir daqui, você também pode ajustar as cores e a velocidade dos 7 modos de iluminação padrão.",
+        },
+      ],
       categorias: {
         categoria: "Periféricos",
         subCategoria: "Ratos e Teclados",
@@ -227,7 +406,6 @@ export const db = {
       },
       specs: [
         { title: "Marca", content: ["Asus"] },
-        { title: "DPI", content: [] },
         { title: "Layout teclado", content: ["US"] },
         { title: "Formato teclado", content: ["Full-size"] },
         { title: "Iluminação", content: ["RGB"] },
@@ -256,6 +434,34 @@ export const db = {
     {
       id: "6",
       title: 'Portátil MSI 15.6" GF63 Thin',
+      description: [
+        {
+          sectionTitle:
+            "PROCESSADOR COM DESEMPENHO HEXA-CORE INTEL® CORE™ i7 DA 10ª GERAÇÃO",
+          content:
+            "Dê um grande salto no desempenho com os processadores para notebook Hexa Core! Experiência de jogabilidade reforçada e renderização mais rápida com os núcleos extras. Quanto mais melhor!",
+        },
+        {
+          sectionTitle: "FINO E LEVE COM CHASSI EM ALUMÍNIO",
+          content:
+            "Tampa metálica de topo e teclado combinada com uma ventilação em forma de X escondida por baixo.",
+        },
+        {
+          sectionTitle: "A MELHOR PLATAFORMA MÓVEL PARA GAMING",
+          content:
+            "Prepara-se para o jogo com a GeForce® GTX. As placas gráficas GeForce® GTX são as mais avançadas já criadas. Descubra um desempenho sem precedentes, eficiência energética e experiência de jogo da próxima geração.",
+        },
+        {
+          sectionTitle: "AS MAIS RECENTES TECNOLOGIAS GAMING",
+          content:
+            "Este GPU inovador foi criado para atender à procura por ecrãs de próxima geração, incluindo VR, resolução ultra-elevada e vários monitores. Tecnologias como a NVIDIA GameWorks™ darão jogabilidade extremamente suave e cinematográfica, além da revolucionária NVIDIA Ansel™ que lhe permite capturar imagens de 360 graus no jogo e visualizá-los em VR.",
+        },
+        {
+          sectionTitle: "NAHIMIC 3 - IMERSÃO DE ÁUDIO",
+          content:
+            "Prepare-se para se surpreender com o novo Nahimic 3 e viva a imersão nos jogos como nunca antes! Com a nova interface simples e intuitiva, o Nahimic 3 não apenas aprimora ainda mais o som surround 3D do jogo, mas também oferece controlo ainda mais preciso sobre as suas músicas, filmes e teleconferências.",
+        },
+      ],
       categorias: {
         categoria: "Computadores",
         subCategoria: "Portáteis",
@@ -265,17 +471,19 @@ export const db = {
         { title: "Marca", content: ["MSI"] },
         { title: "Armazenamento", content: ["SSD 512GB NVMe PCIe"] },
         { title: "CPU", content: ["Intel Core i7-10750H"] },
-        { title: "RAM", content: ["16GB (1x16GB) DDR4 2666MHz"] },
         {
           title: "RAM",
           content: [
+            "16GB (1x16GB) DDR4 2666MHz",
             "2 x Slots SO-DIMM (1 x livre / 1 x ocupado) p/ expansibilidade total até 64GB",
           ],
         },
-        { title: "Gráficos", content: ["Intel UHD Graphics"] },
         {
           title: "Gráficos",
-          content: ["NVIDIA GeForce GTX 1650 Ti 4GB GDDR6"],
+          content: [
+            "Intel UHD Graphics",
+            "NVIDIA GeForce GTX 1650 Ti 4GB GDDR6",
+          ],
         },
         { title: "Sistema Operativo", content: ["Não incluído"] },
         { title: "Tipo teclado", content: ["TKL"] },
@@ -309,6 +517,38 @@ export const db = {
     {
       id: "7",
       title: "All-in-One HP Pavilion 24-k0003np",
+      description: [
+        {
+          sectionTitle: "",
+          content:
+            "Do design impecável à potência e ao desempenho que o caracterizam, o elegante PC All-in-One HP Pavilion foi criado para projetos exigentes e maratonas de filmes. Complementa na perfeição qualquer espaço, graças ao equilíbrio perfeito entre forma e função.",
+        },
+        {
+          sectionTitle: "DESIGN ELEGANTE E ENGENHOSO",
+          content:
+            "Criado para modernistas. Este PC exibe sofisticação, com um ecrã de moldura fina, um design fino e elegante, e apontamentos em pele. As portas convenientemente localizadas na lateral e na traseira do PC permitem um acesso fácil e mantêm os cabos organizados.",
+        },
+        {
+          sectionTitle: "DESEMPENHO. PRIVACIDADE. TRANQUILIDADE.",
+          content:
+            "Faça streaming e navegue sem preocupações com uma câmara de privacidade, que se retrai em segurança quando não está a ser utilizada. Encare facilmente os seus dias mais atarefados com o desempenho de um processador fiável, e guarde mais daquilo de que gosta com uma incrível capacidade de armazenamento para fotografias, vídeos e documentos.",
+        },
+        {
+          sectionTitle: "ENTRETENIMENTO CHEIO DE VIDA",
+          content:
+            "A sua casa é o melhor lugar. Os altifalantes, cobertos por tecido acústico e aperfeiçoados por especialistas da B&O, produzem uma qualidade de som incrível. Faça streaming de músicas com facilidade a partir do smartphone com o HP Audio Stream. Carregue sem fios o seu smartphone compatível através da base de carregamento do PC.",
+        },
+        {
+          sectionTitle: "PROCESSADOR INTEL® DE 10.ª GERAÇÃO",
+          content:
+            "O impressionante desempenho do processador Intel® Core™ de 10.ª geração satisfaz todas as suas exigências de multimédia. As capacidades melhoradas de visualização 4K com suporte HDR e as opções de Wi-Fi 5 ultrarrápido permitem-lhe executar todas as suas tarefas sem interrupções.",
+        },
+        {
+          sectionTitle: "UMA EXPERIÊNCIA DE ÁUDIO VERDADEIRAMENTE PODEROSA",
+          content:
+            "Com dois altifalantes HP, HP Audio Boost e áudio aperfeiçoado por especialistas da B&O, desfrutará de uma experiência auditiva autêntica e envolvente. Deixe-se envolver pelo som.",
+        },
+      ],
       categorias: {
         categoria: "Computadores",
         subCategoria: "Desktops",
@@ -318,10 +558,10 @@ export const db = {
         { title: "Marca", content: ["HP"] },
         { title: "Armazenamento", content: ["SSD 512GB NVMe M.2"] },
         { title: "CPU", content: ["Intel Core i5-10400T"] },
-        { title: "RAM", content: ["1x8GB SDRAM DDR4-2666MHz"] },
         {
           title: "RAM",
           content: [
+            "1x8GB SDRAM DDR4-2666MHz",
             "2 x Slots SDRAM (1 x livre / 1 x ocupado) p/ expansibilidade total até 32GB",
           ],
         },
@@ -354,6 +594,28 @@ export const db = {
     {
       id: "8",
       title: "Processador Intel Core i5-10600KF 6-Core 4.1GHz c/ Turbo 4.8GHz",
+      description: [
+        {
+          sectionTitle: "A POTÊNCIA DA 10ª GERAÇÃO",
+          content:
+            "Os processadores Intel Core da 10ª geração oferecem atualizações de desempenho incríveis, para melhorar a produtividade e proporcionar entretenimento surpreendente, com clocks poderosos, otimização inteligente de sistema e muito mais.",
+        },
+        {
+          sectionTitle: "PRODUTIVIDADE ACELERADA",
+          content:
+            "Recursos de desempenho inteligente integrados aprendem adaptam-se ao que você faz, direcionando potência dinamicamente para onde ela é mais necessária. Os processadores Intel® Core™ da 10ª geração fornecem a responsividade para fazer mais.",
+        },
+        {
+          sectionTitle: "ENTRETENIMENTO PREMIUM",
+          content:
+            "Uma nova arquitetura de gráficos oferece suporte a experiências visuais ultravívidas, como vídeo em HDR 4K e jogos a 1080p. Os processadores Intel® Core™ da 10ª geração permitem experiências de entretenimento nunca vistas.",
+        },
+        {
+          sectionTitle: "JOGOS SÉRIOS",
+          content:
+            "Aproveite jogos incríveis com alto FPS, até mesmo enquanto realiza streaming e gravação. Os processadores Intel® Core™ da 10ª geração executam nas plataformas definitivas de jogos.",
+        },
+      ],
       categorias: {
         categoria: "Componentes",
         subCategoria: "Processadores",
@@ -387,6 +649,29 @@ export const db = {
     {
       id: "9",
       title: "Processador AMD Ryzen 5 3600XT Hexa-Core 3.8GHz c/ Turbo 4.5GHz",
+      description: [
+        {
+          sectionTitle: "DEFININDO O PADRÃO PARA O ALTO DESEMPENHO",
+          content:
+            "A arquitetura “Zen 2” do núcleo de alto desempenho da AMD permite que os Processadores de 3ª geração Ryzen™ ofereçam o mais alto desempenho para uma ou múltiplas linha(s) de execução e de qualquer Processador de desktop convencional. Tanto para gamers quanto para os criadores de conteúdo, este desempenho foi criado essencialmente para ajudá-lo a vencer.",
+        },
+        {
+          sectionTitle:
+            "DESEMPENHO E EFICIÊNNCIA PARA APLICATIVOS DE ÚLTIMA GERAÇÃO",
+          content:
+            "Computação em nuvem, produtividade corporativa, experiências visuais impressionantes, jogos e streaming exigem cada vez mais desempenho de computação com eficiência energética ideal. Desde o início, os engenheiros da AMD projetaram o novo núcleo “Zen 2” para atender a essas exigências com mais rendimento por núcleo, caches maiores e recursos poderosos de múltiplas linhas de execução.",
+        },
+        {
+          sectionTitle: "ALIMENTADO PELA PLATAFORMA AM4",
+          content:
+            "A plataforma AM4 da AMD põe a compatibilidade sem complicações na frente e no centro. O processador AMD de 1331 pinos suporta muitas gerações de Processadores Desktops AMD Ryzen™ e funciona com as mais recentes tecnologias entusiastas: PCIe® 4.0, NVMe, SuperSpeed USB 10Gbps, RAID e muito mais.",
+        },
+        {
+          sectionTitle: "CONSTRUÍDOS COM A TECNOLOGIA AMD SENSEMI",
+          content:
+            "A tecnologia SenseMI da AMD é um conjunto de recursos de aprendizagem e adaptação que ajuda os processadores AMD Ryzen™ a personalizarem o desempenho de acordo com o seu perfil e as suas aplicações, graças à verdadeira aprendizagem automática. Finalmente: o desempenho que pensa.",
+        },
+      ],
       categorias: {
         categoria: "Componentes",
         subCategoria: "Processadores",
@@ -420,6 +705,33 @@ export const db = {
     {
       id: "10",
       title: "Placa Gráfica Gigabyte Radeon RX 6800 Gaming 16GB OC",
+      description: [
+        {
+          sectionTitle: "",
+          content:
+            "A placa gráfica AMD Radeon™ RX 6800, movida pela arquitetura AMD RDNA™ 2, com 60 unidades de computação aprimoradas e poderosas, 128 MB do mais recente AMD Infinity Cache e memória GDDR6 dedicada, foi projetada para oferecer taxas de frames ultra-elevada e jogos sérios em resolução 4K.",
+        },
+        {
+          sectionTitle: "MODERNA. ACESSÍVEL. PODEROSA.",
+          content:
+            "Eleve a sua experiência de jogos com o software Radeon™. Aproveite recursos que oferecem uma experiência verdadeiramente imersiva nos jogos, com visuais deslumbrantes, sem tremulação e sem falhas, latência de entrada reduzida e drives otimizados para o dia 0.",
+        },
+        {
+          sectionTitle: "VISUAIS VÍVIDOS",
+          content:
+            "As placas gráficas AMD Radeon™ RX 6800 Series colocam você em ação com tecnologias de jogo envolventes e suporte para DirectX® 12 Ultimate. Usufrua de jogos com iluminação, sombras e reflexos realistas, juntamente com ricos detalhes graças ao DirectX® Raytracing (DXR), sombreamento de taxa variável (VRS) e recursos AMD FidelityFX, otimizados para a arquitetura AMD RDNA™ 2.",
+        },
+        {
+          sectionTitle: "JOGABILIDADE ELEVADA A NOVOS NÍVEIS",
+          content:
+            "A capacidade de resposta definitiva e jogos suaves são aprimorados com a tecnologia de jogos de baixa latência da AMD Radeon Anti-Lag e AMD Radeon Boost.",
+        },
+        {
+          sectionTitle: "O MESMO ADN DE JOGO PARA PCS E CONSOLAS",
+          content:
+            "A arquitetura AMD RDNA™ 2 é a base dos PCs e consolas de jogos da próxima geração. É a base da revolução que se aproxima em gráficos de jogos para PC e jogos em nuvem. O AMD RDNA™ 2 eleva e unifica os efeitos visuais e a jogabilidade em plataformas de vários jogos, como nenhuma outra arquitetura gráfica antes.",
+        },
+      ],
       categorias: {
         categoria: "Componentes",
         subCategoria: "Placas gráficas",
@@ -428,10 +740,11 @@ export const db = {
       specs: [
         { title: "Memória", content: ["16GB"] },
         { title: "Gama", content: ["Gaming"] },
-
         { title: "Gráficos", content: ["AMD Radeon RX 6800"] },
-        { title: "Portas I/O", content: ["2 x DisplayPort 1.4a"] },
-        { title: "Portas I/O", content: ["2 x HDMI 2.1"] },
+        {
+          title: "Portas I/O",
+          content: ["2 x DisplayPort 1.4a", "2 x HDMI 2.1"],
+        },
       ],
       img: [
         {
@@ -466,6 +779,44 @@ export const db = {
     {
       id: "11",
       title: "Placa Gráfica Gigabyte GeForce RTX 3090 Aorus Xtreme 24GB",
+      description: [
+        {
+          sectionTitle: "",
+          content:
+            "As placas gráficas GeForce RTX™ Série 30 oferecem o melhor desempenho para jogadores e criadores. Elas são alimentados por Ampere - a arquitetura RTX de 2ª geração da NVIDIA - com novos núcleos RT, núcleos Tensor e multiprocessadores de streaming para gráficos Ray Tracing mais realistas e recursos de AI de ponta.",
+        },
+        {
+          sectionTitle:
+            "RTX. IT’S ON. RAY TRACING E INTELIGÊNCIA ARTIFICIAL IMPRESSIONANTES.",
+          content:
+            "Joga os melhores jogos da atualidade como nunca antes, com a fidelidade visual do ray tracing em tempo real e o desempenho avançado da tecnologia DLSS com suporte de Inteligência Artificial. RTX. It’s On.",
+        },
+        {
+          sectionTitle: "ACELERAÇÃO DE INTELIGÊNCIA ARTIFICIAL DLSS.",
+          content:
+            "Utilizando os Núcleos Tensor de processamento de Inteligência Artificial dedicados da GeForce RTX, NVIDIA DLSS é uma tecnologia inovadora em termos de renderização de Inteligência artificial que aumenta a velocidade de fotogramas em 1,5 vezes ou mais com uma qualidade de imagem rigorosa. Isto oferece-te a capacidade de desempenho necessária para poderes aumentar as definições e resoluções de modo a obteres uma experiência visual incrível. A revolução da Inteligência Artificial chegou ao gaming.",
+        },
+        {
+          sectionTitle: "VITÓRIA MEDIDA EM MILÉSIMOS DE SEGUNDOS",
+          content:
+            "O NVIDIA Reflex proporciona a derradeira vantagem competitiva. A latência mais baixa. A melhor capacidade de resposta. Com GPUs GeForce RTX Série 30 e monitores de gaming NVIDIA® G-SYNC®. Descobre alvos mais rapidamente, aumenta a tua capacidade de reação e melhora a tua precisão através de um conjunto revolucionário de tecnologias para medir e otimizar a latência do sistema para jogos competitivos.",
+        },
+        {
+          sectionTitle: "AUMENTA A TUA CRIATIVIDADE",
+          content:
+            "Eleva os teus projetos criativos para um novo patamar com as GPU GeForce RTX Série 30. Desfruta de aceleração através de Inteligência Artificial nas principais aplicações criativas. Tudo isto com o apoio da plataforma NVIDIA Studio de controladores dedicados e ferramentas exclusivas. E desenvolvido para apresentar resultados em tempo recorde. Quer estejas a renderizar cenas complexas em 3D, a editar vídeo de 8K ou a fazer livestreams com a melhor qualidade de imagem e codificação, as GPU GeForce RTX oferecem-te o desempenho para dares o teu melhor.",
+        },
+        {
+          sectionTitle: "FAZ STREAMS COMO NINGUÉM",
+          content:
+            "Assume o protagonismo com livestreams sem interrupções, fluídas e com gráficos incríveis. A codificação e descodificação de hardware de próxima geração juntam-se para apresentar todos os teus melhores momentos com detalhes refinados. E a nova aplicação NVIDIA Broadcast eleva as tuas livestreams para um novo patamar com capacidades avançadas de Inteligência Artificial para melhorar a qualidade de áudio e vídeo com efeitos como fundo virtual, quadro automático de Webcam e remoção de ruído do microfone. As GPU GeForce RTX Série 30 proporcionam o desempenho e a qualidade de imagem de que necessitas para ofereceres o melhor possível a quem te vê, sempre.",
+        },
+        {
+          sectionTitle: "DIRECTX 12 ULTIMATE",
+          content:
+            "Os programadores podem agora acrescentar ainda mais efeitos gráficos espetaculares aos jogos para PC executáveis no Microsoft Windows. As placas gráficas GeForce RTX oferecem funcionalidades DX12 avançadas, como o ray tracing e o sombreamento de frequência variável, criando jogos dotados de efeitos visuais ultrarrealistas e velocidades de fotogramas ainda mais rápidas.",
+        },
+      ],
       categorias: {
         categoria: "Componentes",
         subCategoria: "Placas gráficas",
@@ -475,9 +826,10 @@ export const db = {
         { title: "Memória", content: ["24GB"] },
         { title: "Gama", content: ["Gaming"] },
         { title: "Gráficos", content: ["GeForce RTX 3090"] },
-        { title: "Portas I/O", content: ["3 x DisplayPort 1.4a"] },
-        { title: "Portas I/O", content: ["2 x HDMI 2.1"] },
-        { title: "Portas I/O", content: ["1 x HDMI 2.0"] },
+        {
+          title: "Portas I/O",
+          content: ["3 x DisplayPort 1.4a", "2 x HDMI 2.1", "1 x HDMI 2.0"],
+        },
       ],
       img: [
         {
@@ -516,6 +868,28 @@ export const db = {
     {
       id: "12",
       title: "Fonte de Alimentação Seasonic Prime Titanium 600W Full Modular",
+      description: [
+        {
+          sectionTitle: "PREMIUM TITANIUM FANLESS",
+          content:
+            "A PRIME 600 Titanium Fanless utiliza a tecnologia fanless, que elimina completamente o ruído de ventoinha, garantindo uma operação verdadeiramente silenciosa. A unidade não só é classificada com a eficiência 80PLUS Titanium, como também possui a maior potência no mercado das fontes de alimentação fanless. A fonte de alimentação é ideal para qualquer situação que exija silêncio do equipamento. Os componentes de alta qualidade no seu interior e o design do circuito inovador resultam em saída de energia limpa e estável.",
+        },
+        {
+          sectionTitle: "80 PLUS TITANIUM",
+          content:
+            "A série PRIME Titanium obtém o mais alto nível de certificação no mercado com a sua eficiência de 94% com 50% de carga do sistema.",
+        },
+        {
+          sectionTitle: "REGULAMENTO DE CARGA COM MICRO TOLERÂNCIA",
+          content:
+            "O último design da Seasonic mantém a tensão de saída dentro de uma faixa muito apertada, atingindo uma regulação de carga inferior a 0,5%. Este impressionante desempenho e estabilidade elétrica torna esta fonte de alimentação uma escolha ideal para sistemas de alto desempenho.",
+        },
+        {
+          sectionTitle: "DESIGN FANLESS",
+          content:
+            "Esta fonte de alimentação está equipada com refrigeração passiva. A operação silenciosa não proporciona apenas um ambiente de trabalho mais agradável, mas também resulta em menos consumo de energia.",
+        },
+      ],
       categorias: {
         categoria: "Componentes",
         subCategoria: "Fontes de Alimentação",
@@ -544,6 +918,38 @@ export const db = {
     {
       id: "13",
       title: "Fonte de Alimentação Corsair CX450",
+      description: [
+        {
+          sectionTitle: "",
+          content:
+            "As fontes de alimentação CX Series proporcionam tecnologias modernas e a eficiência da certificação 80 PLUS Bronze a um preço competitivo. Ela é preta, à semelhança do seu revestimento de cabos e dos seus conectores, com uma ventoinha de 120 mm controlada termicamente. A topologia ressonante LLC com CC para CC garante total compatibilidade com todos os computadores modernos.",
+        },
+        {
+          sectionTitle: "MENOS RUÍDO",
+          content:
+            "A eficiência certificada pela 80 PLUS Bronze e o design inteligente da ventoinha permitem pouco ou nenhum ruído detectável da ventoinha durante um funcionamento regular.",
+        },
+        {
+          sectionTitle: "BOA APARÊNCIA",
+          content:
+            "O acabamento preto fosco, os cabos revestidos em preto e os conectores pretos ajudam a dar ao seu sistema uma aparência contida e de alta tecnologia.",
+        },
+        {
+          sectionTitle: "FIABILIDADE E COMPATIBILIDADE",
+          content:
+            "A CX Series é projetada e testada com normas rigorosas para a instalação sem problemas e bom funcionamento.",
+        },
+        {
+          sectionTitle: "CONECTORES AMPLOS E CABOS LONGOS",
+          content:
+            "Cabos longos deixam a CX Series apropriada para a instalação, mesmo em casos de torre com altura total e o generoso comprimento do cabo permite que você forneça energia a vários componentes e dispositivos de armazenamento.",
+        },
+        {
+          sectionTitle: "VENTOINHA CONTROLADA TERMICAMENTE DE GRANDE DIÂMETRO",
+          content:
+            "Depois de instalar uma PSU, você não terá que ficar a pensar nela. Empregar uma ventoinha controlada termicamente faz com que a CX Series fique simplesmente silenciosa no modo idle e o grande diâmetro reduz o ruído, mesmo quando você está a exigir muito do seu sistema.",
+        },
+      ],
       categorias: {
         categoria: "Componentes",
         subCategoria: "Fontes de Alimentação",
@@ -581,6 +987,23 @@ export const db = {
       id: "14",
       title:
         "Fonte de Alimentação Nox Hummer X700W 80 PLUS Bronze Semi Modular",
+      description: [
+        {
+          sectionTitle: "HUMMER X · BRONZE EDITION",
+          content:
+            "Os acabamentos premium das Hummer X Bronze dão uma dica sobre a qualidade dos componentes que você pode encontrar no seu interior: Os cabos planos extra-longos para uma fonte semi-modular que possui o certificado 80+ Bronze e que garante o uso de 85% energia quando o PC está no seu desempenho máximo.",
+        },
+        {
+          sectionTitle: "CERTIFICAÇÃO 80+ BRONZE",
+          content:
+            "A eficiência energética é a apresentação mais importante de uma fonte de alimentação, e a Hummer X possui certificação 80+ Bronze que garante o desempenho de 80% da energia quando a fonte está na sua capacidade máxima. Como consequência deste recurso, o ruído vindo dela e a temperatura permanecerão sempre num nível ótimo, afetando também a eficiência de energia do seu dispositivo e evitando o consumo desnecessário.",
+        },
+        {
+          sectionTitle: "VENTOINHA SILENCIOSA",
+          content:
+            "As fontes da gama Hummer X têm uma ventoinha de 120 mm, controlada termicamente, isto é, só funciona com a potência máxima se necessário. Desta forma, a fonte estará sempre na temperatura ideal, garantindo um baixo ruído. O seu design é funcional e dinâmico, para obter a máxima dissipação de calor e um desempenho perfeito.",
+        },
+      ],
       categorias: {
         categoria: "Componentes",
         subCategoria: "Fontes de Alimentação",
