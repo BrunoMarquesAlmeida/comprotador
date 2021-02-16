@@ -10,6 +10,8 @@ const ProductDetail = (props) => {
   if (props.fetchComplete !== undefined && props.fetchComplete !== null) {
     const { product } = props;
     const images = product.img;
+    const { novo, saldos } = product.ribbons;
+
     return (
       <div className="col-lg-9 order-1 order-lg-2">
         <div id="productMain" className="row">
@@ -23,8 +25,8 @@ const ProductDetail = (props) => {
                 showNav={false}
               />
             </div>
-            <NewRibbon tipo="saldos" />
-            <NewRibbon tipo="novo" />
+            {saldos ? <NewRibbon tipo="saldos" /> : null}
+            {novo ? <NewRibbon tipo="novo" /> : null}
           </div>
           <div className="col-md-6">
             <div className="box">
@@ -51,56 +53,10 @@ const ProductDetail = (props) => {
         </div>
         <div id="details" className="box">
           <p></p>
-          <h4>O mini PC 4K que cabe na palma de sua mão</h4>
-          <p>
-            O Nucbox é um PC ultra pequeno, mas com uma grande performance. O
-            seu design é a pensar na sua produtividade móvel e no entretenimento
-            4K.
-          </p>
-          <h4>Menos é mais</h4>
-          <p>
-            O seu design metálico texturizado dá-lhe um toque robusto e luxuoso.
-            O NucBox é ultra compacto, leve e portátil, de transporte tão
-            simples como guardá-lo na sua mala própria e colocá-lo no bolso do
-            seu casaco.
-          </p>
-
+          {renderDescription(product.description)}
+          <br />
           <h4>Especificações técnicas:</h4>
-          <ul>
-            <li>
-              <b>Sistema Operativo</b>: Windows 10 Home, 64 Bits
-            </li>
-            <li>
-              <b>Processador</b>: Intel® Celeron® J4125 Quad-Core, 2.00 GHz com
-              Turbo até 2.70 GHz, 8 MB Cache
-            </li>
-            <li>
-              <b>Gráficos</b>: Intel® UHD Graphics 600
-            </li>
-            <li>
-              <b>Interface</b>:
-              <ul>
-                <li>2 x USB-A</li>
-                <li>1 x USB-C (Entrada DC apenas)</li>
-                <li>1 x HDMI</li>
-                <li>1 x 3.5mm Headphone Jack</li>
-                <li>1 x Micro SD Slot</li>
-              </ul>
-            </li>
-            <li>
-              <b>Comunicações</b>: Wireless AC 867 MB/s 2x2 + Bluetooth 4.2
-            </li>
-            <li>
-              <b>Alimentação</b>: Adaptador AC
-            </li>
-            <li>
-              <b>Dimensões do produto</b>: 62 x 62 x 42mm
-            </li>
-            <li>
-              <b>Peso do produto </b>: 125g
-            </li>
-          </ul>
-
+          <ul>{renderSpecs(product.specs)}</ul>
           <hr />
           <div className="social">
             <h4>Partilhar</h4>
@@ -138,6 +94,43 @@ const ProductDetail = (props) => {
       </div>
     );
   }
+};
+
+const renderSpecs = function (specs) {
+  return specs.map(({ title, content }) => {
+    const moreThan1Spec = content.length > 1;
+    if (moreThan1Spec) {
+      return (
+        <li key={title}>
+          <b>{title}</b>:
+          <ul>
+            {content.map((c) => {
+              return <li key={c}>{c}</li>;
+            })}
+          </ul>
+        </li>
+      );
+    } else {
+      return (
+        <li key={title}>
+          <b>{title}</b>: {content}
+        </li>
+      );
+    }
+  });
+};
+
+const renderDescription = function (description) {
+  let key = 0;
+  return description.map(function ({ sectionTitle, content }) {
+    key++;
+    return (
+      <div key={key}>
+        <h4 className="mb-0">{sectionTitle}</h4>
+        <p style={{ textAlign: "justify" }}>{content}</p>
+      </div>
+    );
+  });
 };
 
 export default ProductDetail;
