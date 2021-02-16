@@ -36,11 +36,7 @@ class Hot extends React.Component {
           key={id}
         >
           <Link to={`/detalhes/${id}`}>
-            <img
-              src={`assets/img/produtos/${img}`}
-              alt=""
-              className="img-fluid"
-            />
+            <img src={img[0].original} alt="" className="img-fluid" />
           </Link>
           <div className="text">
             <h3>

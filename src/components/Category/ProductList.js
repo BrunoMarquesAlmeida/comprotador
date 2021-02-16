@@ -15,11 +15,7 @@ class ProductList extends React.Component {
         <div className="col-lg-4 col-md-6" key={id}>
           <div className="product">
             <Link to={`/detalhes/${id}`}>
-              <img
-                src={`assets/img/produtos/${img}`}
-                alt=""
-                className="img-fluid"
-              />
+              <img src={img[0].original} alt="" className="img-fluid" />
             </Link>
             <div className="text">
               <h3>
@@ -206,9 +202,14 @@ class ProductList extends React.Component {
     if (specFiltersSelected.length > 0) {
       orderedProducts.map((product) =>
         product.specs.map(({ content }) => {
-          const productIncludesSelectedSpec = specFiltersSelected.includes(
-            content[0]
-          );
+          let productIncludesSelectedSpec = false;
+
+          content.map((c) => {
+            if (specFiltersSelected.includes(c)) {
+              productIncludesSelectedSpec = true;
+            }
+          });
+
           if (productIncludesSelectedSpec) {
             const productIsNotInList = !filteredProductList.includes(product);
             if (productIsNotInList) {
