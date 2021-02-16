@@ -9,6 +9,7 @@ import Recomendados from "../Common/Recomendados";
 const ProductDetail = (props) => {
   if (props.fetchComplete !== undefined && props.fetchComplete !== null) {
     const { product } = props;
+    const images = product.img;
     return (
       <div className="col-lg-9 order-1 order-lg-2">
         <div id="productMain" className="row">
@@ -139,26 +140,4 @@ const ProductDetail = (props) => {
   }
 };
 
-const images = [
-  {
-    original: "assets/img/produtos/1_337_1.jpg",
-    thumbnail: "assets/img/produtos/1_337_1.jpg",
-  },
-  {
-    original: "assets/img/produtos/2_270_1.jpg",
-    thumbnail: "assets/img/produtos/2_270_1.jpg",
-  },
-  {
-    original: "assets/img/produtos/6_128_1.jpg",
-    thumbnail: "assets/img/produtos/6_128_1.jpg",
-  },
-  {
-    original: "assets/img/produtos/10_32_1.jpg",
-    thumbnail: "assets/img/produtos/10_32_1.jpg",
-  },
-  {
-    original: "assets/img/produtos/8_65_1.jpg",
-    thumbnail: "assets/img/produtos/8_65_1.jpg",
-  },
-];
 export default ProductDetail;
