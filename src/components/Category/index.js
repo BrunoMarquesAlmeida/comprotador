@@ -114,6 +114,7 @@ class Category extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const allProducts = Object.values(state.products);
+  // const allProducts = db.produtos;
   const { categoria, subCategoria, subCategoria2 } = ownProps.match.params;
   return {
     productsByCat: allProducts.filter((produto) => {

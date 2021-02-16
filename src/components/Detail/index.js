@@ -43,8 +43,8 @@ class Detail extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    // product: state.products[ownProps.match.params.id],
-    product: db.produtos[ownProps.match.params.id],
+    product: state.products[ownProps.match.params.id],
+    // product: db.produtos[ownProps.match.params.id],
     fetchComplete: state.products.fetchComplete,
   };
 };
