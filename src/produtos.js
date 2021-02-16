@@ -18,15 +18,38 @@ export const db = {
       ],
       img: [
         {
-          original: "assets/img/produtos/1_332_17.jpg",
-          thumbnail: "assets/img/produtos/1_332_17.jpg",
+          original: "assets/img/produtos/1_332_17L.jpg",
+          thumbnail: "assets/img/produtos/1_332_17L.jpg",
+        },
+        {
+          original: "assets/img/produtos/7_82_6L.jpg",
+          thumbnail: "assets/img/produtos/7_82_6L.jpg",
+        },
+        {
+          original: "assets/img/produtos/6_124_7L.jpg",
+          thumbnail: "assets/img/produtos/6_124_7L.jpg",
+        },
+        {
+          original: "assets/img/produtos/5_181_11L.jpg",
+          thumbnail: "assets/img/produtos/5_181_11L.jpg",
+        },
+        {
+          original: "assets/img/produtos/4_216_17L.jpg",
+          thumbnail: "assets/img/produtos/4_216_17L.jpg",
+        },
+        {
+          original: "assets/img/produtos/3_250_20L.jpg",
+          thumbnail: "assets/img/produtos/3_250_20L.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_266_15L.jpg",
+          thumbnail: "assets/img/produtos/2_266_15L.jpg",
         },
       ],
       precos: { normal: "39.90", desconto: "27.90" },
       ribbons: { novo: true, saldos: true },
       vendas: 0,
     },
-
     {
       id: "1",
       title: "Subwoofer Edifier T5 70W Preto",
@@ -42,7 +65,24 @@ export const db = {
         { title: "Sem fios", content: ["Não"] },
         { title: "Portas I/O", content: ["RCA"] },
       ],
-      img: "1_335_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/1_335_2.jpg",
+          thumbnail: "assets/img/produtos/1_335_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/4_219_3.jpg",
+          thumbnail: "assets/img/produtos/4_219_3.jpg",
+        },
+        {
+          original: "assets/img/produtos/3_253_3.jpg",
+          thumbnail: "assets/img/produtos/3_253_3.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_269_3.jpg",
+          thumbnail: "assets/img/produtos/2_269_3.jpg ",
+        },
+      ],
       precos: { normal: "129.90", desconto: null },
       ribbons: { novo: true, saldos: false },
       vendas: 1,
@@ -64,7 +104,28 @@ export const db = {
         { title: "Sistema Operativo", content: ["Windows 10 Home, 64 Bits"] },
         { title: "Formato", content: ["Mini PC"] },
       ],
-      img: "1_337_1.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/1_337_1.jpg",
+          thumbnail: "assets/img/produtos/1_337_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_270_1.jpg",
+          thumbnail: "assets/img/produtos/2_270_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/6_128_1.jpg",
+          thumbnail: "assets/img/produtos/6_128_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/8_65_1.jpg",
+          thumbnail: "assets/img/produtos/8_65_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/10_32_1.jpg",
+          thumbnail: "assets/img/produtos/10_32_1.jpg",
+        },
+      ],
       precos: { normal: "289.90", desconto: null },
       ribbons: { novo: true, saldos: false },
       vendas: 2,
@@ -90,7 +151,36 @@ export const db = {
         { title: "Resolução", content: ["1920 x 1080"] },
         { title: "Taxa de atualização", content: [] },
       ],
-      img: "1_339_8.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/1_339_8_1.jpg",
+          thumbnail: "assets/img/produtos/1_339_8_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_270_14_1.jpg",
+          thumbnail: "assets/img/produtos/2_270_14_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/3_255_10_1.jpg",
+          thumbnail: "assets/img/produtos/3_255_10_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/4_221_9_1.jpg",
+          thumbnail: "assets/img/produtos/4_221_9_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/5_187_6_1.jpg",
+          thumbnail: "assets/img/produtos/5_187_6_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/6_128_6_1.jpg",
+          thumbnail: "assets/img/produtos/6_128_6_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/7_83_7_1.jpg",
+          thumbnail: "assets/img/produtos/7_83_7_1.jpg",
+        },
+      ],
       precos: { normal: "999.90", desconto: null },
       ribbons: { novo: true, saldos: false },
       vendas: 3,
@@ -109,7 +199,20 @@ export const db = {
         { title: "Capacidade", content: ["1TB"] },
         { title: "Interface", content: ["NVMe™ PCIe Ger 4.0 x4 pistas"] },
       ],
-      img: "1_p030470_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/1_p030470_2.jpg",
+          thumbnail: "assets/img/produtos/1_p030470_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_p030470_2.jpg",
+          thumbnail: "assets/img/produtos/2_p030470_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/3_p030470_2.jpg",
+          thumbnail: "assets/img/produtos/3_p030470_2.jpg",
+        },
+      ],
       precos: { normal: "187.90", desconto: null },
       ribbons: { novo: false, saldos: false },
       vendas: 4,
@@ -132,7 +235,20 @@ export const db = {
         { title: "Capacidade", content: ["1TB"] },
         { title: "Conexão", content: ["USB-A"] },
       ],
-      img: "1085_1.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/1085_1.jpg",
+          thumbnail: "assets/img/produtos/1085_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_266_9.jpg",
+          thumbnail: "assets/img/produtos/2_266_9.jpg",
+        },
+        {
+          original: "assets/img/produtos/3_250_14.jpg",
+          thumbnail: "assets/img/produtos/3_250_14.jpg",
+        },
+      ],
       precos: { normal: "149.90", desconto: "54.90" },
       ribbons: { novo: true, saldos: true },
       vendas: 5,
@@ -168,7 +284,24 @@ export const db = {
         { title: "Resolução", content: ["1920 x 1080"] },
         { title: "Taxa de atualização", content: ["144Hz"] },
       ],
-      img: "MSI156.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/MSI156.jpg",
+          thumbnail: "assets/img/produtos/MSI156.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p018582-65861_1_1_1.jpg",
+          thumbnail: "assets/img/produtos/product-p018582-65861_1_1_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p018582-65862_1_1_1.jpg",
+          thumbnail: "assets/img/produtos/product-p018582-65862_1_1_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p018582-65863_1_1_1.jpg",
+          thumbnail: "assets/img/produtos/product-p018582-65863_1_1_1.jpg",
+        },
+      ],
       precos: { normal: "1199.90", desconto: "949.90" },
       ribbons: { novo: true, saldos: true },
       vendas: 6,
@@ -196,7 +329,24 @@ export const db = {
         { title: "Sistema Operativo", content: ["Não incluído"] },
         { title: "Formato", content: ["All-in-One"] },
       ],
-      img: "1_292_12.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/1_292_12.jpg",
+          thumbnail: "assets/img/produtos/1_292_12.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_234_12.jpg",
+          thumbnail: "assets/img/produtos/2_234_12.jpg",
+        },
+        {
+          original: "assets/img/produtos/3_225_12.jpg",
+          thumbnail: "assets/img/produtos/3_225_12.jpg",
+        },
+        {
+          original: "assets/img/produtos/4_191_15.jpg",
+          thumbnail: "assets/img/produtos/4_191_15.jpg",
+        },
+      ],
       precos: { normal: "899.90", desconto: null },
       ribbons: { novo: false, saldos: false },
       vendas: 7,
@@ -216,7 +366,20 @@ export const db = {
         { title: "Gráficos", content: ["Não"] },
         { title: "Cooler incluído", content: ["Não"] },
       ],
-      img: "sem-ti_tulo-178_1.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/sem-ti_tulo-178_1.jpg",
+          thumbnail: "assets/img/produtos/sem-ti_tulo-178_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_210_10.jpg",
+          thumbnail: "assets/img/produtos/2_210_10.jpg",
+        },
+        {
+          original: "assets/img/produtos/3_200_10.jpg",
+          thumbnail: "assets/img/produtos/3_200_10.jpg",
+        },
+      ],
       precos: { normal: "249.90", desconto: null },
       ribbons: { novo: false, saldos: false },
       vendas: 8,
@@ -236,7 +399,20 @@ export const db = {
         { title: "Gráficos", content: ["Não"] },
         { title: "Cooler incluído", content: ["Sim"] },
       ],
-      img: "1_p025452.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/1_p025452.jpg",
+          thumbnail: "assets/img/produtos/1_p025452.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_p025452.jpg",
+          thumbnail: "assets/img/produtos/2_p025452.jpg",
+        },
+        {
+          original: "assets/img/produtos/3_p025452.jpg",
+          thumbnail: "assets/img/produtos/3_p025452.jpg",
+        },
+      ],
       precos: { normal: "259.90", desconto: null },
       ribbons: { novo: false, saldos: false },
       vendas: 9,
@@ -257,7 +433,32 @@ export const db = {
         { title: "Portas I/O", content: ["2 x DisplayPort 1.4a"] },
         { title: "Portas I/O", content: ["2 x HDMI 2.1"] },
       ],
-      img: "kjf_1.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/kjf_1.jpg",
+          thumbnail: "assets/img/produtos/kjf_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/1234_1.jpg",
+          thumbnail: "assets/img/produtos/1234_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/awxvc_1.jpg",
+          thumbnail: "assets/img/produtos/awxvc_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/dfer_1.jpg",
+          thumbnail: "assets/img/produtos/dfer_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/1dssd_1.jpg",
+          thumbnail: "assets/img/produtos/1dssd_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/9hg.jpg",
+          thumbnail: "assets/img/produtos/9hg.jpg",
+        },
+      ],
       precos: { normal: "744.90", desconto: null },
       ribbons: { novo: false, saldos: false },
       vendas: 10,
@@ -278,7 +479,36 @@ export const db = {
         { title: "Portas I/O", content: ["2 x HDMI 2.1"] },
         { title: "Portas I/O", content: ["1 x HDMI 2.0"] },
       ],
-      img: "1_342_25.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/1_342_25.jpg",
+          thumbnail: "assets/img/produtos/1_342_25.jpg",
+        },
+        {
+          original: "assets/img/produtos/2_271_36.jpg",
+          thumbnail: "assets/img/produtos/2_271_36.jpg",
+        },
+        {
+          original: "assets/img/produtos/3_255_47.jpg",
+          thumbnail: "assets/img/produtos/3_255_47.jpg",
+        },
+        {
+          original: "assets/img/produtos/4_221_49.jpg",
+          thumbnail: "assets/img/produtos/4_221_49.jpg",
+        },
+        {
+          original: "assets/img/produtos/5_187_42.jpg",
+          thumbnail: "assets/img/produtos/5_187_42.jpg",
+        },
+        {
+          original: "assets/img/produtos/6_128_30.jpg",
+          thumbnail: "assets/img/produtos/6_128_30.jpg",
+        },
+        {
+          original: "assets/img/produtos/7_83_27.jpg",
+          thumbnail: "assets/img/produtos/7_83_27.jpg",
+        },
+      ],
       precos: { normal: "1949.90", desconto: null },
       ribbons: { novo: false, saldos: false },
       vendas: 11,
@@ -297,7 +527,16 @@ export const db = {
         { title: "Cablagem", content: ["Full Modular"] },
         { title: "Potência", content: ["600w"] },
       ],
-      img: "product-p011502-10173.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p011502-10173.jpg",
+          thumbnail: "assets/img/produtos/product-p011502-10173.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p011502-10174.jpg",
+          thumbnail: "assets/img/produtos/product-p011502-10174.jpg",
+        },
+      ],
       precos: { normal: "227.00", desconto: "199.90" },
       ribbons: { novo: false, saldos: true },
       vendas: 12,
@@ -316,7 +555,24 @@ export const db = {
         { title: "Cablagem", content: ["Não Modular"] },
         { title: "Potência", content: ["450w"] },
       ],
-      img: "product-p015954-56212.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p015954-56212.jpg",
+          thumbnail: "assets/img/produtos/product-p015954-56212.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p015954-56214.jpg",
+          thumbnail: "assets/img/produtos/product-p015954-56214.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p015954-56217.jpg",
+          thumbnail: "assets/img/produtos/product-p015954-56217.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p015954-56219.jpg",
+          thumbnail: "assets/img/produtos/product-p015954-56219.jpg",
+        },
+      ],
       precos: { normal: "64.90", desconto: "54.90" },
       ribbons: { novo: false, saldos: true },
       vendas: 13,
@@ -336,7 +592,28 @@ export const db = {
         { title: "Cablagem", content: ["Semi-Modular"] },
         { title: "Potência", content: ["700w"] },
       ],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
       vendas: 14,
@@ -350,7 +627,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -363,7 +661,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -376,7 +695,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -389,7 +729,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -402,7 +763,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -415,7 +797,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -428,7 +831,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -441,7 +865,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -454,7 +899,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -467,7 +933,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -480,7 +967,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -493,7 +1001,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -506,7 +1035,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -519,7 +1069,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -532,7 +1103,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -545,7 +1137,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -558,7 +1171,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -571,7 +1205,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -584,7 +1239,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -597,7 +1273,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -610,7 +1307,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -623,7 +1341,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -636,7 +1375,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -649,7 +1409,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -662,7 +1443,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -675,7 +1477,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -688,7 +1511,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -701,7 +1545,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -714,7 +1579,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -727,7 +1613,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -740,7 +1647,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -753,7 +1681,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -766,7 +1715,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -779,7 +1749,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -792,7 +1783,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -805,7 +1817,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -818,7 +1851,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -831,7 +1885,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -844,7 +1919,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -857,7 +1953,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -870,7 +1987,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -883,7 +2021,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -896,7 +2055,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "68.90", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -909,7 +2089,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "1", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -922,7 +2123,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "2", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -935,7 +2157,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "2", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -948,7 +2191,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "3", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -961,7 +2225,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "4", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -974,7 +2259,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "5", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -987,7 +2293,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "6", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1000,7 +2327,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "7", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1013,7 +2361,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "8", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1026,7 +2395,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "9", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1039,7 +2429,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "10", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1052,7 +2463,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "11", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1065,7 +2497,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "12", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1078,7 +2531,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "13", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1091,7 +2565,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "14", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1104,7 +2599,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "15", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1117,7 +2633,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "16", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1130,7 +2667,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "17", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1143,7 +2701,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "18", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1156,7 +2735,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "19", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1169,7 +2769,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "20", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1182,7 +2803,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "21", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1195,7 +2837,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "22", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1208,7 +2871,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "23", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1221,7 +2905,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "24", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1234,7 +2939,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "25", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
@@ -1247,7 +2973,28 @@ export const db = {
         subCategoria2: "Semi-Modulares",
       },
       specs: [],
-      img: "product-p016157-55456_2.jpg",
+      img: [
+        {
+          original: "assets/img/produtos/product-p016157-55456_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55456_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55458_1.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55458_1.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55459_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55459_2.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55460.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55460.jpg",
+        },
+        {
+          original: "assets/img/produtos/product-p016157-55461_2.jpg",
+          thumbnail: "assets/img/produtos/product-p016157-55461_2.jpg",
+        },
+      ],
       precos: { normal: "26", desconto: null },
       ribbons: { novo: false, saldos: false },
     },
