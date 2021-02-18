@@ -1,6 +1,6 @@
 import ImgSlider from "./ImgSlider";
 import Advantages from "./Advantages";
-import Hot from "../Common/Hot";
+import Hot from "./Hot";
 
 const Home = () => {
   return (
