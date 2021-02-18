@@ -1,62 +1,73 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-const Recomendados = (
-  <div className="row same-height-row">
-    <div className="col-md-3 col-sm-6" style={{ display: "grid" }}>
-      <div className="box">
-        <h3>Produtos recomendados</h3>
-      </div>
-    </div>
+import { fetchAllProducts } from "../../actions";
 
-    <div className="col-md-3 col-sm-6">
-      <div className="product">
-        <Link to="/detalhes/xxxyyyzzz">
-          <img
-            src="assets/img/produtos/1085_1.jpg"
-            alt=""
-            className="img-fluid"
-          />
-        </Link>
+class Recomendados extends React.Component {
+  componentDidMount() {
+    this.props.fetchAllProducts();
+  }
 
-        <div className="text">
-          <h3>Teclado Mecânico Asus Sagaris</h3>
-          <p className="price">54,90€</p>
+  renderProducts() {
+    const sortedProducts = this.props.products.sort((a, b) => {
+      if (a.vendas < b.vendas) {
+        return 1;
+      }
+      if (a.vendas > b.vendas) {
+        return -1;
+      }
+      return 0;
+    });
+
+    const hotProducts = sortedProducts.slice(0, 3);
+
+    return hotProducts.map(({ img, title, id, precos }) => {
+      return (
+        <div className="col-md-3 col-sm-6" key={id}>
+          <div className="product">
+            <Link to={`/detalhes/${id}`}>
+              <img src={img[0].original} alt="" className="img-fluid" />
+            </Link>
+            <div className="text">
+              <h3>{title}</h3>
+              <p className="price">
+                <del>{precos.desconto ? precos.normal : null}</del>
+                <> </>
+                {precos.desconto ? precos.desconto : precos.normal}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div className="col-md-3 col-sm-6">
-      <div className="product">
-        <Link to="/detalhes/xxxyyyzzz">
-          <img
-            src="assets/img/produtos/1_p030470_2.jpg"
-            alt=""
-            className="img-fluid"
-          />
-        </Link>
+      );
+    });
+  }
 
-        <div className="text">
-          <h3>SD M.2 2280 Gigabyte Aorus Gen4 1TB</h3>
-          <p className="price">187,90€</p>
+  render() {
+    return (
+      <div className="row same-height-row">
+        <div className="col-md-3 col-sm-6" style={{ display: "grid" }}>
+          <div className="box">
+            <h3>Produtos recomendados</h3>
+          </div>
         </div>
+        {this.renderProducts()}
       </div>
-    </div>
-    <div className="col-md-3 col-sm-6">
-      <div className="product">
-        <Link to="/detalhes/xxxyyyzzz">
-          <img
-            src="assets/img/produtos/1_335_2.jpg"
-            alt=""
-            className="img-fluid"
-          />
-        </Link>
+    );
+  }
+}
 
-        <div className="text">
-          <h3>Subwoofer Edifier T5 70W Preto</h3>
-          <p className="price">129,90€</p>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+const mapStateToProps = (state) => {
+  const allProducts = Object.values(state.products);
 
-export default Recomendados;
+  return {
+    products: allProducts.filter((produto) => {
+      const isNotFetchComplete =
+        typeof produto === "object" && produto !== null;
+      return isNotFetchComplete;
+    }),
+    fetchComplete: state.products.fetchComplete,
+  };
+};
+
+export default connect(mapStateToProps, { fetchAllProducts })(Recomendados);
