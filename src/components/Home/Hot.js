@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Spinner } from "react-bootstrap";
 
 import { fetchAllProducts } from "../../actions";
 import { db } from "../../produtos";
@@ -11,6 +12,7 @@ import { db } from "../../produtos";
 class Hot extends React.Component {
   componentDidMount() {
     this.props.fetchAllProducts();
+    console.log(this.props);
   }
 
   renderProducts() {
@@ -72,16 +74,33 @@ class Hot extends React.Component {
   }
 
   render() {
-    return (
-      <Carousel
-        responsive={responsive}
-        autoPlay={true}
-        autoPlaySpeed={8000}
-        infinite={true}
-      >
-        {this.renderProducts()}
-      </Carousel>
-    );
+    if (
+      this.props.fetchComplete !== undefined &&
+      this.props.fetchComplete !== null
+    ) {
+      return (
+        <Carousel
+          responsive={responsive}
+          autoPlay={true}
+          autoPlaySpeed={8000}
+          infinite={true}
+        >
+          {this.renderProducts()}
+        </Carousel>
+      );
+    } else {
+      return (
+        <div className="row h-100">
+          <div className="col-sm-12 my-auto">
+            <div className="mx-auto" style={{ width: "2rem" }}>
+              <Spinner animation="border" role="status" variant="info">
+                <span className="sr-only">Loading...</span>
+              </Spinner>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 }
 
