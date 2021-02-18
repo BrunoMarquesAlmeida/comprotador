@@ -6,7 +6,7 @@ import MenuFilters from "./MenuFilters";
 import ProductList from "./ProductList";
 import NavMenu from "../Detail/NavMenu";
 
-import { fetchAllProducts } from "../../actions";
+import { fetchAllProducts, addToCart } from "../../actions";
 import { db } from "../../produtos";
 
 class Category extends React.Component {
@@ -104,6 +104,7 @@ class Category extends React.Component {
               showN={this.state.showN}
               handleSelectChange={this.handleSelectChange}
               ordenarPor={this.state.ordenarPor}
+              addToCart={this.props.addToCart}
             />
           </div>
         </div>
@@ -141,4 +142,6 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchAllProducts })(Category);
+export default connect(mapStateToProps, { fetchAllProducts, addToCart })(
+  Category
+);

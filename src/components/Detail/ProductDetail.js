@@ -42,7 +42,7 @@ const ProductDetail = (props) => {
                   : product.precos.normal}
               </p>
               <p className="text-center buttons">
-                <AddCartIcon />
+                <AddCartIcon addToCart={props.addToCart} product={product} />
                 <span className="btn btn-outline-primary">
                   Adicionar à wishlist
                   <i className="fa fa-heart fa-icon"></i>

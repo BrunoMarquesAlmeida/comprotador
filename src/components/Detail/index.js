@@ -6,7 +6,7 @@ import BreadCrumb from "./BreadCrumb";
 import ProductDetail from "./ProductDetail";
 import NavMenu from "./NavMenu";
 
-import { fetchProduct } from "../../actions";
+import { fetchProduct, addToCart } from "../../actions";
 import { db } from "../../produtos";
 
 class Detail extends React.Component {
@@ -36,6 +36,7 @@ class Detail extends React.Component {
             <ProductDetail
               product={this.props.product}
               fetchComplete={this.props.fetchComplete}
+              addToCart={this.props.addToCart}
             />
           </div>
           <div style={{ marginBottom: "30px" }} />
@@ -53,4 +54,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchProduct })(Detail);
+export default connect(mapStateToProps, { fetchProduct, addToCart })(Detail);

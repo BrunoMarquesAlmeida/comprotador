@@ -44,7 +44,10 @@ class ProductList extends React.Component {
                 >
                   Ver detalhes
                 </Link>
-                <AddCartIcon />
+                <AddCartIcon
+                  product={product}
+                  addToCart={this.props.addToCart}
+                />
               </p>
             </div>
             {ribbons.novo ? <NewRibbon tipo="novo" /> : null}
