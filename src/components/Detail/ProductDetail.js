@@ -61,22 +61,22 @@ const ProductDetail = (props) => {
           <div className="social">
             <h4>Partilhar</h4>
             <p>
-              <a href="#" className="external facebook">
+              <a className="external facebook">
                 <i className="fa fa-facebook"></i>
               </a>
-              <a href="#" className="external gplus">
+              <a className="external gplus">
                 <i className="fa fa-google-plus"></i>
               </a>
-              <a href="#" className="external twitter">
+              <a className="external twitter">
                 <i className="fa fa-twitter"></i>
               </a>
-              <a href="#" className="email">
+              <a className="email">
                 <i className="fa fa-envelope"></i>
               </a>
             </p>
           </div>
         </div>
-        {Recomendados}
+        <Recomendados />
       </div>
     );
   } else {
