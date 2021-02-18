@@ -33,3 +33,13 @@ export const fetchProduct = (props) => async (dispatch) => {
     )
     .catch(() => history.push("/404"));
 };
+
+export const ADD_TO_CART = "ADD_TO_CART";
+export const addToCart = (product) => {
+  const { title, img, precos, id } = product;
+  const preco = precos.desconto ? precos.desconto : precos.normal;
+  const image = img[0].thumbnail;
+  const payload = { id, title, image, preco };
+
+  return { type: ADD_TO_CART, payload: { payload } };
+};
