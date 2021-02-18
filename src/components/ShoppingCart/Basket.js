@@ -12,11 +12,11 @@ const Basket = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th colspan="2">Produto</th>
+                  <th colSpan="2">Produto</th>
                   <th>Quantidade</th>
                   <th>Preço</th>
                   <th>Desconto</th>
-                  <th colspan="2">Total</th>
+                  <th colSpan="2">Total</th>
                 </tr>
               </thead>
               <tbody>
@@ -75,8 +75,8 @@ const Basket = () => {
               </tbody>
               <tfoot>
                 <tr>
-                  <th colspan="5">Total</th>
-                  <th colspan="2">1 005,70€</th>
+                  <th colSpan="5">Total</th>
+                  <th colSpan="2">1 005,70€</th>
                 </tr>
               </tfoot>
             </table>
@@ -99,7 +99,7 @@ const Basket = () => {
           </div>
         </form>
       </div>
-      {Recomendados}
+      <Recomendados />
     </div>
   );
 };
