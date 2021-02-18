@@ -13,11 +13,18 @@ class Header extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
+      // state of the Search Bar
       searchOpen: false,
-      navOpen: false,
-      activeKey: "",
+      // where the search term is kept
       searchTerm: "",
+
+      // state of the NavMenu (for mobile only)
+      navOpen: false,
+
+      // activeCat keeps track of what category the user is browsing through
+      activeCat: "",
     };
+    // loadGAPI to know if user is signed in through Google
     if (this.props.loginType === "Google") {
       loadGAPI(
         this.props.signIn,
@@ -27,36 +34,49 @@ class Header extends React.Component {
     }
   }
 
-  handleCatClick(categoria) {
-    const { activeKey } = this.state;
-    if (activeKey === categoria) {
+  // Handle the main categories' clicks' in the main NavMenu
+  handleCatClick(categoria, e) {
+    const { activeCat } = this.state;
+
+    // prevent navigation through this button
+    e.preventDefault();
+
+    // if this category is already selected this unselects it
+    if (activeCat === categoria) {
       return this.setState({
-        activeKey: "",
+        activeCat: "",
       });
     }
+
+    // otherwise we keep category name in state
     this.setState({
-      activeKey: categoria,
+      activeCat: categoria,
     });
   }
 
+  // This maps the 'Categorias' object from categorias.js and all its SubCategories
   renderNavList() {
-    const { activeKey } = this.state;
+    const { activeCat } = this.state;
+
     return Object.keys(Categorias).map((categoria) => {
       return (
         <li className="nav-item dropdown menu-large" key={categoria}>
+          {/* here we use <NavLink> despite not using it to navigate because activeClassName 
+          allows us to show this element as active even if we navigate directly through URL */}
           <NavLink
             to={`/categoria/${categoria}`}
             className="dropdown-toggle nav-link"
             style={{ cursor: "pointer" }}
-            onClick={() => this.handleCatClick(categoria)}
+            onClick={(e) => this.handleCatClick(categoria, e)}
             activeClassName="active"
           >
             {categoria}
             <b className="caret"></b>
           </NavLink>
           <ul
+            // if this element belongs to the active Category this shows the megamenu
             className={
-              activeKey === categoria
+              activeCat === categoria
                 ? "dropdown-menu megamenu show"
                 : "dropdown-menu megamenu"
             }
@@ -100,6 +120,7 @@ class Header extends React.Component {
     });
   }
 
+  // Render LoginBtn if user is signed in } else { render the 'Account' access button
   renderLoginBtn(isSignedIn) {
     if (isSignedIn) {
       return (
@@ -116,6 +137,7 @@ class Header extends React.Component {
     }
   }
 
+  // Where we test if the user is signed in through Auth0
   componentDidUpdate() {
     const { isAuthenticated } = this.props.auth0;
 
@@ -124,15 +146,21 @@ class Header extends React.Component {
     }
   }
 
+  // Handle submitting a search term
   onSearchSubmit = (e) => {
-    e.preventDefault();
     const { searchTerm } = this.state;
     const searchTermIsNotEmpty = searchTerm !== "";
+
+    // to prevent from default form submittal behaviour
+    e.preventDefault();
+
+    // this navigates the user to '/procura/searchTerm' when term is submited
     if (searchTermIsNotEmpty) {
       this.props.history.push(`/procura/${this.state.searchTerm}`);
     }
   };
 
+  // Where we update the 'searchTerm' piece of state
   onSearchChange = (e) => {
     this.setState({ searchTerm: e.target.value });
   };
@@ -307,10 +335,12 @@ class Header extends React.Component {
   }
 }
 
+// Access to the Auth part of the Redux store, we need this to keep track of the user isSignedIn state through the app
 const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
+// Exporting this withRouter allows us to use the history object outside of the Switch we have set up
 export default withRouter(
   connect(mapStateToProps, { signIn, signOut })(withAuth0(Header))
 );
