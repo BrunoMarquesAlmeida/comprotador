@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import BreadCrumb from "./BreadCrumb";
 import ProductDetail from "./ProductDetail";
@@ -20,6 +21,9 @@ class Detail extends React.Component {
   }
 
   render() {
+    if (this.props.product === undefined && this.props.fetchComplete) {
+      return <Redirect to="/404" />;
+    }
     return (
       <div id="content" key={this.props.match.params}>
         <div className="container">
