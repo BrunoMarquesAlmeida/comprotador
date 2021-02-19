@@ -1,107 +1,111 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Recomendados from "../Common/Recomendados";
 
-const Basket = () => {
-  return (
-    <div id="basket" className="col-lg-9">
-      <div className="box">
-        <form method="post" action="checkout1.html">
-          <h1>Carrinho de compras</h1>
-          <p className="text-muted">De momento tem 3 itens no seu carrinho.</p>
-          <div className="table-responsive">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th colSpan="2">Produto</th>
-                  <th>Quantidade</th>
-                  <th>Preço</th>
-                  <th>Desconto</th>
-                  <th colSpan="2">Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <Link to="/detalhes/xxxyyyzzz">
-                      <img
-                        src="assets/img/produtos/1_332_17.jpg"
-                        alt="Suporte p/ Headset Ozone Portal RGB Hub"
-                      />
-                    </Link>
-                  </td>
-                  <td>
-                    <Link to="/detalhes/xxxyyyzzz">
-                      Suporte p/ Headset Ozone Portal RGB Hub
-                    </Link>
-                  </td>
-                  <td>
-                    <input type="number" value="2" className="form-control" />
-                  </td>
-                  <td>27,90€</td>
-                  <td>0,00€</td>
-                  <td>55,80€</td>
-                  <td>
-                    <a href="#">
-                      <i className="fa fa-trash-o"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <Link to="/detalhes/xxxyyyzzz">
-                      <img
-                        src="assets/img/produtos/MSI156.jpg"
-                        alt='Portátil MSI 15.6" GF63 Thin'
-                      />
-                    </Link>
-                  </td>
-                  <td>
-                    <Link to="/detalhes/xxxyyyzzz">
-                      Portátil MSI 15.6" GF63 Thin
-                    </Link>
-                  </td>
-                  <td>
-                    <input type="number" value="1" className="form-control" />
-                  </td>
-                  <td>949,90€</td>
-                  <td>0,00€</td>
-                  <td>949,90€</td>
-                  <td>
-                    <a href="#">
-                      <i className="fa fa-trash-o"></i>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th colSpan="5">Total</th>
-                  <th colSpan="2">1 005,70€</th>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-          <div className="box-footer d-flex justify-content-between flex-column flex-lg-row">
-            <div className="left">
-              <Link to="/" className="btn btn-outline-secondary">
-                <i className="fa fa-chevron-left"></i> Continuar a comprar
-              </Link>
+class Basket extends React.Component {
+  renderShoppingCart() {
+    const { shoppingCart, removeFromCart } = this.props;
+    if (shoppingCart !== undefined) {
+      return Object.values(shoppingCart).map(
+        ({ title, image, preco, quantidade, id }) => {
+          const total = preco * quantidade;
+          return (
+            <tr key={id}>
+              <td>
+                <Link to={`/detalhes/${id}`}>
+                  <img src={image} alt={title} />
+                </Link>
+              </td>
+              <td>
+                <Link to={`/detalhes/${id}`}>{title}</Link>
+              </td>
+              <td>
+                <input
+                  type="number"
+                  value={quantidade}
+                  className="form-control"
+                  onChange={(e) => this.handleAmountChange(e, id)}
+                />
+              </td>
+              <td>{preco}€</td>
+              <td>0,00€</td>
+              <td>{total.toFixed(2)}€</td>
+              <td>
+                <span
+                  onClick={() => removeFromCart(id)}
+                  style={{ color: "#3eaa94" }}
+                  className="navMenuBtn"
+                >
+                  <i className="fa fa-trash-o"></i>
+                </span>
+              </td>
+            </tr>
+          );
+        }
+      );
+    }
+  }
+
+  handleAmountChange(e, id) {
+    this.props.changeItemAmount(id, e.target.value);
+  }
+
+  render() {
+    const itemAmount = Object.keys(this.props.shoppingCart).length;
+
+    return (
+      <div id="basket" className="col-lg-9">
+        <div className="box">
+          <form method="post" action="checkout1.html">
+            <h1>Carrinho de compras</h1>
+            <p className="text-muted">
+              De momento tem {itemAmount} itens no carrinho.
+            </p>
+            <div className="table-responsive">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th colSpan="2">Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Desconto</th>
+                    <th colSpan="2">Total</th>
+                  </tr>
+                </thead>
+                <tbody>{this.renderShoppingCart()}</tbody>
+                <tfoot>
+                  <tr>
+                    <th colSpan="5">Total</th>
+                    <th colSpan="2">1 005,70€</th>
+                  </tr>
+                </tfoot>
+              </table>
             </div>
-            <div className="right">
-              <span className="btn btn-outline-secondary">
+            <div className="box-footer d-flex justify-content-between flex-column flex-lg-row">
+              <div className="left">
+                <span
+                  className="btn btn-outline-secondary"
+                  onClick={() => this.props.goBack()}
+                >
+                  <i className="fa fa-chevron-left"></i> Continuar a comprar
+                </span>
+              </div>
+              <div className="right">
+                {/* <span className="btn btn-outline-secondary">
                 <i className="fa fa-refresh"></i> Atualizar carrinho
-              </span>
-              <Link to="/carrinho/checkout1" className="btn btn-primary">
-                Confirmar compra
-                <i className="fa fa-chevron-right fa-icon"></i>
-              </Link>
+              </span> */}
+                <Link to="/carrinho/checkout1" className="btn btn-primary">
+                  Confirmar compra
+                  <i className="fa fa-chevron-right fa-icon"></i>
+                </Link>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
+        <Recomendados />
       </div>
-      <Recomendados />
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Basket;
