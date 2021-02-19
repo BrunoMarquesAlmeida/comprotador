@@ -17,6 +17,7 @@ class Detail extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.match.params.id !== prevProps.match.params.id) {
       this.props.fetchProduct(this.props);
+      window.scrollTo(0, 0);
     }
   }
 
