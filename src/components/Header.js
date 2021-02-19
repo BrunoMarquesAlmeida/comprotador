@@ -54,7 +54,7 @@ class Header extends React.Component {
     });
   }
 
-  // This maps the 'Categorias' object from categorias.js and all its SubCategories
+  // This maps the 'Categorias' object from categorias.js and all its SubCategories and renders all the links
   renderNavList() {
     const { activeCat } = this.state;
 
@@ -89,6 +89,7 @@ class Header extends React.Component {
                       <Link
                         to={`/categoria/${categoria}/${subCategoria}`}
                         style={{ color: "#212529" }}
+                        onClick={() => this.setState({ navOpen: false })}
                       >
                         <h5>{subCategoria}</h5>
                       </Link>
@@ -101,6 +102,9 @@ class Header extends React.Component {
                                   to={`/categoria/${categoria}/${subCategoria}/${subCategoria2}`}
                                   href="category.html"
                                   className="nav-link"
+                                  onClick={() =>
+                                    this.setState({ navOpen: false })
+                                  }
                                 >
                                   {subCategoria2}
                                 </Link>
