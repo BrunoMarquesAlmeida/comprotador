@@ -1,4 +1,6 @@
+import React from "react";
 import { Route } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Breadcrumb from "../Common/Breadcrumb";
 
@@ -10,25 +12,44 @@ import Checkout2 from "./Checkout2";
 import Checkout3 from "./Checkout3";
 import Checkout4 from "./Checkout4";
 
-const ShoppingCart = (props) => {
-  return (
-    <div id="content">
-      <div className="container">
-        <div className="row">
-          <Breadcrumb props={props} />
-          <Route exact path="/carrinho" component={Basket} />
-          <Route path="/carrinho/checkout1" component={Checkout1} />
-          <Route path="/carrinho/checkout2" component={Checkout2} />
-          <Route path="/carrinho/checkout3" component={Checkout3} />
-          <Route path="/carrinho/checkout4" component={Checkout4} />
-          <div className="col-lg-3">
-            <OrderSummary />
-            <Route exact path="/carrinho" component={CouponCodes} />
+import { removeFromCart, changeItemAmount } from "../../actions";
+
+class ShoppingCart extends React.Component {
+  render() {
+    return (
+      <div id="content">
+        <div className="container">
+          <div className="row">
+            <Breadcrumb props={this.props} />
+            <Route exact path="/carrinho">
+              <Basket
+                shoppingCart={this.props.shoppingCart}
+                goBack={this.props.history.goBack}
+                removeFromCart={this.props.removeFromCart}
+                changeItemAmount={this.props.changeItemAmount}
+              />
+            </Route>
+            <Route path="/carrinho/checkout1" component={Checkout1} />
+            <Route path="/carrinho/checkout2" component={Checkout2} />
+            <Route path="/carrinho/checkout3" component={Checkout3} />
+            <Route path="/carrinho/checkout4" component={Checkout4} />
+            <div className="col-lg-3">
+              <OrderSummary />
+              <Route exact path="/carrinho" component={CouponCodes} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    shoppingCart: state.shoppingCart,
+  };
 };
 
-export default ShoppingCart;
+export default connect(mapStateToProps, { removeFromCart, changeItemAmount })(
+  ShoppingCart
+);
