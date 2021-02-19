@@ -12,6 +12,7 @@ import { db } from "../../produtos";
 class Detail extends React.Component {
   componentDidMount() {
     this.props.fetchProduct(this.props);
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate(prevProps) {
