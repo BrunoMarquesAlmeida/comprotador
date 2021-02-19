@@ -39,7 +39,17 @@ export const addToCart = (product) => {
   const { title, img, precos, id } = product;
   const preco = precos.desconto ? precos.desconto : precos.normal;
   const image = img[0].thumbnail;
-  const payload = { id, title, image, preco };
+  const payload = { id, title, image, preco, quantidade: 1 };
 
   return { type: ADD_TO_CART, payload: { payload } };
+};
+
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const removeFromCart = (product) => {
+  return { type: REMOVE_FROM_CART, payload: product };
+};
+
+export const CHANGE_ITEM_AMOUNT = "CHANGE_ITEM_AMOUNT";
+export const changeItemAmount = (id, amount) => {
+  return { type: CHANGE_ITEM_AMOUNT, payload: { id, amount } };
 };
