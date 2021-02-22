@@ -1,7 +1,6 @@
 import _ from "lodash";
 
 import { ADD_TO_CART, REMOVE_FROM_CART, CHANGE_ITEM_AMOUNT } from "../actions";
-import ShoppingCart from "../components/ShoppingCart";
 
 export default (state = {}, action) => {
   switch (action.type) {
