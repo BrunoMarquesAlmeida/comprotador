@@ -32,6 +32,7 @@ export const fetchProduct = (props) => async (dispatch) => {
       dispatch({ type: FETCH_PRODUCT, payload: response.data })
     )
     .catch(() => history.push("/404"));
+  // catch here in case productID doesn't exist in DB
 };
 
 export const ADD_TO_CART = "ADD_TO_CART";
