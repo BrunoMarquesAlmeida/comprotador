@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import Recomendados from "../Common/Recomendados";
+import formatPrice from "../Common/formatPrice";
 
 class Basket extends React.Component {
+  // maps items added to Shopping Cart and builds list of products
   renderShoppingCart() {
     const { shoppingCart, removeFromCart } = this.props;
     if (shoppingCart !== undefined) {
@@ -25,11 +28,12 @@ class Basket extends React.Component {
                   value={quantidade}
                   className="form-control"
                   onChange={(e) => this.handleAmountChange(e, id)}
+                  style={{ width: "70px" }}
                 />
               </td>
-              <td>{preco}€</td>
-              <td>0,00€</td>
-              <td>{total.toFixed(2)}€</td>
+              <td>{formatPrice(preco)}€</td>
+              <td>0.00€</td>
+              <td>{formatPrice(total.toFixed(2))}€</td>
               <td>
                 <span
                   onClick={() => removeFromCart(id)}
@@ -46,13 +50,17 @@ class Basket extends React.Component {
     }
   }
 
+  // handles the change of quantity of a specific cart item by calling the changeItemAmount() Redux action
   handleAmountChange(e, id) {
-    this.props.changeItemAmount(id, e.target.value);
+    const amount = e.target.value;
+
+    if (amount > 0) {
+      this.props.changeItemAmount(id, amount);
+    }
   }
 
   render() {
     const itemAmount = Object.keys(this.props.shoppingCart).length;
-
     return (
       <div id="basket" className="col-lg-9">
         <div className="box">
@@ -76,7 +84,7 @@ class Basket extends React.Component {
                 <tfoot>
                   <tr>
                     <th colSpan="5">Total</th>
-                    <th colSpan="2">1 005,70€</th>
+                    <th colSpan="2">{this.props.totalPrice}€</th>
                   </tr>
                 </tfoot>
               </table>

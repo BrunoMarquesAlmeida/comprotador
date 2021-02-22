@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Breadcrumb from "../Common/Breadcrumb";
+import formatPrice from "../Common/formatPrice";
 
 import Basket from "./Basket";
 import OrderSummary from "./OrderSummary";
@@ -14,8 +15,21 @@ import Checkout4 from "./Checkout4";
 
 import { removeFromCart, changeItemAmount } from "../../actions";
 
+// hosts all related components, routes and common page state + functions
 class ShoppingCart extends React.Component {
+  calculateTotalPrice() {
+    let totalPrice = 0;
+
+    // maps all the prices of products in the shopping cart and adds them to totalPrice
+    Object.values(this.props.shoppingCart).map(({ preco, quantidade }) => {
+      totalPrice += parseFloat(preco * quantidade);
+    });
+
+    return formatPrice(totalPrice.toFixed(2));
+  }
+
   render() {
+    console.log(this.calculateTotalPrice());
     return (
       <div id="content">
         <div className="container">
@@ -27,6 +41,7 @@ class ShoppingCart extends React.Component {
                 goBack={this.props.history.goBack}
                 removeFromCart={this.props.removeFromCart}
                 changeItemAmount={this.props.changeItemAmount}
+                totalPrice={this.calculateTotalPrice()}
               />
             </Route>
             <Route path="/carrinho/checkout1" component={Checkout1} />
@@ -44,6 +59,7 @@ class ShoppingCart extends React.Component {
   }
 }
 
+// fetches Redux store shoppingCart state
 const mapStateToProps = (state) => {
   return {
     shoppingCart: state.shoppingCart,
