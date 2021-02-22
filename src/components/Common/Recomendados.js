@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { fetchAllProducts } from "../../actions";
+import formatPrice from "../Common/formatPrice";
 
 class Recomendados extends React.Component {
   componentDidMount() {
@@ -10,6 +11,7 @@ class Recomendados extends React.Component {
   }
 
   renderProducts() {
+    // sorts products by sales number
     const sortedProducts = this.props.products.sort((a, b) => {
       if (a.vendas < b.vendas) {
         return 1;
@@ -20,8 +22,10 @@ class Recomendados extends React.Component {
       return 0;
     });
 
+    // slices the 3 most sold products
     const hotProducts = sortedProducts.slice(0, 3);
 
+    // maps those 3 products onto JSX
     return hotProducts.map(({ img, title, id, precos }) => {
       return (
         <div className="col-md-3 col-sm-6" key={id}>
@@ -32,9 +36,11 @@ class Recomendados extends React.Component {
             <div className="text">
               <h3>{title}</h3>
               <p className="price">
-                <del>{precos.desconto ? precos.normal : null}</del>
+                <del>{precos.desconto ? formatPrice(precos.normal) : null}</del>
                 <> </>
-                {precos.desconto ? precos.desconto : precos.normal}
+                {precos.desconto
+                  ? formatPrice(precos.desconto)
+                  : formatPrice(precos.normal)}
               </p>
             </div>
           </div>
@@ -43,6 +49,7 @@ class Recomendados extends React.Component {
     });
   }
 
+  // hosts enclosing JSX
   render() {
     return (
       <div className="row same-height-row">
@@ -61,6 +68,7 @@ const mapStateToProps = (state) => {
   const allProducts = Object.values(state.products);
 
   return {
+    // filter out fetchComplete
     products: allProducts.filter((produto) => {
       const isNotFetchComplete =
         typeof produto === "object" && produto !== null;

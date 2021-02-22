@@ -9,14 +9,16 @@ import { Spinner } from "react-bootstrap";
 import { fetchAllProducts } from "../../actions";
 import { db } from "../../produtos";
 
+import formatPrice from "../Common/formatPrice";
+
 class Hot extends React.Component {
   componentDidMount() {
     this.props.fetchAllProducts();
-    console.log(this.props);
   }
 
   renderProducts() {
-    const sortedProducts = this.props.productsByCat.sort((a, b) => {
+    // sorts products by highest sales number
+    const sortedProducts = this.props.products.sort((a, b) => {
       if (a.vendas < b.vendas) {
         return 1;
       }
@@ -26,8 +28,10 @@ class Hot extends React.Component {
       return 0;
     });
 
+    // then slices only the 15 most selling products
     const hotProducts = sortedProducts.slice(0, 15);
 
+    // maps those 15 products onto JSX
     return hotProducts.map(({ img, title, id, ribbons, precos }) => {
       return (
         <div
@@ -45,9 +49,11 @@ class Hot extends React.Component {
               <Link to={`/detalhes/${id}`}>{title}</Link>
             </h3>
             <p className="price">
-              <del>{precos.desconto ? precos.normal : null}</del>
+              <del>{precos.desconto ? formatPrice(precos.normal) : null}</del>
               <> </>
-              {precos.desconto ? precos.desconto : precos.normal}
+              {precos.desconto
+                ? formatPrice(precos.desconto)
+                : formatPrice(precos.normal)}
             </p>
           </div>
           <div className="ribbon sale">
@@ -127,7 +133,8 @@ const mapStateToProps = (state) => {
   const allProducts = Object.values(state.products);
 
   return {
-    productsByCat: allProducts.filter((produto) => {
+    products: allProducts.filter((produto) => {
+      // filter out fetchComplete from product list
       const isNotFetchComplete =
         typeof produto === "object" && produto !== null;
       return isNotFetchComplete;

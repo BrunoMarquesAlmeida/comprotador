@@ -5,9 +5,13 @@ import { Spinner } from "react-bootstrap";
 import { NewRibbon } from "../Common/Ribbon";
 import { AddCartIcon } from "../Common/AddCartIcon";
 import Recomendados from "../Common/Recomendados";
+import formatPrice from "../Common/formatPrice";
 
+// hosts enclosing JSX tags and tests whether to render that or a loading spinner
 const ProductDetail = (props) => {
+  // loading test
   if (props.fetchComplete !== undefined && props.fetchComplete !== null) {
+    // result when loading is complete
     const { product } = props;
     const images = product.img;
     const { novo, saldos } = product.ribbons;
@@ -35,11 +39,14 @@ const ProductDetail = (props) => {
               <p className="price">
                 <del>
                   {" "}
-                  {product.precos.desconto ? product.precos.normal : ""}
+                  {product.precos.desconto
+                    ? formatPrice(product.precos.normal)
+                    : ""}
                 </del>{" "}
                 {product.precos.desconto
-                  ? product.precos.desconto
-                  : product.precos.normal}
+                  ? formatPrice(product.precos.desconto)
+                  : formatPrice(product.precos.normal)}
+                €
               </p>
               <p className="text-center buttons">
                 <AddCartIcon addToCart={props.addToCart} product={product} />
@@ -80,6 +87,7 @@ const ProductDetail = (props) => {
       </div>
     );
   } else {
+    // loading is not complete
     return (
       <div className="col-lg-9 order-1 order-lg-2">
         <div className="row h-100">
@@ -96,8 +104,10 @@ const ProductDetail = (props) => {
   }
 };
 
+// maps a products technical specifications unto JSX
 const renderSpecs = function (specs) {
   return specs.map(({ title, content }) => {
+    // tests for more than one spec in the same category to decide on how to build the Spec list
     const moreThan1Spec = content.length > 1;
     if (moreThan1Spec) {
       return (
@@ -120,6 +130,7 @@ const renderSpecs = function (specs) {
   });
 };
 
+// maps through all the description sections and renders them out
 const renderDescription = function (description) {
   let key = 0;
   return description.map(function ({ sectionTitle, content }) {

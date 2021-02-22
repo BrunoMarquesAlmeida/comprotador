@@ -6,6 +6,7 @@ import { Spinner } from "react-bootstrap";
 
 import { NewRibbon } from "../Common/Ribbon";
 import { AddCartIcon } from "../Common/AddCartIcon";
+import formatPrice from "../Common/formatPrice";
 
 class ProductList extends React.Component {
   renderProductList = (showNProducts) => {
@@ -25,16 +26,14 @@ class ProductList extends React.Component {
                 {precos.desconto ? (
                   <>
                     <del>
-                      {precos.normal.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")}
+                      {formatPrice(precos.normal)}
                       {" €"}
                     </del>{" "}
-                    {precos.desconto}
+                    {formatPrice(precos.desconto)}
                     {" €"}
                   </>
                 ) : (
-                  <>
-                    {precos.normal.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")} €
-                  </>
+                  <>{formatPrice(precos.normal)} €</>
                 )}
               </p>
               <p className="buttons">
