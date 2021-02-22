@@ -25,7 +25,8 @@ class Header extends React.Component {
       activeCat: "",
 
       cartChange: null,
-      additionalProduct: null,
+      changedProduct: null,
+      removedProduct: null,
     };
     // loadGAPI to know if user is signed in through Google
     if (this.props.loginType === "Google") {
@@ -155,7 +156,21 @@ class Header extends React.Component {
     Object.values(this.props.shoppingCart).map((product) => {
       const productWasAdded = prevProps.shoppingCart[product.id] === undefined;
       if (productWasAdded) {
-        this.setState({ additionalProduct: product.title, cartChange: "add" });
+        this.setState({
+          changedProduct: product.title,
+          cartChange: "add",
+        });
+      }
+    });
+
+    Object.values(prevProps.shoppingCart).map((product) => {
+      const productWasRemoved =
+        this.props.shoppingCart[product.id] === undefined;
+      if (productWasRemoved) {
+        this.setState({
+          changedProduct: product.title,
+          cartChange: "remove",
+        });
       }
     });
   }
@@ -183,6 +198,7 @@ class Header extends React.Component {
     const { isSignedIn } = this.props;
     const { navOpen, searchOpen } = this.state;
     const cartItemAmount = Object.keys(this.props.shoppingCart).length;
+    const wasProductAdded = this.state.cartChange === "add";
 
     return (
       <>
@@ -215,6 +231,7 @@ class Header extends React.Component {
               </div>
             </div>
           </div>
+
           {/* Nav bar */}
           <nav className="navbar navbar-expand-lg">
             <div className="container">
@@ -232,6 +249,7 @@ class Header extends React.Component {
                 />
                 <span className="sr-only">ComproTador - Homepage</span>
               </Link>
+
               {/* Btn mobile */}
               <div className="navbar-buttons">
                 <Button
@@ -280,6 +298,7 @@ class Header extends React.Component {
                     </li>
                     {this.renderNavList()}
                   </ul>
+
                   {/* Btn desktop */}
                   <div className="navbar-buttons d-flex justify-content-end">
                     <div
@@ -352,6 +371,8 @@ class Header extends React.Component {
             </div>
           </Collapse>
         </header>
+
+        {/* this.state.cartChange is tested to check if item was added or removed from cart */}
         <div id="content" key={this.props.match.params}>
           <div className="container">
             <div className="row">
@@ -364,11 +385,21 @@ class Header extends React.Component {
                   <ol className="breadcrumb text-muted">
                     <div>
                       <i
-                        className="fa fa-check-circle "
-                        style={{ color: "#3eaa94" }}
+                        className={
+                          wasProductAdded
+                            ? "fa fa-check-circle"
+                            : "fa fa-times-circle"
+                        }
+                        style={
+                          wasProductAdded
+                            ? { color: "#3eaa94" }
+                            : { color: "#dc3545" }
+                        }
                       ></i>{" "}
-                      Adicionou <b>{this.state.additionalProduct}</b>
-                      &nbsp;ao&nbsp;
+                      {wasProductAdded ? "Adicionou" : "Removeu"}{" "}
+                      <b>{this.state.changedProduct}</b>
+                      &nbsp;{wasProductAdded ? "ao" : "do"}
+                      &nbsp;
                       <Link to="/carrinho">Carrinho de Compras</Link>
                     </div>
                   </ol>
