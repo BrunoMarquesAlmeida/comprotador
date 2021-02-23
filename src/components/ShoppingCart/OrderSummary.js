@@ -1,4 +1,7 @@
-const OrderSummary = () => {
+import formatPrice from "../Common/formatPrice";
+
+const OrderSummary = (props) => {
+  const { subTotal, shipCosts } = props;
   return (
     <div id="order-summary" className="box">
       <div className="box-header">
@@ -9,15 +12,17 @@ const OrderSummary = () => {
           <tbody>
             <tr>
               <td>Subtotal</td>
-              <th>1 005,70€</th>
+              <th>{formatPrice(subTotal)}€</th>
             </tr>
             <tr>
               <td>Custos de envio</td>
-              <th>10,00€</th>
+              <th>{formatPrice(shipCosts.toString())}€</th>
             </tr>
             <tr className="total">
               <td>Total</td>
-              <th>1 015,70€</th>
+              <th>
+                {formatPrice((parseFloat(subTotal) + shipCosts).toFixed(2))}€
+              </th>
             </tr>
           </tbody>
         </table>
