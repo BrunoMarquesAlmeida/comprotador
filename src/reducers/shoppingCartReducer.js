@@ -13,7 +13,6 @@ export default (state = {}, action) => {
         ...state[action.payload.id],
         quantidade: action.payload.amount,
       };
-
       return { ...state, [action.payload.id]: productWithNewAmount };
     default:
       return state;
