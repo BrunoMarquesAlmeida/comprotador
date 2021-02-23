@@ -54,3 +54,8 @@ export const CHANGE_ITEM_AMOUNT = "CHANGE_ITEM_AMOUNT";
 export const changeItemAmount = (id, amount) => {
   return { type: CHANGE_ITEM_AMOUNT, payload: { id, amount } };
 };
+
+export const ORDER_CHANGE = "ORDER_CHANGE";
+export const orderChange = (order) => {
+  return { type: ORDER_CHANGE, payload: order };
+};
