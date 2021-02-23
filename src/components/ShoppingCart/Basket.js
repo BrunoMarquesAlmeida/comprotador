@@ -84,7 +84,7 @@ class Basket extends React.Component {
                 <tfoot>
                   <tr>
                     <th colSpan="5">Total</th>
-                    <th colSpan="2">{this.props.totalPrice}€</th>
+                    <th colSpan="2">{formatPrice(this.props.totalPrice)}€</th>
                   </tr>
                 </tfoot>
               </table>
