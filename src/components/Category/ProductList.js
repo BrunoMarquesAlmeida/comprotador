@@ -9,6 +9,7 @@ import { AddCartIcon } from "../Common/AddCartIcon";
 import formatPrice from "../Common/formatPrice";
 
 class ProductList extends React.Component {
+  // builds product list depending on how many items the user has chosen to view, tests and renders for loading
   renderProductList = (showNProducts) => {
     const buildProductListJSX = (product) => {
       const { id, title, img, precos, ribbons } = product;
@@ -77,12 +78,14 @@ class ProductList extends React.Component {
     return showNProducts.map((product) => buildProductListJSX(product));
   };
 
+  // returns appropriate className for showNBtn
   showBtnClassName = (n) => {
     return this.props.showN === n
       ? "btn btn-sm btn-primary"
       : "btn btn-outline-secondary btn-sm";
   };
 
+  // renders page numbers at the bottom of the screen
   renderPageList = (productListLength) => {
     const { activePage } = this.props;
     const numberOfPages = Math.ceil(productListLength / this.props.showN);
@@ -151,6 +154,7 @@ class ProductList extends React.Component {
   render() {
     const { productsByCat, specFiltersSelected } = this.props;
 
+    // takes care of sorting products according to the option selected (default: sales)
     const orderedProducts = productsByCat.sort((a, b) => {
       if (this.props.ordenarPor === "priceAsc") {
         if (parseFloat(a.precos.normal) > parseFloat(b.precos.normal)) {
@@ -197,9 +201,11 @@ class ProductList extends React.Component {
       return null;
     });
 
+    // calculates current page starting product to be used for a later .slice()
     const startingProduct =
       this.props.activePage * this.props.showN - this.props.showN;
 
+    // maps through orderedProducts specs and filters only those whose specs are included in the selected filters (if there are any)
     let filteredProductList = [];
     if (specFiltersSelected.length > 0) {
       orderedProducts.map((product) =>
@@ -224,6 +230,7 @@ class ProductList extends React.Component {
       filteredProductList = orderedProducts;
     }
 
+    // slices filteredProduct list to show only the amount of items selected (default: 12)
     const finalProductList = filteredProductList.slice(
       startingProduct,
       this.props.showN * this.props.activePage
@@ -309,6 +316,7 @@ class ProductList extends React.Component {
   }
 }
 
+// renders title Box according to selected categories or text search
 const renderTitleBox = (props) => {
   if (props.categorias) {
     const { categoria, subCategoria } = props.categorias;
