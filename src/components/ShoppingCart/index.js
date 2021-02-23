@@ -13,7 +13,7 @@ import Checkout2 from "./Checkout2";
 import Checkout3 from "./Checkout3";
 import Checkout4 from "./Checkout4";
 
-import { removeFromCart, changeItemAmount } from "../../actions";
+import { removeFromCart, changeItemAmount, orderChange } from "../../actions";
 
 // hosts all related components, routes and common page state + functions
 class ShoppingCart extends React.Component {
@@ -25,11 +25,10 @@ class ShoppingCart extends React.Component {
       totalPrice += parseFloat(preco * quantidade);
     });
 
-    return formatPrice(totalPrice.toFixed(2));
+    return totalPrice.toFixed(2);
   }
 
   render() {
-    console.log(this.calculateTotalPrice());
     return (
       <div id="content">
         <div className="container">
@@ -44,12 +43,17 @@ class ShoppingCart extends React.Component {
                 totalPrice={this.calculateTotalPrice()}
               />
             </Route>
-            <Route path="/carrinho/checkout1" component={Checkout1} />
+            <Route path="/carrinho/checkout1">
+              <Checkout1 orderChange={this.props.orderChange} />
+            </Route>
             <Route path="/carrinho/checkout2" component={Checkout2} />
             <Route path="/carrinho/checkout3" component={Checkout3} />
             <Route path="/carrinho/checkout4" component={Checkout4} />
             <div className="col-lg-3">
-              <OrderSummary />
+              <OrderSummary
+                subTotal={this.calculateTotalPrice()}
+                shipCosts={10.0}
+              />
               <Route exact path="/carrinho" component={CouponCodes} />
             </div>
           </div>
@@ -66,6 +70,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { removeFromCart, changeItemAmount })(
-  ShoppingCart
-);
+export default connect(mapStateToProps, {
+  removeFromCart,
+  changeItemAmount,
+  orderChange,
+})(ShoppingCart);
