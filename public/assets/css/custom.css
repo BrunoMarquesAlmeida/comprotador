@@ -1,3 +1,11 @@
+.invalid-feedback {
+  display: block;
+}
+
+.disabled {
+  cursor: context-menu;
+}
+
 .navMenuBtn {
   color: #4fbfa8;
   cursor: pointer;
