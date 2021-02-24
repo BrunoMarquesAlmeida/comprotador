@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
-const Checkout1 = () => {
+const Checkout1 = ({ address, orderChange, itemAmount }) => {
+  const cartEmpty = itemAmount === 0;
+  const checkoutStep = "address";
+
+  if (cartEmpty) {
+    return <Redirect to="/carrinho" />;
+  }
   return (
     <div id="checkout" className="col-lg-9">
       <div className="box">
@@ -24,33 +30,57 @@ const Checkout1 = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="form-group">
-                  <label for="firstname">Primeiro nome</label>
-                  <input id="firstname" type="text" className="form-control" />
+                  <label>Primeiro nome</label>
+                  <input
+                    id="firstname"
+                    type="text"
+                    className="form-control"
+                    value={address.firstName}
+                    onChange={(e) =>
+                      orderChange(e.target.value, "firstName", checkoutStep)
+                    }
+                  />
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="form-group">
-                  <label for="lastname">Último nome</label>
-                  <input id="lastname" type="text" className="form-control" />
+                  <label>Último nome</label>
+                  <input
+                    id="lastname"
+                    type="text"
+                    className="form-control"
+                    value={address.lastName}
+                    onChange={(e) =>
+                      orderChange(e.target.value, "lastName", checkoutStep)
+                    }
+                  />
                 </div>
               </div>
             </div>
             <div className="row">
               <div className="col-md-6">
                 <div className="form-group">
-                  <label for="company">Morada</label>
-                  <input id="company" type="text" className="form-control" />
+                  <label>Morada</label>
+                  <input
+                    id="company"
+                    type="text"
+                    className="form-control"
+                    value={address.street}
+                    onChange={(e) =>
+                      orderChange(e.target.value, "street", checkoutStep)
+                    }
+                  />
                 </div>
               </div>
               <div className="col-md-6 col-lg-3">
                 <div className="form-group">
-                  <label for="zip">Código postal</label>
+                  <label>Código postal</label>
                   <input id="zip" type="text" className="form-control" />
                 </div>
               </div>
               <div className="col-md-6 col-lg-3">
                 <div className="form-group">
-                  <label for="state">Cidade</label>
+                  <label>Cidade</label>
                   <input id="state" className="form-control" />
                 </div>
               </div>
@@ -58,20 +88,20 @@ const Checkout1 = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="form-group">
-                  <label for="email">Email</label>
+                  <label>Email</label>
                   <input id="email" type="text" className="form-control" />
                 </div>
               </div>
               <div className="col-md-6 col-lg-3">
                 <div className="form-group">
-                  <label for="phone">Contacto telefónico</label>
+                  <label>Contacto telefónico</label>
                   <input id="phone" type="text" className="form-control" />
                 </div>
               </div>
               <div className="col-md-6 col-lg-3">
                 <div className="form-group">
-                  <label for="state">Número de contribuinte (NIF)</label>
-                  <input id="state" className="form-control" />
+                  <label>Número de contribuinte (NIF)</label>
+                  <input id="NIF" className="form-control" />
                 </div>
               </div>
             </div>
