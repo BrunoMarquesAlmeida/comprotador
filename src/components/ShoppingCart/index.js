@@ -3,7 +3,6 @@ import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Breadcrumb from "../Common/Breadcrumb";
-import formatPrice from "../Common/formatPrice";
 
 import Basket from "./Basket";
 import OrderSummary from "./OrderSummary";
@@ -44,7 +43,11 @@ class ShoppingCart extends React.Component {
               />
             </Route>
             <Route path="/carrinho/checkout1">
-              <Checkout1 orderChange={this.props.orderChange} />
+              <Checkout1
+                orderChange={this.props.orderChange}
+                address={this.props.order.address}
+                itemAmount={Object.keys(this.props.shoppingCart).length}
+              />
             </Route>
             <Route path="/carrinho/checkout2" component={Checkout2} />
             <Route path="/carrinho/checkout3" component={Checkout3} />
@@ -67,6 +70,7 @@ class ShoppingCart extends React.Component {
 const mapStateToProps = (state) => {
   return {
     shoppingCart: state.shoppingCart,
+    order: state.order,
   };
 };
 
