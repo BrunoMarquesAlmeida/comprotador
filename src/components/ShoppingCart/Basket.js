@@ -59,6 +59,31 @@ class Basket extends React.Component {
     }
   }
 
+  renderContinueBtn() {
+    const cartNotEmpty = Object.keys(this.props.shoppingCart).length > 0;
+    if (cartNotEmpty) {
+      return (
+        <Link to="/carrinho/checkout1">
+          <button className="btn btn-primary">
+            Confirmar compra
+            <i className="fa fa-chevron-right fa-icon"></i>
+          </button>
+        </Link>
+      );
+    }
+    return (
+      <span>
+        <button
+          className="btn btn-primary disabled"
+          onClick={(e) => e.preventDefault()}
+        >
+          Confirmar compra
+          <i className="fa fa-chevron-right fa-icon"></i>
+        </button>
+      </span>
+    );
+  }
+
   render() {
     const itemAmount = Object.keys(this.props.shoppingCart).length;
     return (
@@ -91,21 +116,21 @@ class Basket extends React.Component {
             </div>
             <div className="box-footer d-flex justify-content-between flex-column flex-lg-row">
               <div className="left">
-                <span
+                <button
                   className="btn btn-outline-secondary"
-                  onClick={() => this.props.goBack()}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.props.goBack();
+                  }}
                 >
                   <i className="fa fa-chevron-left"></i> Continuar a comprar
-                </span>
+                </button>
               </div>
               <div className="right">
+                {this.renderContinueBtn()}
                 {/* <span className="btn btn-outline-secondary">
                 <i className="fa fa-refresh"></i> Atualizar carrinho
               </span> */}
-                <Link to="/carrinho/checkout1" className="btn btn-primary">
-                  Confirmar compra
-                  <i className="fa fa-chevron-right fa-icon"></i>
-                </Link>
               </div>
             </div>
           </form>
