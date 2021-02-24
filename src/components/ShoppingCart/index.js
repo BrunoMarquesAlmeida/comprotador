@@ -44,6 +44,7 @@ class ShoppingCart extends React.Component {
             </Route>
             <Route path="/carrinho/checkout1">
               <Checkout1
+                push={this.props.history.push}
                 orderChange={this.props.orderChange}
                 address={this.props.order.address}
                 itemAmount={Object.keys(this.props.shoppingCart).length}
