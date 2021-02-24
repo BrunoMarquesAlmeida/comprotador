@@ -36,8 +36,7 @@ export const fetchProduct = (props) => async (dispatch) => {
 };
 
 export const ADD_TO_CART = "ADD_TO_CART";
-export const addToCart = (product) => {
-  const { title, img, precos, id } = product;
+export const addToCart = ({ title, img, precos, id }) => {
   const preco = precos.desconto ? precos.desconto : precos.normal;
   const image = img[0].thumbnail;
   const payload = { id, title, image, preco, quantidade: 1 };
@@ -56,6 +55,6 @@ export const changeItemAmount = (id, amount) => {
 };
 
 export const ORDER_CHANGE = "ORDER_CHANGE";
-export const orderChange = (order) => {
-  return { type: ORDER_CHANGE, payload: order };
+export const orderChange = (value, key, checkoutStep) => {
+  return { type: ORDER_CHANGE, payload: { value, key, checkoutStep } };
 };
