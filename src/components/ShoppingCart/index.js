@@ -28,6 +28,7 @@ class ShoppingCart extends React.Component {
   }
 
   render() {
+    const cartIsEmpty = Object.keys(this.props.shoppingCart).length === 0;
     return (
       <div id="content">
         <div className="container">
@@ -47,10 +48,19 @@ class ShoppingCart extends React.Component {
                 push={this.props.history.push}
                 orderChange={this.props.orderChange}
                 address={this.props.order.address}
-                itemAmount={Object.keys(this.props.shoppingCart).length}
+                // cartIsEmpty={cartIsEmpty}
+                cartIsEmpty={false}
               />
             </Route>
-            <Route path="/carrinho/checkout2" component={Checkout2} />
+            <Route path="/carrinho/checkout2">
+              <Checkout2
+                push={this.props.history.push}
+                orderChange={this.props.orderChange}
+                delivery={this.props.order.delivery}
+                // cartIsEmpty={cartIsEmpty}
+                cartIsEmpty={false}
+              />
+            </Route>
             <Route path="/carrinho/checkout3" component={Checkout3} />
             <Route path="/carrinho/checkout4" component={Checkout4} />
             <div className="col-lg-3">
