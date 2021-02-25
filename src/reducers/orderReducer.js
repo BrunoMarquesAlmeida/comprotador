@@ -1,6 +1,18 @@
 import { ORDER_CHANGE } from "../actions";
 
-const INITIAL_STATE = { address: { firstName: "", lastName: "" } };
+const INITIAL_STATE = {
+  address: {
+    firstName: "",
+    lastName: "",
+    street: "",
+    zip: "",
+    city: "",
+    email: "",
+    phone: "",
+    NIF: "",
+  },
+  delivery: { method: "" },
+};
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -8,7 +20,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         [action.payload.checkoutStep]: {
-          ...state.address,
+          ...state[action.payload.checkoutStep],
           [action.payload.key]: action.payload.value,
         },
       };
