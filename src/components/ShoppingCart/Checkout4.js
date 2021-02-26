@@ -1,10 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
-const Checkout4 = () => {
+import formatPrice from "../Common/formatPrice";
+
+const Checkout4 = (props) => {
+  const { totalPrice, deliveryCost, total } = props;
+  const totals = {
+    subTotal: totalPrice,
+    deliveryCost: parseFloat(deliveryCost).toFixed(2),
+    total: parseFloat(total).toFixed(2),
+  };
+
+  if (props.cartIsEmpty) {
+    return <Redirect to="/carrinho" />;
+  }
   return (
     <div id="checkout" className="col-lg-9">
       <div className="box">
-        <form method="get" action="checkout4.html">
+        <form onSubmit={(e) => handleSubmit(e, props.orderPlace, totals)}>
           <h1>Checkout - Revisão e confirmação</h1>
           <div className="nav flex-column flex-sm-row nav-pills">
             <Link
@@ -25,66 +37,27 @@ const Checkout4 = () => {
             >
               <i className="fa fa-money"> </i>Método de pagamento
             </Link>
-            <Link className="nav-link flex-sm-fill text-sm-center active">
+            <a className="nav-link flex-sm-fill text-sm-center active">
               <i className="fa fa-eye"> </i>Revisão e confirmação
-            </Link>
+            </a>
           </div>
           <div className="content">
             <div className="table-responsive">
               <table className="table">
                 <thead>
                   <tr>
-                    <th colspan="2">Produto</th>
+                    <th colSpan="2">Produto</th>
                     <th>Quantidade</th>
                     <th>Preço</th>
                     <th>Desconto</th>
-                    <th colspan="2">Total</th>
+                    <th colSpan="2">Total</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <Link to="/detalhes/xxxyyyzzz">
-                        <img
-                          src="assets/img/produtos/1_332_17.jpg"
-                          alt="Suporte p/ Headset Ozone Portal RGB Hub"
-                        />
-                      </Link>
-                    </td>
-                    <td>
-                      <Link to="/detalhes/xxxyyyzzz">
-                        Suporte p/ Headset Ozone Portal RGB Hub
-                      </Link>
-                    </td>
-                    <td>2</td>
-                    <td>27,90€</td>
-                    <td>0,00€</td>
-                    <td>55,80€</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Link to="/detalhes/xxxyyyzzz">
-                        <img
-                          src="assets/img/produtos/MSI156.jpg"
-                          alt='Portátil MSI 15.6" GF63 Thin'
-                        />
-                      </Link>
-                    </td>
-                    <td>
-                      <Link to="/detalhes/xxxyyyzzz">
-                        Portátil MSI 15.6" GF63 Thin
-                      </Link>
-                    </td>
-                    <td>1</td>
-                    <td>949,90€</td>
-                    <td>0,00€</td>
-                    <td>949,90€</td>
-                  </tr>
-                </tbody>
+                <tbody>{renderShoppingCart(props)}</tbody>
                 <tfoot>
                   <tr>
-                    <th colspan="5">Total</th>
-                    <th colspan="2">1 005,70€</th>
+                    <th colSpan="5">Total</th>
+                    <th colSpan="2">{formatPrice(props.totalPrice)}€</th>
                   </tr>
                 </tfoot>
               </table>
@@ -98,15 +71,47 @@ const Checkout4 = () => {
               <i className="fa fa-chevron-left"></i>Voltar para Método de
               pagamento
             </Link>
-            <Link to="/carrinho/checkout4" className="btn btn-primary">
+            <button className="btn btn-primary">
               Confirmar encomenda
               <i className="fa fa-chevron-right"></i>
-            </Link>
+            </button>
           </div>
         </form>
       </div>
     </div>
   );
+};
+
+const renderShoppingCart = function (props) {
+  const { shoppingCart } = props;
+  if (shoppingCart !== undefined) {
+    return Object.values(shoppingCart).map(
+      ({ title, image, preco, quantidade, id }) => {
+        const total = preco * quantidade;
+        return (
+          <tr key={id}>
+            <td>
+              <Link to={`/detalhes/${id}`}>
+                <img src={image} alt={title} />
+              </Link>
+            </td>
+            <td>
+              <Link to={`/detalhes/${id}`}>{title}</Link>
+            </td>
+            <td>{quantidade}</td>
+            <td>{formatPrice(preco)}€</td>
+            <td>0.00€</td>
+            <td>{formatPrice(total.toFixed(2))}€</td>
+          </tr>
+        );
+      }
+    );
+  }
+};
+
+const handleSubmit = function (e, orderPlace, totals) {
+  e.preventDefault();
+  orderPlace(totals);
 };
 
 export default Checkout4;
