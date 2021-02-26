@@ -12,6 +12,7 @@ const INITIAL_STATE = {
     NIF: "",
   },
   delivery: { method: "" },
+  payment: { method: "" },
 };
 
 export default (state = INITIAL_STATE, action) => {
