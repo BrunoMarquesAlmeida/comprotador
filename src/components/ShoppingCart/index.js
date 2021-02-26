@@ -12,11 +12,16 @@ import Checkout2 from "./Checkout2";
 import Checkout3 from "./Checkout3";
 import Checkout4 from "./Checkout4";
 
-import { removeFromCart, changeItemAmount, orderChange } from "../../actions";
+import {
+  removeFromCart,
+  changeItemAmount,
+  orderChange,
+  orderPlace,
+} from "../../actions";
 
 // hosts all related components, routes and common page state + functions
 class ShoppingCart extends React.Component {
-  calculateTotalPrice() {
+  calculateSubTotal() {
     let totalPrice = 0;
 
     // maps all the prices of products in the shopping cart and adds them to totalPrice
@@ -27,8 +32,31 @@ class ShoppingCart extends React.Component {
     return totalPrice.toFixed(2);
   }
 
+  calculateDeliveryCost() {
+    const { delivery } = this.props.order;
+    let deliveryCost = 0;
+    if (delivery.method === "normal") {
+      deliveryCost = 5;
+      return deliveryCost;
+    }
+    if (delivery.method === "express") {
+      deliveryCost = 10;
+      return deliveryCost;
+    }
+    return deliveryCost;
+  }
+
+  calculateTotal() {
+    const deliveryCost = this.calculateDeliveryCost();
+    const subTotal = parseFloat(this.calculateSubTotal());
+    const total = deliveryCost + subTotal;
+
+    return total;
+  }
+
   render() {
-    const cartIsEmpty = Object.keys(this.props.shoppingCart).length === 0;
+    // const cartIsEmpty = Object.keys(this.props.shoppingCart).length === 0;
+    const cartIsEmpty = false;
     return (
       <div id="content">
         <div className="container">
@@ -40,7 +68,7 @@ class ShoppingCart extends React.Component {
                 goBack={this.props.history.goBack}
                 removeFromCart={this.props.removeFromCart}
                 changeItemAmount={this.props.changeItemAmount}
-                totalPrice={this.calculateTotalPrice()}
+                totalPrice={this.calculateSubTotal()}
               />
             </Route>
             <Route path="/carrinho/checkout1">
@@ -48,8 +76,7 @@ class ShoppingCart extends React.Component {
                 push={this.props.history.push}
                 orderChange={this.props.orderChange}
                 address={this.props.order.address}
-                // cartIsEmpty={cartIsEmpty}
-                cartIsEmpty={false}
+                cartIsEmpty={cartIsEmpty}
               />
             </Route>
             <Route path="/carrinho/checkout2">
@@ -57,16 +84,34 @@ class ShoppingCart extends React.Component {
                 push={this.props.history.push}
                 orderChange={this.props.orderChange}
                 delivery={this.props.order.delivery}
-                // cartIsEmpty={cartIsEmpty}
-                cartIsEmpty={false}
+                cartIsEmpty={cartIsEmpty}
               />
             </Route>
-            <Route path="/carrinho/checkout3" component={Checkout3} />
-            <Route path="/carrinho/checkout4" component={Checkout4} />
+            <Route path="/carrinho/checkout3">
+              <Checkout3
+                push={this.props.history.push}
+                orderChange={this.props.orderChange}
+                payment={this.props.order.payment}
+                cartIsEmpty={cartIsEmpty}
+                shoppingCart={this.props.shoppingCart}
+              />
+            </Route>
+            <Route path="/carrinho/checkout4">
+              <Checkout4
+                push={this.props.history.push}
+                cartIsEmpty={cartIsEmpty}
+                totalPrice={this.calculateSubTotal()}
+                shoppingCart={this.props.shoppingCart}
+                orderPlace={this.props.orderPlace}
+                deliveryCost={this.calculateDeliveryCost()}
+                total={this.calculateTotal()}
+              />
+            </Route>
             <div className="col-lg-3">
               <OrderSummary
-                subTotal={this.calculateTotalPrice()}
-                shipCosts={10.0}
+                subTotal={this.calculateSubTotal()}
+                deliveryCost={this.calculateDeliveryCost()}
+                total={this.calculateTotal()}
               />
               <Route exact path="/carrinho" component={CouponCodes} />
             </div>
@@ -89,4 +134,5 @@ export default connect(mapStateToProps, {
   removeFromCart,
   changeItemAmount,
   orderChange,
+  orderPlace,
 })(ShoppingCart);
