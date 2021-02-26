@@ -58,3 +58,13 @@ export const ORDER_CHANGE = "ORDER_CHANGE";
 export const orderChange = (value, key, checkoutStep) => {
   return { type: ORDER_CHANGE, payload: { value, key, checkoutStep } };
 };
+
+export const ORDER_PLACE = "ORDER_PLACE";
+export const orderPlace = (totals) => async (getState) => {
+  const { shoppingCart } = getState();
+  const orderDetails = getState().order;
+  const order = { ...orderDetails, items: shoppingCart, totals: totals };
+
+  const response = await api.post("/encomendas", { ...order });
+  console.log(response);
+};
