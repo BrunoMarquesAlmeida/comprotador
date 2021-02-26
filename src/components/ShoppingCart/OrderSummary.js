@@ -1,7 +1,8 @@
 import formatPrice from "../Common/formatPrice";
 
 const OrderSummary = (props) => {
-  const { subTotal, shipCosts } = props;
+  const { subTotal, deliveryCost, total } = props;
+
   return (
     <div id="order-summary" className="box">
       <div className="box-header">
@@ -16,13 +17,11 @@ const OrderSummary = (props) => {
             </tr>
             <tr>
               <td>Custos de envio</td>
-              <th>{formatPrice(shipCosts.toString())}€</th>
+              <th>{deliveryCost.toFixed(2)}€</th>
             </tr>
             <tr className="total">
               <td>Total</td>
-              <th>
-                {formatPrice((parseFloat(subTotal) + shipCosts).toFixed(2))}€
-              </th>
+              <th>{formatPrice(total.toFixed(2))}€</th>
             </tr>
           </tbody>
         </table>
