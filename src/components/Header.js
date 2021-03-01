@@ -145,14 +145,26 @@ class Header extends React.Component {
     }
   }
 
-  // Where we test if the user is signed in through Auth0 and if product was added to cart
   componentDidUpdate(prevProps) {
     const { isAuthenticated } = this.props.auth0;
 
+    // check if user is authenticated
     if (isAuthenticated) {
       this.props.signIn(this.props.auth0.user.email, "Auth0");
     }
 
+    // check if there was an order attempt made and if it was succesfull
+    if (prevProps !== this.props) {
+      if (this.props.order.status === 201) {
+        this.setState({ cartChange: "sucess" });
+      }
+
+      if (this.props.order.status === "error") {
+        this.setState({ cartChange: "error" });
+      }
+    }
+
+    // check if there was any product added to shopping cart
     Object.values(this.props.shoppingCart).map((product) => {
       const productWasAdded = prevProps.shoppingCart[product.id] === undefined;
       if (productWasAdded) {
@@ -163,6 +175,7 @@ class Header extends React.Component {
       }
     });
 
+    // check if there was any product removed from shopping cart
     Object.values(prevProps.shoppingCart).map((product) => {
       const productWasRemoved =
         this.props.shoppingCart[product.id] === undefined;
@@ -194,11 +207,52 @@ class Header extends React.Component {
     this.setState({ searchTerm: e.target.value });
   };
 
+  // decide what notification to show in the bar
+  renderNotificationBar() {
+    const productWasAdded = this.state.cartChange === "add";
+    const orderSucess = this.state.cartChange === "sucess";
+    const productWasRemoved = this.state.cartChange === "remove";
+    const orderError = this.state.cartChange === "error";
+
+    if (productWasAdded || orderSucess) {
+      return (
+        <div>
+          <i className="fa fa-check-circle green"></i>{" "}
+          {productWasAdded ? (
+            <>
+              Adicionou <b>{this.state.changedProduct}</b>
+              &nbsp;ao &nbsp;
+              <Link to="/carrinho">Carrinho de Compras</Link>
+            </>
+          ) : (
+            <b>Encomenda feita com sucesso. Obrigado!</b>
+          )}
+        </div>
+      );
+    }
+
+    if (productWasRemoved || orderError) {
+      return (
+        <div>
+          <i className="fa fa-times-circle red"></i>{" "}
+          {productWasRemoved ? (
+            <>
+              Removeu <b>{this.state.changedProduct}</b>
+              &nbsp;do&nbsp;
+              <Link to="/carrinho">Carrinho de Compras</Link>
+            </>
+          ) : (
+            "Algo correu mal com a encomenda. Por favor tente outra vez."
+          )}
+        </div>
+      );
+    }
+  }
+
   render() {
     const { isSignedIn } = this.props;
     const { navOpen, searchOpen } = this.state;
     const cartItemAmount = Object.keys(this.props.shoppingCart).length;
-    const wasProductAdded = this.state.cartChange === "add";
 
     return (
       <>
@@ -383,25 +437,7 @@ class Header extends React.Component {
               >
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb text-muted">
-                    <div>
-                      <i
-                        className={
-                          wasProductAdded
-                            ? "fa fa-check-circle"
-                            : "fa fa-times-circle"
-                        }
-                        style={
-                          wasProductAdded
-                            ? { color: "#3eaa94" }
-                            : { color: "#dc3545" }
-                        }
-                      ></i>{" "}
-                      {wasProductAdded ? "Adicionou" : "Removeu"}{" "}
-                      <b>{this.state.changedProduct}</b>
-                      &nbsp;{wasProductAdded ? "ao" : "do"}
-                      &nbsp;
-                      <Link to="/carrinho">Carrinho de Compras</Link>
-                    </div>
+                    {this.renderNotificationBar()}{" "}
                   </ol>
                 </nav>
               </div>
@@ -418,6 +454,7 @@ const mapStateToProps = (state) => {
   return {
     isSignedIn: state.auth.isSignedIn,
     shoppingCart: state.shoppingCart,
+    order: state.order,
   };
 };
 
