@@ -1,3 +1,11 @@
+.red {
+  color: #dc3545;
+}
+
+.green {
+  color: #3eaa94;
+}
+
 .invalid-feedback {
   display: block;
 }
