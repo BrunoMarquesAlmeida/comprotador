@@ -1,4 +1,4 @@
-import { ORDER_CHANGE } from "../actions";
+import { ORDER_CHANGE, ORDER_PLACE } from "../actions";
 
 const INITIAL_STATE = {
   address: {
@@ -13,6 +13,7 @@ const INITIAL_STATE = {
   },
   delivery: { method: "" },
   payment: { method: "" },
+  status: null,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -25,6 +26,8 @@ export default (state = INITIAL_STATE, action) => {
           [action.payload.key]: action.payload.value,
         },
       };
+    case ORDER_PLACE:
+      return { ...state, status: action.payload };
     default:
       return state;
   }

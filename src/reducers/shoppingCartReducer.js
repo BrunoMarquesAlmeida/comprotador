@@ -1,6 +1,11 @@
 import _ from "lodash";
 
-import { ADD_TO_CART, REMOVE_FROM_CART, CHANGE_ITEM_AMOUNT } from "../actions";
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  CHANGE_ITEM_AMOUNT,
+  CART_DELETE,
+} from "../actions";
 
 export default (state = {}, action) => {
   switch (action.type) {
@@ -14,6 +19,8 @@ export default (state = {}, action) => {
         quantidade: action.payload.amount,
       };
       return { ...state, [action.payload.id]: productWithNewAmount };
+    case CART_DELETE:
+      return {};
     default:
       return state;
   }
