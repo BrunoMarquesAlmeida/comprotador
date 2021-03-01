@@ -1,3 +1,19 @@
+.red {
+  color: #dc3545;
+}
+
+.green {
+  color: #3eaa94;
+}
+
+.invalid-feedback {
+  display: block;
+}
+
+.disabled {
+  cursor: context-menu;
+}
+
 .navMenuBtn {
   color: #4fbfa8;
   cursor: pointer;
