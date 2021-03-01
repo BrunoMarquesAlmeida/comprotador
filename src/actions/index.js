@@ -1,5 +1,6 @@
 import api from "../api";
 
+// Auth
 export const SIGN_IN = "SIGN_IN";
 export const signIn = (userID, loginType) => {
   return {
@@ -15,6 +16,7 @@ export const signOut = () => {
   };
 };
 
+// Products
 export const FETCH_ALLPRODUCTS = "FETCH_ALLPRODUCTS";
 export const fetchAllProducts = () => async (dispatch) => {
   const response = await api.get(`/produtos`);
@@ -35,6 +37,7 @@ export const fetchProduct = (props) => async (dispatch) => {
   // catch here in case productID doesn't exist in DB
 };
 
+// Cart
 export const ADD_TO_CART = "ADD_TO_CART";
 export const addToCart = ({ title, img, precos, id }) => {
   const preco = precos.desconto ? precos.desconto : precos.normal;
@@ -54,17 +57,29 @@ export const changeItemAmount = (id, amount) => {
   return { type: CHANGE_ITEM_AMOUNT, payload: { id, amount } };
 };
 
+export const CART_DELETE = "CART_DELETE";
+export const cartDelete = () => {
+  return { type: CART_DELETE };
+};
+
+// Order
 export const ORDER_CHANGE = "ORDER_CHANGE";
 export const orderChange = (value, key, checkoutStep) => {
   return { type: ORDER_CHANGE, payload: { value, key, checkoutStep } };
 };
 
 export const ORDER_PLACE = "ORDER_PLACE";
-export const orderPlace = (totals) => async (getState) => {
+export const orderPlace = (totals, push) => async (dispatch, getState) => {
   const { shoppingCart } = getState();
   const orderDetails = getState().order;
   const order = { ...orderDetails, items: shoppingCart, totals: totals };
 
-  const response = await api.post("/encomendas", { ...order });
-  console.log(response);
+  await api
+    .post("/encomendas", { ...order })
+    .then(({ status }) => {
+      dispatch({ type: CART_DELETE });
+      dispatch({ type: ORDER_PLACE, payload: status });
+      push("/");
+    })
+    .catch(() => dispatch({ type: ORDER_PLACE, payload: "error" }));
 };
