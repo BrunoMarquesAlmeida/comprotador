@@ -55,8 +55,9 @@ class ShoppingCart extends React.Component {
   }
 
   render() {
-    // const cartIsEmpty = Object.keys(this.props.shoppingCart).length === 0;
-    const cartIsEmpty = false;
+    const cartIsEmpty = Object.keys(this.props.shoppingCart).length === 0;
+    // const cartIsEmpty = false;
+
     return (
       <div id="content">
         <div className="container">
@@ -122,7 +123,7 @@ class ShoppingCart extends React.Component {
   }
 }
 
-// fetches Redux store shoppingCart state
+// fetches Redux store shoppingCart and order state
 const mapStateToProps = (state) => {
   return {
     shoppingCart: state.shoppingCart,
