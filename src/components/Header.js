@@ -166,7 +166,7 @@ class Header extends React.Component {
 
     // check if there was any product added to shopping cart
     Object.values(this.props.shoppingCart).map((product) => {
-      const productWasAdded = prevProps.shoppingCart[product.id] === undefined;
+      const productWasAdded = prevProps.shoppingCart[product._id] === undefined;
       if (productWasAdded) {
         this.setState({
           changedProduct: product.title,
@@ -178,7 +178,7 @@ class Header extends React.Component {
     // check if there was any product removed from shopping cart
     Object.values(prevProps.shoppingCart).map((product) => {
       const productWasRemoved =
-        this.props.shoppingCart[product.id] === undefined;
+        this.props.shoppingCart[product._id] === undefined;
       if (productWasRemoved) {
         this.setState({
           changedProduct: product.title,
@@ -262,9 +262,9 @@ class Header extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-lg-10 offer mb-3 mb-lg-0">
-                  <Link to="/detalhes/5">
+                  <Link to="/carrinho">
                     <span className="btn btn-success btn-sm">
-                      Página de produto exibe informações
+                      Agora é possível fazer encomendas
                     </span>
                     <span className="ml-1">
                       Clique aqui para conhecer a última atualização ao site
