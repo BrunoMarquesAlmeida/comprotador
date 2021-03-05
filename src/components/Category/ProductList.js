@@ -12,16 +12,16 @@ class ProductList extends React.Component {
   // builds product list depending on how many items the user has chosen to view, tests and renders for loading
   renderProductList = (showNProducts) => {
     const buildProductListJSX = (product) => {
-      const { id, title, img, precos, ribbons } = product;
+      const { _id, title, img, precos, ribbons } = product;
       return (
-        <div className="col-lg-4 col-md-6" key={id}>
+        <div className="col-lg-4 col-md-6" key={_id}>
           <div className="product">
-            <Link to={`/detalhes/${id}`}>
+            <Link to={`/detalhes/${_id}`}>
               <img src={img[0].original} alt="" className="img-fluid" />
             </Link>
             <div className="text">
               <h3>
-                <Link to={`/detalhes/${id}`}>{title}</Link>
+                <Link to={`/detalhes/${_id}`}>{title}</Link>
               </h3>
               <p className="price">
                 {precos.desconto ? (
@@ -39,7 +39,7 @@ class ProductList extends React.Component {
               </p>
               <p className="buttons">
                 <Link
-                  to={`/detalhes/${id}`}
+                  to={`/detalhes/${_id}`}
                   className="btn btn-outline-secondary"
                 >
                   Ver detalhes

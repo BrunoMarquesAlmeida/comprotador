@@ -26,11 +26,11 @@ class Recomendados extends React.Component {
     const hotProducts = sortedProducts.slice(0, 3);
 
     // maps those 3 products onto JSX
-    return hotProducts.map(({ img, title, id, precos }) => {
+    return hotProducts.map(({ img, title, _id, precos }) => {
       return (
-        <div className="col-md-3 col-sm-6" key={id}>
+        <div className="col-md-3 col-sm-6" key={_id}>
           <div className="product">
-            <Link to={`/detalhes/${id}`}>
+            <Link to={`/detalhes/${_id}`}>
               <img src={img[0].original} alt="" className="img-fluid" />
             </Link>
             <div className="text">

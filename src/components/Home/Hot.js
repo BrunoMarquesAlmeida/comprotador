@@ -32,21 +32,21 @@ class Hot extends React.Component {
     const hotProducts = sortedProducts.slice(0, 15);
 
     // maps those 15 products onto JSX
-    return hotProducts.map(({ img, title, id, ribbons, precos }) => {
+    return hotProducts.map(({ img, title, _id, ribbons, precos }) => {
       return (
         <div
           className="product same-height"
           style={{
             margin: "0 25px",
           }}
-          key={id}
+          key={_id}
         >
-          <Link to={`/detalhes/${id}`}>
+          <Link to={`/detalhes/${_id}`}>
             <img src={img[0].original} alt="" className="img-fluid" />
           </Link>
           <div className="text">
             <h3>
-              <Link to={`/detalhes/${id}`}>{title}</Link>
+              <Link to={`/detalhes/${_id}`}>{title}</Link>
             </h3>
             <p className="price">
               <del>{precos.desconto ? formatPrice(precos.normal) : null}</del>

@@ -7,13 +7,13 @@ export default (state = { fetchComplete: null }, action) => {
     case FETCH_ALLPRODUCTS:
       return {
         ...state,
-        ..._.mapKeys(action.payload, "id"),
+        ..._.mapKeys(action.payload, "_id"),
         fetchComplete: true,
       };
     case FETCH_PRODUCT:
       return {
         ...state,
-        [action.payload.id]: action.payload,
+        [action.payload._id]: action.payload,
         fetchComplete: true,
       };
     default:

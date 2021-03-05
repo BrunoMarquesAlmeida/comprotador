@@ -13,17 +13,17 @@ class Checkout4 extends React.Component {
     const { shoppingCart } = this.props;
     if (shoppingCart !== undefined) {
       return Object.values(shoppingCart).map(
-        ({ title, image, preco, quantidade, id }) => {
+        ({ title, image, preco, quantidade, _id }) => {
           const total = preco * quantidade;
           return (
-            <tr key={id}>
+            <tr key={_id}>
               <td>
-                <Link to={`/detalhes/${id}`}>
+                <Link to={`/detalhes/${_id}`}>
                   <img src={image} alt={title} />
                 </Link>
               </td>
               <td>
-                <Link to={`/detalhes/${id}`}>{title}</Link>
+                <Link to={`/detalhes/${_id}`}>{title}</Link>
               </td>
               <td>{quantidade}</td>
               <td>{formatPrice(preco)}€</td>

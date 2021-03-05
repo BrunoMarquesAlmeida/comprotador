@@ -10,24 +10,24 @@ class Basket extends React.Component {
     const { shoppingCart, removeFromCart } = this.props;
     if (shoppingCart !== undefined) {
       return Object.values(shoppingCart).map(
-        ({ title, image, preco, quantidade, id }) => {
+        ({ title, image, preco, quantidade, _id }) => {
           const total = preco * quantidade;
           return (
-            <tr key={id}>
+            <tr key={_id}>
               <td>
-                <Link to={`/detalhes/${id}`}>
+                <Link to={`/detalhes/${_id}`}>
                   <img src={image} alt={title} />
                 </Link>
               </td>
               <td>
-                <Link to={`/detalhes/${id}`}>{title}</Link>
+                <Link to={`/detalhes/${_id}`}>{title}</Link>
               </td>
               <td>
                 <input
                   type="number"
                   value={quantidade}
                   className="form-control"
-                  onChange={(e) => this.handleAmountChange(e, id)}
+                  onChange={(e) => this.handleAmountChange(e, _id)}
                   style={{ width: "70px" }}
                 />
               </td>
@@ -36,7 +36,7 @@ class Basket extends React.Component {
               <td>{formatPrice(total.toFixed(2))}€</td>
               <td>
                 <span
-                  onClick={() => removeFromCart(id)}
+                  onClick={() => removeFromCart(_id)}
                   style={{ color: "#3eaa94" }}
                   className="navMenuBtn"
                 >
