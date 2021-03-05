@@ -19,9 +19,12 @@ export const signOut = () => {
 // Products
 export const FETCH_ALLPRODUCTS = "FETCH_ALLPRODUCTS";
 export const fetchAllProducts = () => async (dispatch) => {
-  const response = await api.get(`/produtos`);
-
-  dispatch({ type: FETCH_ALLPRODUCTS, payload: response.data });
+  await api
+    .get(`/produtos`)
+    .then((response) => {
+      dispatch({ type: FETCH_ALLPRODUCTS, payload: response.data });
+    })
+    .catch((err) => console.log(err));
 };
 
 export const FETCH_PRODUCT = "FETCH_PRODUCT";
@@ -39,10 +42,10 @@ export const fetchProduct = (props) => async (dispatch) => {
 
 // Cart
 export const ADD_TO_CART = "ADD_TO_CART";
-export const addToCart = ({ title, img, precos, id }) => {
+export const addToCart = ({ title, img, precos, _id }) => {
   const preco = precos.desconto ? precos.desconto : precos.normal;
   const image = img[0].thumbnail;
-  const payload = { id, title, image, preco, quantidade: 1 };
+  const payload = { _id, title, image, preco, quantidade: 1 };
 
   return { type: ADD_TO_CART, payload: { payload } };
 };
@@ -72,6 +75,7 @@ export const ORDER_PLACE = "ORDER_PLACE";
 export const orderPlace = (totals, push) => async (dispatch, getState) => {
   const { shoppingCart } = getState();
   const orderDetails = getState().order;
+  delete orderDetails.status;
   const order = { ...orderDetails, items: shoppingCart, totals: totals };
 
   await api
