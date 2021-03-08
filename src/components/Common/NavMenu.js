@@ -13,12 +13,14 @@ class NavMenu extends React.Component {
       logoutClick: false,
     };
   }
+
   componentDidMount() {
     if (this.props.loginType === "Google") {
       loadGAPI(this.props.signIn, this.props.signOut);
     }
   }
-  renderNavLinks = ({ subRoutes }) => {
+
+  renderNavLinks = (subRoutes) => {
     return subRoutes.map(({ name, path, icon, exact }) => {
       if (name === "Logout") {
         return (
@@ -45,6 +47,7 @@ class NavMenu extends React.Component {
       }
     });
   };
+
   handleLogoutClick = () => {
     const { loginType } = this.props;
     switch (loginType) {
@@ -82,7 +85,7 @@ class NavMenu extends React.Component {
             </div>
             <div className="card-body">
               <ul className="nav nav-pills flex-column">
-                {this.renderNavLinks({ subRoutes })}
+                {this.renderNavLinks(subRoutes)}
               </ul>
             </div>
           </div>
