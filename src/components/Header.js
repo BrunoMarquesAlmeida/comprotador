@@ -226,8 +226,8 @@ class Header extends React.Component {
             </>
           ) : (
             <>
-              <b>Encomenda feita com sucesso</b> Irá receber um email com mais
-              detalhes <b>Obrigado!</b>
+              <b>Encomenda feita com sucesso.</b> Irá receber um email com mais
+              detalhes. <b>Obrigado!</b>
             </>
           )}
         </div>
