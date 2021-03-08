@@ -13,6 +13,7 @@ import EncomendaDetalhes from "./EncomendaDetalhes";
 import { fetchUserOrders } from "../../actions";
 
 class MyAccount extends Component {
+  // detects userId changes and call for update on user orders
   componentDidUpdate(prevProps) {
     const userChanged = prevProps.user.userId !== this.props.user.userId;
     if (userChanged) {
@@ -47,6 +48,7 @@ class MyAccount extends Component {
   }
 }
 
+// routes to map in NavMenu
 const subRoutes = [
   {
     path: "/conta",
