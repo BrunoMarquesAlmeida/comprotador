@@ -1,3 +1,4 @@
+import { Component } from "react";
 import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
@@ -9,25 +10,42 @@ import Detail from "./Detail";
 import Encomendas from "./Encomendas";
 import EncomendaDetalhes from "./EncomendaDetalhes";
 
-const MyAccount = (props) => {
-  if (props.isSignedIn === false) {
-    return <Redirect to="/">{props.handleLoginShow()}</Redirect>;
+import { fetchUserOrders } from "../../actions";
+
+class MyAccount extends Component {
+  componentDidUpdate(prevProps) {
+    const userChanged = prevProps.user.userId !== this.props.user.userId;
+    if (userChanged) {
+      this.props.fetchUserOrders();
+    }
   }
-  return (
-    <div id="content">
-      <div className="container">
-        <div className="row">
-          <Breadcrumb props={props} />
-          <NavMenu subRoutes={subRoutes} title="Conta" />
-          <Route path="/conta/wishlist" component={Wishlist} />
-          <Route exact path="/conta" component={Detail} />
-          <Route exact path="/conta/encomendas" component={Encomendas} />
-          <Route path="/conta/encomendas/:id" component={EncomendaDetalhes} />
+
+  componentDidMount() {
+    this.props.fetchUserOrders();
+  }
+
+  render() {
+    if (this.props.isSignedIn === false) {
+      return <Redirect to="/">{this.props.handleLoginShow()}</Redirect>;
+    }
+    return (
+      <div id="content">
+        <div className="container">
+          <div className="row">
+            <Breadcrumb props={this.props} />
+            <NavMenu subRoutes={subRoutes} title="Conta" />
+            <Route path="/conta/wishlist" component={Wishlist} />
+            <Route exact path="/conta" component={Detail} />
+            <Route exact path="/conta/encomendas">
+              <Encomendas orders={this.props.user.orders} />
+            </Route>
+            <Route path="/conta/encomendas/:id" component={EncomendaDetalhes} />
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 const subRoutes = [
   {
@@ -57,7 +75,10 @@ const subRoutes = [
 ];
 
 const mapStateToProps = (state) => {
-  return { isSignedIn: state.auth.isSignedIn };
+  return {
+    isSignedIn: state.auth.isSignedIn,
+    user: { userId: state.auth.userId, ...state.user },
+  };
 };
 
-export default connect(mapStateToProps, {})(MyAccount);
+export default connect(mapStateToProps, { fetchUserOrders })(MyAccount);
