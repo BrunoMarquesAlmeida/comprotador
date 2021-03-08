@@ -74,9 +74,10 @@ export const orderChange = (value, key, checkoutStep) => {
 export const ORDER_PLACE = "ORDER_PLACE";
 export const orderPlace = (totals, push) => async (dispatch, getState) => {
   const { shoppingCart } = getState();
+  const { userId } = getState().auth;
   const orderDetails = getState().order;
   delete orderDetails.status;
-  const order = { ...orderDetails, items: shoppingCart, totals: totals };
+  const order = { ...orderDetails, items: shoppingCart, totals, userId };
 
   await api
     .post("/encomendas", { ...order })

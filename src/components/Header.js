@@ -225,7 +225,10 @@ class Header extends React.Component {
               <Link to="/carrinho">Carrinho de Compras</Link>
             </>
           ) : (
-            <b>Encomenda feita com sucesso. Obrigado!</b>
+            <>
+              <b>Encomenda feita com sucesso</b> Irá receber um email com mais
+              detalhes <b>Obrigado!</b>
+            </>
           )}
         </div>
       );
