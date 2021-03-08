@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-const Encomendas = () => {
+const Encomendas = (props) => {
+  console.log(props.orders);
   return (
     <div className="col-lg-9">
       <div className="box">
