@@ -65,7 +65,7 @@ export const cartDelete = () => {
   return { type: CART_DELETE };
 };
 
-// Order
+// Orders
 export const ORDER_CHANGE = "ORDER_CHANGE";
 export const orderChange = (value, key, checkoutStep) => {
   return { type: ORDER_CHANGE, payload: { value, key, checkoutStep } };
@@ -87,4 +87,13 @@ export const orderPlace = (totals, push) => async (dispatch, getState) => {
       push("/");
     })
     .catch(() => dispatch({ type: ORDER_PLACE, payload: "error" }));
+};
+
+export const FETCH_USER_ORDERS = "FETCH_USER_ORDERS";
+export const fetchUserOrders = () => async (dispatch, getState) => {
+  const { userId } = getState().auth;
+
+  await api.get(`/encomendas/user/${userId}`).then((result) => {
+    dispatch({ type: FETCH_USER_ORDERS, payload: result.data });
+  });
 };
