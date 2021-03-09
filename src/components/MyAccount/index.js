@@ -26,7 +26,9 @@ class MyAccount extends Component {
   }
 
   render() {
-    if (this.props.isSignedIn === false) {
+    const { orders } = this.props.user;
+
+    if (this.props.isSignedIn !== true) {
       return <Redirect to="/">{this.props.handleLoginShow()}</Redirect>;
     }
     return (
@@ -38,9 +40,14 @@ class MyAccount extends Component {
             <Route path="/conta/wishlist" component={Wishlist} />
             <Route exact path="/conta" component={Detail} />
             <Route exact path="/conta/encomendas">
-              <Encomendas orders={this.props.user.orders} />
+              <Encomendas orders={orders} />
             </Route>
-            <Route path="/conta/encomendas/:id" component={EncomendaDetalhes} />
+            <Route
+              path="/conta/encomendas/:id"
+              render={(props) => (
+                <EncomendaDetalhes {...props} orders={orders} />
+              )}
+            />
           </div>
         </div>
       </div>
