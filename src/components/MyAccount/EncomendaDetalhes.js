@@ -64,7 +64,21 @@ const EncomendaDetalhes = (props) => {
           </table>
         </div>
         <div className="row addresses">
-          <div className="col-lg-12">
+          <div className={address.differentAddresses ? "col-lg-6" : "d-none"}>
+            <h2>Endereço de faturação</h2>
+            <p>
+              {address.firstNameInVoice + " " + address.lastNameInVoice}
+              <br />
+              {address.streetInVoice}
+              <br />
+              {address.cityInVoice}
+              <br />
+              {address.zipInVoice}
+            </p>
+          </div>
+          <div
+            className={address.differentAddresses ? "col-lg-6" : "col-lg-12"}
+          >
             <h2>Endereço de envio</h2>
             <p>
               {address.firstName + " " + address.lastName}
