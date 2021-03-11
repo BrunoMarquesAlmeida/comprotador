@@ -10,6 +10,7 @@ const INITIAL_STATE = {
     email: "",
     phone: "",
     NIF: "",
+    differentAddresses: false,
   },
   delivery: { method: "" },
   payment: { method: "" },
