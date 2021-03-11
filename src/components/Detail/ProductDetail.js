@@ -50,7 +50,10 @@ const ProductDetail = (props) => {
               </p>
               <p className="text-center buttons">
                 <AddCartIcon addToCart={props.addToCart} product={product} />
-                <span className="btn btn-outline-primary">
+                <span
+                  className="btn btn-outline-primary"
+                  onClick={() => props.addToWishlist(product._id)}
+                >
                   Adicionar à wishlist
                   <i className="fa fa-heart fa-icon"></i>
                 </span>
