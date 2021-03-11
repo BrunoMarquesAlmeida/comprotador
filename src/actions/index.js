@@ -80,7 +80,7 @@ export const orderPlace = (totals, push) => async (dispatch, getState) => {
   const order = { ...orderDetails, items: shoppingCart, totals, userId };
 
   await api
-    .post("/encomendas", { ...order })
+    .post("/encomendas", order)
     .then(({ status }) => {
       dispatch({ type: CART_DELETE });
       dispatch({ type: ORDER_PLACE, payload: status });
@@ -96,4 +96,87 @@ export const fetchUserOrders = () => async (dispatch, getState) => {
   await api.get(`/encomendas/user/${userId}`).then((result) => {
     dispatch({ type: FETCH_USER_ORDERS, payload: result.data });
   });
+};
+
+//user
+export const USER_OPERATION_STATUS = "USER_OPERATION_STATUS";
+
+export const FETCH_USER_DETAILS = "FETCH_USER_DETAILS";
+export const fetchUserDetails = () => async (dispatch, getState) => {
+  const { userId } = getState().auth;
+
+  await api
+    .get(`/utilizadores/${userId}`)
+    .then((result) => {
+      dispatch({ type: FETCH_USER_DETAILS, payload: result.data });
+      dispatch({
+        type: USER_OPERATION_STATUS,
+        payload: {
+          message: "User was found",
+          code: 200,
+        },
+      });
+    })
+    .catch((err) => {
+      if (err.response.status === 404) {
+        api.post("/utilizadores", { userId }).then(
+          dispatch({
+            type: USER_OPERATION_STATUS,
+            payload: {
+              message: "User was not found and new entry was created",
+              code: 201,
+            },
+          })
+        );
+      }
+      dispatch({
+        type: USER_OPERATION_STATUS,
+        payload: {
+          message: "User was not found and could not be created",
+          code: 500,
+        },
+      });
+    });
+};
+
+export const SAVE_USER_ADDRESS = "SAVE_USER_ADDRESS";
+export const saveUserAddress = (address) => async (dispatch, getState) => {
+  const { userId } = getState().auth;
+  const udpateAddress = [
+    {
+      propName: "address",
+      value: address,
+    },
+  ];
+
+  await api
+    .patch(`/utilizadores/${userId}`, udpateAddress)
+    .then(() => {
+      dispatch({ type: SAVE_USER_ADDRESS, payload: address });
+      dispatch({
+        type: USER_OPERATION_STATUS,
+        payload: { message: "User address was updated", code: 200 },
+      });
+    })
+    .catch(() =>
+      dispatch({
+        type: USER_OPERATION_STATUS,
+        payload: { message: "User address could not be updated", code: 500 },
+      })
+    );
+};
+
+export const ADD_TO_WISHLIST = "ADD_TO_WISHLIST";
+export const addToWishlist = (id) => async (dispatch, getState) => {
+  const { wishlist } = getState().user;
+  const newWishlist = [...wishlist, id];
+  // const index = wishlist.indexOf(id);
+
+  // if (index !== -1) {
+  //   wishlist.splice(index, 1);
+  // }
+
+  console.log(newWishlist);
+
+  dispatch({ type: ADD_TO_WISHLIST, payload: newWishlist });
 };
