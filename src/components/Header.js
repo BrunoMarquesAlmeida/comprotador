@@ -154,12 +154,19 @@ class Header extends React.Component {
     }
 
     // check if there was an order attempt made and if it was succesfull
-    if (prevProps !== this.props) {
+    if (prevProps.order !== this.props.order) {
       if (this.props.order.status === 201) {
         this.setState({ cartChange: "sucess" });
       }
 
       if (this.props.order.status === "error") {
+        this.setState({ cartChange: "error" });
+      }
+    }
+
+    if (prevProps.userOperationStatus !== this.props.userOperationStatus) {
+      console.log(this.props.userOperationStatus);
+      if (this.props.userOperationStatus === 500) {
         this.setState({ cartChange: "error" });
       }
     }
@@ -229,7 +236,7 @@ class Header extends React.Component {
               <b>Encomenda feita com sucesso.</b> Irá receber um email com mais
               detalhes. <b>Obrigado!</b>
             </>
-          )}
+          )}{" "}
         </div>
       );
     }
@@ -245,7 +252,7 @@ class Header extends React.Component {
               <Link to="/carrinho">Carrinho de Compras</Link>
             </>
           ) : (
-            "Algo correu mal com a encomenda. Por favor tente outra vez."
+            "Algo correu mal. Por favor tente outra vez."
           )}
         </div>
       );
@@ -439,8 +446,16 @@ class Header extends React.Component {
                 }
               >
                 <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb text-muted">
+                  <ol className="breadcrumb text-muted d-flex p-2">
                     {this.renderNotificationBar()}{" "}
+                    <div className="ml-auto">
+                      <button
+                        className="green link"
+                        onClick={() => this.setState({ cartChange: null })}
+                      >
+                        Fechar
+                      </button>
+                    </div>
                   </ol>
                 </nav>
               </div>
@@ -458,6 +473,7 @@ const mapStateToProps = (state) => {
     isSignedIn: state.auth.isSignedIn,
     shoppingCart: state.shoppingCart,
     order: state.order,
+    userOperationStatus: state.user.status.code,
   };
 };
 
