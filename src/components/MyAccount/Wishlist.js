@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AddCartIcon } from "../Common/AddCartIcon";
 import { NewRibbon } from "../Common/Ribbon";
 
-const Wishlist = () => {
+const Wishlist = (props) => {
   return (
     <div className="col-lg-9">
       <div className="box">
