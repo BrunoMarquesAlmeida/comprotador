@@ -3,7 +3,7 @@
 }
 
 .green {
-  color: #3eaa94;
+  color: #3eaa94 !important;
 }
 
 .invalid-feedback {
