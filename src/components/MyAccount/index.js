@@ -15,6 +15,8 @@ import {
   saveUserAddress,
   fetchUserDetails,
   addToWishlist,
+  fetchAllProducts,
+  addToCart,
 } from "../../actions";
 
 class MyAccount extends Component {
@@ -30,6 +32,7 @@ class MyAccount extends Component {
 
   componentDidMount() {
     this.props.fetchUserOrders();
+    this.props.fetchAllProducts();
 
     if (this.props.user.userId) {
       this.props.fetchUserDetails();
@@ -49,7 +52,11 @@ class MyAccount extends Component {
             <Breadcrumb props={this.props} />
             <NavMenu subRoutes={subRoutes} title="Conta" />
             <Route path="/conta/wishlist">
-              <Wishlist addToWishlist={this.props.addToWishlist} />
+              <Wishlist
+                products={this.props.products}
+                wishlist={this.props.user.wishlist}
+                addToCart={this.props.addToCart}
+              />
             </Route>
             <Route exact path="/conta">
               <Detail
@@ -105,6 +112,7 @@ const mapStateToProps = (state) => {
   return {
     isSignedIn: state.auth.isSignedIn,
     user: { userId: state.auth.userId, ...state.user },
+    products: state.products,
   };
 };
 
@@ -113,4 +121,6 @@ export default connect(mapStateToProps, {
   saveUserAddress,
   fetchUserDetails,
   addToWishlist,
+  fetchAllProducts,
+  addToCart,
 })(MyAccount);
