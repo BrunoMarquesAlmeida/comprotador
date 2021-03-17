@@ -165,7 +165,6 @@ class Header extends React.Component {
     }
 
     if (prevProps.userOperationStatus !== this.props.userOperationStatus) {
-      console.log(this.props.userOperationStatus);
       if (this.props.userOperationStatus === 500) {
         this.setState({ cartChange: "error" });
       }
@@ -272,14 +271,14 @@ class Header extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-lg-10 offer mb-3 mb-lg-0">
-                  <Link to="/carrinho">
+                  <div onClick={() => this.props.handleLoginShow()}>
                     <span className="btn btn-success btn-sm">
-                      Agora é possível fazer encomendas
+                      Agora as informações do utilizador são guardadas
                     </span>
-                    <span className="ml-1">
+                    <button className="ml-1 link">
                       Clique aqui para conhecer a última atualização ao site
-                    </span>
-                  </Link>
+                    </button>
+                  </div>
                 </div>
                 <div className="col-lg-2 text-center text-lg-right">
                   <ul className="menu list-inline mb-0">
