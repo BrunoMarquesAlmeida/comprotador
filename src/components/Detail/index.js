@@ -6,19 +6,40 @@ import BreadCrumb from "./BreadCrumb";
 import ProductDetail from "./ProductDetail";
 import NavMenu from "./NavMenu";
 
-import { fetchProduct, addToCart, addToWishlist } from "../../actions";
+import {
+  fetchProduct,
+  addToCart,
+  addToWishlist,
+  fetchUserDetails,
+  removeFromWishlist,
+} from "../../actions";
 import { db } from "../../produtos";
 
 class Detail extends React.Component {
   componentDidMount() {
     this.props.fetchProduct(this.props);
+
     window.scrollTo(0, 0);
+
+    if (this.props.isSignedIn) {
+      this.props.fetchUserDetails();
+    }
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.id !== prevProps.match.params.id) {
+    const productIDChanged =
+      this.props.match.params.id !== prevProps.match.params.id;
+    const isSignedInChanged = prevProps.isSignedIn !== this.props.isSignedIn;
+
+    if (productIDChanged) {
       this.props.fetchProduct(this.props);
       window.scrollTo(0, 0);
+    }
+
+    if (isSignedInChanged) {
+      if (this.props.isSignedIn) {
+        this.props.fetchUserDetails();
+      }
     }
   }
 
@@ -40,6 +61,10 @@ class Detail extends React.Component {
               fetchComplete={this.props.fetchComplete}
               addToCart={this.props.addToCart}
               addToWishlist={this.props.addToWishlist}
+              handleLoginShow={this.props.handleLoginShow}
+              isSignedIn={this.props.isSignedIn}
+              wishlist={this.props.wishlist}
+              removeFromWishlist={this.props.removeFromWishlist}
             />
           </div>
           <div style={{ marginBottom: "30px" }} />
@@ -54,6 +79,8 @@ const mapStateToProps = (state, ownProps) => {
     product: state.products[ownProps.match.params.id],
     // product: db.produtos[ownProps.match.params.id],
     fetchComplete: state.products.fetchComplete,
+    isSignedIn: state.auth.isSignedIn,
+    wishlist: state.user.wishlist,
   };
 };
 
@@ -61,4 +88,6 @@ export default connect(mapStateToProps, {
   fetchProduct,
   addToCart,
   addToWishlist,
+  fetchUserDetails,
+  removeFromWishlist,
 })(Detail);
