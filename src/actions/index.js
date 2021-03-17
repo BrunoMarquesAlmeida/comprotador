@@ -108,6 +108,7 @@ export const fetchUserDetails = () => async (dispatch, getState) => {
   await api
     .get(`/utilizadores/${userId}`)
     .then((result) => {
+      // User was found
       dispatch({ type: FETCH_USER_DETAILS, payload: result.data });
       dispatch({
         type: USER_OPERATION_STATUS,
@@ -118,8 +119,9 @@ export const fetchUserDetails = () => async (dispatch, getState) => {
       });
     })
     .catch((err) => {
-      if (err.response.status === 404) {
+      if (err.response?.status === 404) {
         api.post("/utilizadores", { userId }).then(
+          // User was not found and new entry was created
           dispatch({
             type: USER_OPERATION_STATUS,
             payload: {
@@ -128,14 +130,16 @@ export const fetchUserDetails = () => async (dispatch, getState) => {
             },
           })
         );
+      } else {
+        // User was not found and could not be created
+        dispatch({
+          type: USER_OPERATION_STATUS,
+          payload: {
+            message: "User was not found and could not be created",
+            code: 500,
+          },
+        });
       }
-      dispatch({
-        type: USER_OPERATION_STATUS,
-        payload: {
-          message: "User was not found and could not be created",
-          code: 500,
-        },
-      });
     });
 };
 
@@ -168,15 +172,69 @@ export const saveUserAddress = (address) => async (dispatch, getState) => {
 
 export const ADD_TO_WISHLIST = "ADD_TO_WISHLIST";
 export const addToWishlist = (id) => async (dispatch, getState) => {
+  const { userId } = getState().auth;
   const { wishlist } = getState().user;
-  const newWishlist = [...wishlist, id];
-  // const index = wishlist.indexOf(id);
+  let newWishlist = [...wishlist];
+  const itemIsNotInWishlist = !wishlist.includes(id);
 
-  // if (index !== -1) {
-  //   wishlist.splice(index, 1);
-  // }
+  if (itemIsNotInWishlist) {
+    newWishlist = [...wishlist, id];
 
-  console.log(newWishlist);
+    const wishlistPatch = [
+      {
+        propName: "wishlist",
+        value: newWishlist,
+      },
+    ];
 
-  dispatch({ type: ADD_TO_WISHLIST, payload: newWishlist });
+    await api
+      .patch(`/utilizadores/${userId}`, wishlistPatch)
+      .then(() => {
+        dispatch({ type: ADD_TO_WISHLIST, payload: newWishlist });
+        dispatch({
+          type: USER_OPERATION_STATUS,
+          payload: { message: "User wishlist was updated", code: 200 },
+        });
+      })
+      .catch(() =>
+        dispatch({
+          type: USER_OPERATION_STATUS,
+          payload: { message: "User wishlist could not be updated", code: 500 },
+        })
+      );
+  }
+};
+
+export const REMOVE_FROM_WISHLIST = "REMOVE_FROM_WISHLIST";
+export const removeFromWishlist = (id) => async (dispatch, getState) => {
+  const { userId } = getState().auth;
+  const { wishlist } = getState().user;
+  let newWishlist = [...wishlist];
+  const index = newWishlist.indexOf(id);
+
+  if (index !== -1) {
+    newWishlist.splice(index, 1);
+    const wishlistPatch = [
+      {
+        propName: "wishlist",
+        value: newWishlist,
+      },
+    ];
+
+    await api
+      .patch(`/utilizadores/${userId}`, wishlistPatch)
+      .then(() => {
+        dispatch({ type: REMOVE_FROM_WISHLIST, payload: newWishlist });
+        dispatch({
+          type: USER_OPERATION_STATUS,
+          payload: { message: "User wishlist was updated", code: 200 },
+        });
+      })
+      .catch(() =>
+        dispatch({
+          type: USER_OPERATION_STATUS,
+          payload: { message: "User wishlist could not be updated", code: 500 },
+        })
+      );
+  }
 };
