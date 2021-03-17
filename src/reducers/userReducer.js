@@ -4,6 +4,7 @@ import {
   FETCH_USER_DETAILS,
   USER_OPERATION_STATUS,
   ADD_TO_WISHLIST,
+  REMOVE_FROM_WISHLIST,
 } from "../actions";
 
 const INITIAL_STATE = {
@@ -41,6 +42,7 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, ...action.payload };
     case USER_OPERATION_STATUS:
       return { ...state, status: action.payload };
+    case REMOVE_FROM_WISHLIST:
     case ADD_TO_WISHLIST:
       return { ...state, wishlist: action.payload };
     default:
