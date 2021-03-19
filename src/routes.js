@@ -4,6 +4,7 @@ import MyAccount from "./components/MyAccount";
 import ShoppingCart from "./components/ShoppingCart";
 import Info from "./components/Info";
 import Procura from "./components/Category/Procura";
+import Admin from "./components/Admin";
 
 export default [
   {
@@ -90,5 +91,10 @@ export default [
     path: "/procura/:searchTerm",
     name: "Procura",
     Component: Procura,
+  },
+  {
+    path: "/admin",
+    name: "Admin",
+    Component: Admin,
   },
 ];
