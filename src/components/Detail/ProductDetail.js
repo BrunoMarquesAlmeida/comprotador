@@ -62,6 +62,7 @@ class ProductDetail extends React.Component {
       const { product } = this.props;
       const images = product.img;
       const { novo, saldos } = product.ribbons;
+      const isUserAdmin = this.props.userRole === "admin";
 
       return (
         <div className="col-lg-9 order-1 order-lg-2">
@@ -101,6 +102,15 @@ class ProductDetail extends React.Component {
                     product={product}
                   />
                   {this.renderWishlistBtn()}
+                  <span
+                    className={
+                      isUserAdmin ? "btn btn-outline-danger" : "d-none"
+                    }
+                    onClick={() => console.log("click!")}
+                  >
+                    Apagar produto
+                    <i className="fa fa-trash fa-icon"></i>
+                  </span>
                 </p>
               </div>
             </div>
