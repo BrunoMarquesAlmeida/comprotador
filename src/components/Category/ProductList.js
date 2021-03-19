@@ -11,11 +11,18 @@ import formatPrice from "../Common/formatPrice";
 class ProductList extends React.Component {
   // builds product list depending on how many items the user has chosen to view, tests and renders for loading
   renderProductList = (showNProducts) => {
+    const isUserAdmin = this.props.userRole === "admin";
     const buildProductListJSX = (product) => {
       const { _id, title, img, precos, ribbons } = product;
       return (
         <div className="col-lg-4 col-md-6" key={_id}>
           <div className="product">
+            <div
+              className={isUserAdmin ? "productDelete" : "d-none"}
+              onClick={() => console.log("click!")}
+            >
+              <i className="fa fa-trash red"></i>
+            </div>
             <Link to={`/detalhes/${_id}`}>
               <img src={img[0].original} alt="" className="img-fluid" />
             </Link>
