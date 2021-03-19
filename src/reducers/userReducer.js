@@ -24,6 +24,7 @@ const INITIAL_STATE = {
     code: 0,
     message: "No request has yet been made",
   },
+  role: "admin",
 };
 
 export default (state = INITIAL_STATE, action) => {
