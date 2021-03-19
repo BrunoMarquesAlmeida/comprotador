@@ -122,6 +122,7 @@ class Category extends React.Component {
               handleSelectChange={this.handleSelectChange}
               ordenarPor={this.state.ordenarPor}
               addToCart={this.props.addToCart}
+              userRole={this.props.userRole}
             />
           </div>
         </div>
@@ -162,6 +163,7 @@ const mapStateToProps = (state, ownProps) => {
       }
     }),
     fetchComplete: state.products.fetchComplete,
+    userRole: state.user?.role,
   };
 };
 
