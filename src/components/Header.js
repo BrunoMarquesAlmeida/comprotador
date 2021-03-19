@@ -262,6 +262,7 @@ class Header extends React.Component {
     const { isSignedIn } = this.props;
     const { navOpen, searchOpen } = this.state;
     const cartItemAmount = Object.keys(this.props.shoppingCart).length;
+    const isUserAdmin = this.props.userRole === "admin";
 
     return (
       <>
@@ -270,7 +271,7 @@ class Header extends React.Component {
           <div id="top">
             <div className="container">
               <div className="row">
-                <div className="col-lg-10 offer mb-3 mb-lg-0">
+                <div className="col-lg-9 offer mb-3 mb-lg-0">
                   <div onClick={() => this.props.handleLoginShow()}>
                     <span className="btn btn-success btn-sm">
                       Agora as informações do utilizador são guardadas
@@ -280,12 +281,14 @@ class Header extends React.Component {
                     </button>
                   </div>
                 </div>
-                <div className="col-lg-2 text-center text-lg-right">
+                <div className="col-lg-3 text-center text-lg-right">
                   <ul className="menu list-inline mb-0">
                     <li className="list-inline-item">
                       {this.renderLoginBtn(isSignedIn)}
                     </li>
-
+                    <li className={isUserAdmin ? "list-inline-item" : "d-none"}>
+                      <Link to="/admin">Administração</Link>
+                    </li>
                     <li className="list-inline-item">
                       <Link to="/info/contctos">Contactos</Link>
                     </li>
@@ -473,6 +476,7 @@ const mapStateToProps = (state) => {
     shoppingCart: state.shoppingCart,
     order: state.order,
     userOperationStatus: state.user.status.code,
+    userRole: state.user?.role,
   };
 };
 
