@@ -121,7 +121,7 @@ function ContextAwareToggle({ eventKey }) {
   );
 }
 
-const catSpecs = {
+export const catSpecs = {
   Computadores: {
     Desktops: [
       "Marca",
