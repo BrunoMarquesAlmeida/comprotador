@@ -65,6 +65,7 @@ class Detail extends React.Component {
               isSignedIn={this.props.isSignedIn}
               wishlist={this.props.wishlist}
               removeFromWishlist={this.props.removeFromWishlist}
+              userRole={this.props.userRole}
             />
           </div>
           <div style={{ marginBottom: "30px" }} />
@@ -81,6 +82,7 @@ const mapStateToProps = (state, ownProps) => {
     fetchComplete: state.products.fetchComplete,
     isSignedIn: state.auth.isSignedIn,
     wishlist: state.user.wishlist,
+    userRole: state.user?.role,
   };
 };
 
