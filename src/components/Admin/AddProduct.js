@@ -15,12 +15,14 @@ class AddProduct extends React.Component {
     };
   }
 
+  // next 3 functions render Categories based on external Category list
   renderCatOptions() {
     return Object.keys(Categorias).map((Cat) => (
       <option key={Cat}>{Cat}</option>
     ));
   }
 
+  // sub-categories wait for higher tiered categories to be selected first
   renderSubCatOptions() {
     const { selectedCat } = this.state;
 
@@ -45,6 +47,7 @@ class AddProduct extends React.Component {
   handleSelectChange({ target }, cat) {
     const catWasDeselected = cat === "selectedCat" && target.value === "";
 
+    // if main category was deselected this resets the state object
     if (catWasDeselected) {
       this.setState({
         selectedCat: null,
